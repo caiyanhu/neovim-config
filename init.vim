@@ -10,3 +10,5 @@ source $HOME/.config/nvim/themes/onedark.vim
 source $HOME/.config/nvim/plug-config/defx.vim
 " find files
 source $HOME/.config/nvim/plug-config/vim-clap.vim
+" smartim
+source $HOME/.config/nvim/plug-config/startim.vim

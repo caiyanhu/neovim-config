@@ -19,4 +19,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'kristijanhusak/defx-icons'
     "generic finder and dispactcher"
     Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
+    " switch input method"
+    Plug 'ybian/smartim'
 call plug#end()

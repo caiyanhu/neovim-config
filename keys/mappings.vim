@@ -41,3 +41,5 @@ nnoremap <Leader>O O<Esc>^Da
 
 nnoremap <silent> H ^
 nnoremap <silent> L $
+
+inoremap <C-c> <Esc>
