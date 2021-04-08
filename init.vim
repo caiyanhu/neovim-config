@@ -6,3 +6,7 @@ source $HOME/.config/nvim/keys/mappings.vim
 " themes
 source $HOME/.config/nvim/themes/airline.vim
 source $HOME/.config/nvim/themes/onedark.vim
+" file explorer
+source $HOME/.config/nvim/plug-config/defx.vim
+" find files
+source $HOME/.config/nvim/plug-config/vim-clap.vim

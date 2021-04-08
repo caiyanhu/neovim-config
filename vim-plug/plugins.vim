@@ -13,4 +13,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'joshdick/onedark.vim'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
+    " file explorer"
+    Plug 'Shougo/defx.nvim', {'do': ':UpdateRemotePlugins'}
+    " add  file icons to defx"
+    Plug 'kristijanhusak/defx-icons'
+    "generic finder and dispactcher"
+    Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
 call plug#end()

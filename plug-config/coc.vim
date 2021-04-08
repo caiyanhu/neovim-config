@@ -51,5 +51,7 @@ let g:coc_snippet_next = '<tab>'
 
 
 
-" coc-explorer config
-nnoremap <leader>e :CocCommand explorer<CR>
+" coc prettier conifig
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+vmap <leader>f <Plug>(coc-format-selected)
+nmap <leader>f <Plug>(coc-format-selected)
