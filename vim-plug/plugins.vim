@@ -28,4 +28,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'SirVer/ultisnips'
     " comment"
     Plug 'tpope/vim-commentary'
+    " surroundings"
+    Plug 'tpope/vim-surround'
 call plug#end()
