@@ -43,3 +43,6 @@ nnoremap <silent> H ^
 nnoremap <silent> L $
 
 inoremap <C-c> <Esc>
+
+" print a numbered list of file names
+nnoremap <F5> :buffers<CR>:buffer<Space>

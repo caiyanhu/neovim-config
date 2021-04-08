@@ -21,4 +21,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
     " switch input method"
     Plug 'ybian/smartim'
+    " git releated plugins"
+    Plug 'tpope/vim-fugitive'
+    Plug 'airblade/vim-gitgutter'
 call plug#end()
