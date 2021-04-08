@@ -24,4 +24,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " git releated plugins"
     Plug 'tpope/vim-fugitive'
     Plug 'airblade/vim-gitgutter'
+    " snippets"
+    Plug 'SirVer/ultisnips'
+    " comment"
+    Plug 'tpope/vim-commentary'
 call plug#end()
