@@ -30,4 +30,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-commentary'
     " surroundings"
     Plug 'tpope/vim-surround'
+    " autor pairs
+    Plug 'jiangmiao/auto-pairs'
 call plug#end()
