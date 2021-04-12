@@ -14,3 +14,5 @@ source $HOME/.config/nvim/plug-config/vim-clap.vim
 source $HOME/.config/nvim/plug-config/startim.vim
 " git gutter
 source $HOME/.config/nvim/plug-config/gitgutter.vim
+" git blame
+source $HOME/.config/nvim/plug-config/blamer.vim

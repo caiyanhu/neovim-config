@@ -32,4 +32,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-surround'
     " 缩进对齐线"
     Plug 'Yggdroot/indentLine'
+    " git blame"
+    Plug 'apzelos/blamer.nvim'
 call plug#end()
