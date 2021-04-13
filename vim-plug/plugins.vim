@@ -34,4 +34,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'Yggdroot/indentLine'
     " git blame"
     Plug 'apzelos/blamer.nvim'
+    " vuejs plugin"
+    Plug 'posva/vim-vue'
 call plug#end()
