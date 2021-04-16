@@ -16,5 +16,3 @@ source $HOME/.config/nvim/plug-config/startim.vim
 source $HOME/.config/nvim/plug-config/gitgutter.vim
 " git blame
 source $HOME/.config/nvim/plug-config/blamer.vim
-" preview iamge
-source $HOME/.config/nvim/plug-config/image.vim

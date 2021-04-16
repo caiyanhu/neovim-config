@@ -47,3 +47,6 @@ cmap w!! w !sudo tee %
 
 filetype plugin on
 filetype indent on
+
+" 用iterm自带的工具展示图片
+autocmd BufEnter *.png,*.jpg,*gif,*.jpeg exec "! ~/.iterm2/imgcat ".expand("%") | :bw

@@ -36,6 +36,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'apzelos/blamer.nvim'
     " vuejs plugin"
     Plug 'posva/vim-vue'
-    " preview image"
-    Plug 'ashisha/image.vim'
+    " ale "
+    Plug 'dense-analysis/ale'
 call plug#end()
