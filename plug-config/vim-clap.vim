@@ -3,3 +3,4 @@ let g:clap_theme  = 'material_design_dark'
 let g:clap_layout = {'relative': 'editor'}
 
 noremap <leader><s-f> :Clap grep ++query=<cword><CR>
+noremap <leader>ff :Clap files<CR>

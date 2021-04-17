@@ -36,6 +36,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'apzelos/blamer.nvim'
     " vuejs plugin"
     Plug 'posva/vim-vue'
-    " ale "
-    Plug 'dense-analysis/ale'
+    " start screen for vim"
+    Plug 'mhinz/vim-startify' 
+    Plug 'jiangmiao/auto-pairs'
 call plug#end()

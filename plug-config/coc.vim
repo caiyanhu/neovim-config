@@ -55,10 +55,3 @@ let g:coc_snippet_next = '<tab>'
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 vmap <leader>f <Plug>(coc-format-selected)
 nmap <leader>f <Plug>(coc-format-selected)
-
-
-autocmd ColorScheme *
-      \ hi CocErrorHighlight guibg=#902020
-      \ | hi CocWarningHighlight guibg=#909020
-      \ | hi CocInfoHighlight guibg=#209020
-      \ | hi CocHintHighlight guibg=#204090
