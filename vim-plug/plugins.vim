@@ -38,5 +38,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'posva/vim-vue'
     " start screen for vim"
     Plug 'mhinz/vim-startify' 
+    " auto pairs
     Plug 'jiangmiao/auto-pairs'
 call plug#end()
