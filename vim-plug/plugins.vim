@@ -42,6 +42,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'norcalli/nvim-colorizer.lua'
   " spell check
   Plug 'kamykn/spelunker.vim'
-  " language syntax highlight
+
+  " highlight
+  Plug 'posva/vim-vue'
   Plug 'sheerun/vim-polyglot'
 call plug#end()

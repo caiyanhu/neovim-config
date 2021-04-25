@@ -35,7 +35,7 @@ set updatetime=300                      " Faster completion
 set timeoutlen=500                      " By default timeoutlen is 1000 ms
 set formatoptions-=cro                  " Stop newline continution of comments
 set clipboard=unnamedplus               " Copy paste between vim and everything else
-set termguicolors
+set termguicolors                       " enable true color support
 set autowrite                           " write the content of the file automatically if you call :make
 "set autochdir                          " Your working directory will always be the same as your working directory
 set shortmess+=c
