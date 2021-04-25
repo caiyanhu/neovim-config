@@ -1,7 +1,0 @@
-coc-snippets
-coc-prettier
-coc-pairs
-coc-eslint
-coc-tsserver
-coc-json
-coc-go
