@@ -145,3 +145,18 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+" 解决coc打开大文件卡死问题
+let g:trigger_size=0.5*1048576
+augroup hugefile
+  autocmd!
+  autocmd BufReadPre *
+        \ let size=getfsize(expand('<afile>')) |
+        \ if(size>g:trigger_size) || (size==-2) |
+        \   echohl WarningMsg | echomsg 'WARNING: altering options for this huge file!' | echohl None |
+        \   exec 'CocDisable' |
+        \ else |
+        \   exec 'CocEnable' |
+        \ endif |
+        \ unlet size
+augroup END

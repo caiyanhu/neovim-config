@@ -6,7 +6,7 @@ endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
   " golang support for vim
-  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' ,'for': ['go', 'golang']}
 
   " Intelisense
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -44,6 +44,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'kamykn/spelunker.vim'
 
   " highlight
-  Plug 'posva/vim-vue'
+  Plug 'posva/vim-vue', {'for': 'vue'}
   Plug 'sheerun/vim-polyglot'
 call plug#end()
