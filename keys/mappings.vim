@@ -46,3 +46,6 @@ inoremap <C-c> <Esc>
 
 " print a numbered list of file names
 nnoremap <F5> :buffers<CR>:buffer<Space>
+
+" back delete a word in insert mode
+inoremap <M-Bs> <C-c>bdwi

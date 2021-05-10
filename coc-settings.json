@@ -5,7 +5,8 @@
       "command": "gopls",
       "rootPatterns": ["go.mod"],
       "trace.server": "verbose",
-      "filetypes": ["go"]
+      "filetypes": ["go"],
+      "args": ["serve", "-debug", "0.0.0.0:8484", "-rpc.trace"]
     }
   }
 }
