@@ -13,3 +13,5 @@ Plug 'liuchengxu/vista.vim',{'on': ['Vista', 'Vista!', 'Vista!!']}
 if executable('ctags')
 	Plug 'ludovicchabant/vim-gutentags'
 endif
+
+Plug 'elzr/vim-json'
