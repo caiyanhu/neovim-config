@@ -85,12 +85,28 @@ function! s:defx_toggle_tree() abort
   return defx#do_action('multi', ['drop'])
 endfunction
 
+function! s:defx_toggle_tree_or_open_file() abort
+	if defx#is_directory()
+		return defx#do_action('open_or_close_tree')
+	else
+		return defx#do_action('drop')
+	endif
+endfunction
+
+function! s:defx_cd_or_open_file() abort
+	if defx#is_directory()
+		return defx#do_action('open_directory')
+	else
+		return defx#do_action('drop')
+	endif
+endfunction
+
 function! s:defx_mappings() abort
   " Defx window keyboard mappings
   setlocal signcolumn=no expandtab
 
-  nnoremap <silent><buffer><expr> <CR>  defx#do_action('drop')
-  nnoremap <silent><buffer><expr> l     <sid>defx_toggle_tree()
+  nnoremap <silent><buffer><expr> <CR>  <sid>defx_toggle_tree_or_open_file()
+  nnoremap <silent><buffer><expr> l     <sid>defx_cd_or_open_file()
   nnoremap <silent><buffer><expr> h     defx#async_action('cd', ['..'])
   nnoremap <silent><buffer><expr> st    defx#do_action('multi', [['drop', 'tabnew'], 'quit'])
   nnoremap <silent><buffer><expr> s     defx#do_action('open', 'botright vsplit')
