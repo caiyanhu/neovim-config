@@ -62,3 +62,5 @@ Plug 'dense-analysis/ale'
 " front end development
 Plug 'mattn/emmet-vim'
 Plug 'andrewradev/tagalong.vim'
+Plug 'zivyangll/git-blame.vim'
+Plug 'Krasjet/auto.pairs'
