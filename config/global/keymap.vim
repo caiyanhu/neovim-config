@@ -1,12 +1,12 @@
 " 窗口相关快捷键
-noremap <c-h> <C-w>h
-noremap <c-j> <C-w>j
-noremap <c-k> <C-w>k
-noremap <c-l> <C-w>l
-tnoremap <c-h> <c-\><c-n><c-w>h
-tnoremap <c-j> <c-\><c-n><c-w>j
-tnoremap <c-k> <c-\><c-n><c-w>k
-tnoremap <c-l> <c-\><c-n><c-w>l
+noremap <M-h> <C-w>h
+noremap <M-j> <C-w>j
+noremap <M-k> <C-w>k
+noremap <M-l> <C-w>l
+tnoremap <M-h> <c-\><c-n><c-w>h
+tnoremap <M-j> <c-\><c-n><c-w>j
+tnoremap <M-k> <c-\><c-n><c-w>k
+tnoremap <M-l> <c-\><c-n><c-w>l
 
 " 使用回车打开关闭折叠
 nnoremap <CR> za

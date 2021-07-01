@@ -37,12 +37,8 @@ Plug 'mhinz/vim-startify'
 " coc插件列表
 let g:coc_global_extensions = [
     \ 'coc-yaml',
-    \ 'coc-snippets',
     \ 'coc-json',
-    \ 'coc-lists',
-    \ 'coc-just-complete',
     \ 'coc-tsserver',
-    \ 'coc-prettier'
     \ ]
 
 "defx
@@ -53,14 +49,21 @@ if has('nvim')
 endif
 
 " finder
-Plug 'kien/ctrlp.vim'
-Plug 'mileszs/ack.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 " lint plugin
-Plug 'dense-analysis/ale'
+Plug 'w0rp/ale'
 
 " front end development
 Plug 'mattn/emmet-vim'
 Plug 'andrewradev/tagalong.vim'
+
+" syntax highlighting
+Plug 'sheerun/vim-polyglot'
+
+" auto pairs
+Plug 'krasjet/auto.pairs'
+
+" git
 Plug 'zivyangll/git-blame.vim'
-Plug 'Krasjet/auto.pairs'
