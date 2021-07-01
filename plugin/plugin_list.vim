@@ -39,6 +39,8 @@ let g:coc_global_extensions = [
     \ 'coc-yaml',
     \ 'coc-json',
     \ 'coc-tsserver',
+    \ 'coc-prettier',
+    \ 'coc-eslint',
     \ ]
 
 "defx
@@ -51,9 +53,6 @@ endif
 " finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-
-" lint plugin
-Plug 'w0rp/ale'
 
 " front end development
 Plug 'mattn/emmet-vim'

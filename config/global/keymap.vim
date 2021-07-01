@@ -56,6 +56,7 @@ inoremap <c-h> <left>
 inoremap <c-j> <down>
 inoremap <c-k> <up>
 inoremap <c-l> <right>
+inoremap <c-e> <END>
 
 function! s:writeCurrent() abort
     if !&readonly && &buftype =~# '^\%(acwrite\)\=$' && expand('%') !=# ''
@@ -76,3 +77,5 @@ nnoremap <silent> <leader>tc :tabclose<cr>
 
 " 使用系统应用打开当前buffer文件
 noremap <silent> <M-x> :call common#functions#OpenFileUsingSystemApp(expand('%:p'))<cr>
+
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
