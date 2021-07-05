@@ -59,9 +59,13 @@ Plug 'leafoftree/vim-vue-plugin'
 " syntax highlighting
 Plug 'sheerun/vim-polyglot'
 
-" auto pairs
-Plug 'krasjet/auto.pairs'
-
 " git
 Plug 'zivyangll/git-blame.vim'
 Plug 'itchyny/vim-gitbranch'
+Plug 'airblade/vim-gitgutter'
+
+" auto pairs
+Plug 'jiangmiao/auto-pairs'
+
+" comment
+Plug 'tomtom/tcomment_vim'
