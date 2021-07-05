@@ -7,9 +7,6 @@ Plug 'rakr/vim-one'
 " 顶栏和底栏
 Plug 'itchyny/lightline.vim'
 
-" ALE indicator for the lightline vim plugin
-Plug 'maximbaz/lightline-ale'
-
 " 彩虹括号
 Plug 'luochen1990/rainbow'
 
@@ -57,6 +54,7 @@ Plug 'junegunn/fzf.vim'
 " front end development
 Plug 'mattn/emmet-vim'
 Plug 'andrewradev/tagalong.vim'
+Plug 'leafoftree/vim-vue-plugin'
 
 " syntax highlighting
 Plug 'sheerun/vim-polyglot'
@@ -66,3 +64,4 @@ Plug 'krasjet/auto.pairs'
 
 " git
 Plug 'zivyangll/git-blame.vim'
+Plug 'itchyny/vim-gitbranch'
