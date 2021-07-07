@@ -54,18 +54,19 @@ Plug 'junegunn/fzf.vim'
 " front end development
 Plug 'mattn/emmet-vim'
 Plug 'andrewradev/tagalong.vim'
-Plug 'leafoftree/vim-vue-plugin'
+Plug 'posva/vim-vue'
 
 " syntax highlighting
 Plug 'sheerun/vim-polyglot'
 
 " git
-Plug 'zivyangll/git-blame.vim'
-Plug 'itchyny/vim-gitbranch'
-Plug 'airblade/vim-gitgutter'
+Plug 'apzelos/blamer.nvim'
 
 " auto pairs
 Plug 'jiangmiao/auto-pairs'
 
 " comment
 Plug 'tomtom/tcomment_vim'
+
+" 自动切换输入法
+Plug 'ybian/smartim'

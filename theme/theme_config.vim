@@ -41,6 +41,7 @@ endif
 " 主题选择
 let g:one_allow_italics = 1
 silent! colorscheme one
+:highlight Normal guibg=#282C34
 
 " coc 美化
 if common#functions#HasPlug('coc.nvim')
@@ -49,10 +50,10 @@ if common#functions#HasPlug('coc.nvim')
         hi CocCursorRange cterm=bold ctermfg=238 ctermbg=226 gui=bold guifg=#444444 guibg=#ffff00
     endif
 
-    hi link CocErrorSign red
-    hi link CocWarningSign yellow
-    hi link CocInfoSign green
-    hi link CocHintSign blue
+    hi CocErrorSign guifg=#FF2200
+    hi CocWarningSign guifg=#ECFA40
+    hi CocInfoSign guifg=#2D9B41
+    hi CocHintSign guifg=#2D3BFF
 
     if common#functions#HasCocPlug('coc-highlight')
         " coc 高亮单词

@@ -105,6 +105,9 @@ augroup defx_group
   autocmd FileType defx do WinEnter | call s:defx_keymaps()
   " replace netrw to defx
   autocmd BufEnter * call s:browse()
+
+  " update defx status automatically when changing file
+  autocmd BufWritePost * call defx#redraw() 
 augroup END
 
 nnoremap <leader>e :Defx -toggle<CR>
