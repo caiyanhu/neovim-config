@@ -111,7 +111,8 @@ _G.packer_plugins = {
   },
   ["nvim-colorizer.lua"] = {
     loaded = true,
-    path = "/Users/caiyanhu/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
+    needs_bufread = false,
+    path = "/Users/caiyanhu/.local/share/nvim/site/pack/packer/opt/nvim-colorizer.lua"
   },
   ["nvim-compe"] = {
     loaded = true,

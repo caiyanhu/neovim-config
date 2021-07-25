@@ -54,10 +54,7 @@ return require('packer').startup(function()
     use {'lewis6991/gitsigns.nvim'}
 
     -- Color Highlighter
-    use {
-        'norcalli/nvim-colorizer.lua',
-        after = 'material.vim'
-    }
+    use {'norcalli/nvim-colorizer.lua'}
 
     -- Formater
     use {'mhartington/formatter.nvim'}
