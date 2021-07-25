@@ -30,7 +30,7 @@ nmap >> >>_
 nnoremap ! :!
 
 nnoremap L $
-nnoremap H 0
+nnoremap H ^
 
 augroup vime_keymap_group
     autocmd!

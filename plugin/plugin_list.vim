@@ -61,6 +61,7 @@ Plug 'sheerun/vim-polyglot'
 
 " git
 Plug 'apzelos/blamer.nvim'
+Plug 'itchyny/vim-gitbranch'
 
 " auto pairs
 Plug 'jiangmiao/auto-pairs'
