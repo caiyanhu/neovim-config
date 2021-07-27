@@ -40,6 +40,12 @@ return require('packer').startup(function()
         run = ':GoUpdateBinaries'
     }
 
+    -- JavaScript and JSX syntax Highlighter
+    use {
+        'yuezk/vim-js',
+        'MaxMEllon/vim-jsx-pretty'
+    }
+
     -- Lualine
     use {'hoob3rt/lualine.nvim'}
 
@@ -67,4 +73,7 @@ return require('packer').startup(function()
 
     -- Snippets
     use {'hrsh7th/vim-vsnip'}
+
+    -- EditorConfig,这样格式化时会使用项目的editorconfig
+    use {'editorconfig/editorconfig-vim'}
 end)

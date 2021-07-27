@@ -5,10 +5,14 @@ local indent = 4
 
 cmd 'syntax enable'
 cmd 'filetype plugin indent on'
-utils.opt('b', 'expandtab', true)
-utils.opt('b', 'shiftwidth', indent)
 utils.opt('b', 'smartindent', true)
-utils.opt('b', 'tabstop', indent)
+-- tab扩展为空格
+utils.opt('b', 'expandtab', true)
+utils.opt('b', 'tabstop', 4)
+-- 连续数量的空格看作一个制表符
+utils.opt('b', 'softtabstop', 4)
+utils.opt('b', 'shiftwidth', 4)
+utils.opt('o', 'smarttab', true)
 utils.opt('o', 'hidden', true)
 utils.opt('o', 'ignorecase', true)
 utils.opt('o', 'scrolloff', 4 )
