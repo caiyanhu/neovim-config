@@ -34,12 +34,6 @@ return require('packer').startup(function()
         'kyazdani42/nvim-tree.lua'
     }
 
-    -- GoLang support
-    use {
-        'fatih/vim-go',
-        run = ':GoUpdateBinaries'
-    }
-
     -- JavaScript and JSX syntax Highlighter
     use {
         'yuezk/vim-js',
@@ -62,8 +56,8 @@ return require('packer').startup(function()
     -- Color Highlighter
     use {'norcalli/nvim-colorizer.lua'}
 
-    -- Formater
-    use {'mhartington/formatter.nvim'}
+    -- ALE
+    use {'dense-analysis/ale'}
 
     -- Emmet
     use {'mattn/emmet-vim'}

@@ -13,7 +13,6 @@ require'lualine'.setup {
     lualine_x = {
         {'diagnostics', sources = {"nvim_lsp"}, symbols = {error = "", warn = "", info = "", hint = ""}},
         'encoding',
-        'fileformat',
         'filetype'
     },
     lualine_y = {'progress'},
@@ -30,4 +29,3 @@ require'lualine'.setup {
   tabline = {},
   extensions = {}
 }
-

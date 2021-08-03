@@ -69,6 +69,10 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ale = {
+    loaded = true,
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/ale"
+  },
   ["editorconfig-vim"] = {
     loaded = true,
     path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/editorconfig-vim"
@@ -76,10 +80,6 @@ _G.packer_plugins = {
   ["emmet-vim"] = {
     loaded = true,
     path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/emmet-vim"
-  },
-  ["formatter.nvim"] = {
-    loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/formatter.nvim"
   },
   ["git-blame.nvim"] = {
     loaded = true,

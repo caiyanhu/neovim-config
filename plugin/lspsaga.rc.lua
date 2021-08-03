@@ -21,6 +21,3 @@ saga.init_lsp_saga {
 local utils = require('utils')
 utils.map('n', 'K', ':Lspsaga hover_doc<CR>', {silent = true})
 utils.map('n', 'gr', ':Lspsaga rename<CR>', {silent = true})
--- jump diagnostic
-utils.map('n', '[e', ':Lspsaga diagnostic_jump_prev<CR>', {silent = true})
-utils.map('n', ']e', ':Lspsaga diagnostic_jump_next<CR>', {silent = true})
