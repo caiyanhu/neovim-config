@@ -15,7 +15,7 @@ require'compe'.setup {
   max_abbr_width = 100;
   max_kind_width = 100;
   max_menu_width = 100;
-  documentation = false,
+  documentation = true,
 
   source = {
     path = true;
@@ -73,6 +73,10 @@ vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+
+-- important for auto-import
+vim.api.nvim_set_keymap('i', '<CR>', 'compe#confirm("<cr>")', {expr = true})
+vim.api.nvim_set_keymap('i', '<C-space>', 'compe#complete()', {expr = true})
 
 
 -- Add completion icons
