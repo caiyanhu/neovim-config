@@ -4,7 +4,7 @@ vim.g.ale_linters_explicit = 1
 vim.g.ale_linters = {
     typescript = {'eslint', 'tslint'},
     jsx = {'stylelint', 'eslint', 'tslint'},
-    javascript = {'prettier', 'eslint'}
+    javascript = {'prettier', 'eslint'},
     vue = {'eslint', 'vls'}
 }
 vim.g.ale_fixers = {
