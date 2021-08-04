@@ -31,99 +31,51 @@ require('nvim-autopairs').setup()
 require('colorizer').setup()
 
 -- LSP Configuration
-vim.lsp.handlers["textDocument/formatting"] = function(err, _, result, _, bufnr)
-    if err ~= nil or result == nil then
-        return
-    end
-    if not vim.api.nvim_buf_get_option(bufnr, "modified") then
-        local view = vim.fn.winsaveview()
-        vim.lsp.util.apply_text_edits(result, bufnr)
-        vim.fn.winrestview(view)
-        if bufnr == vim.api.nvim_get_current_buf() then
-            vim.api.nvim_command("noautocmd :update")
-        end
-    end
-end
-
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-    vim.lsp.diagnostic.on_publish_diagnostics,
-    {
-        virtual_text = true,
-        signs = true,
-        update_in_insert = true
-    }
-)
-
-local on_attach = function(client)
-    if client.name ~= 'efm' then
-        client.resolved_capabilities.document_formatting = false
-    end
-
-    if client.resolved_capabilities.document_formatting then
-        vim.api.nvim_command [[augroup Format]]
-        vim.api.nvim_command [[autocmd! * <buffer>]]
-        vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting()]]
-        vim.api.nvim_command [[augroup END]]
-    end
-end
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true;
-capabilities.textDocument.completion.completionItem.resolveSupport = {
-    properties = {
-        'documentation',
-        'detail',
-        'additionalTextEdits'
-    }
-}
-
-local function eslint_config_exists()
-    local eslintrc = vim.fn.glob(".eslintrc*", 0, 1)
-
-    if not vim.tbl_isempty(eslintrc) then
-        return true
-    end
-
-    if vim.fn.filereadable("package.json") then
-        if vim.fn.json_decode(vim.fn.readfile("package.json"))["eslintConfig"] then
-            return true
-        end
-    end
-
-    return false
-end
-
-local formatConfig = require('format')
-local servers = {
-    efm = {
-        init_options = {documentFormatting = true, codeAction = true},
-        root_dir = function()
-            if not eslint_config_exists() then
-                return nil
-            end
-            return vim.fn.getcwd()
-        end,
-        settings = {
-            languages = formatConfig
+require('languageServerConfig')
+local nvim_lsp = require('lspconfig')
+nvim_lsp.diagnosticls.setup {
+  filetypes = {'javascript', 'typescript'},
+  init_options = {
+    linters = {
+      eslint = {
+        command = './node_modules/.bin/eslint',
+        rootPatterns = {'.git'},
+        debounce = 100,
+        args = {
+          '--stdin',
+          '--stdin-filename',
+          '%filepath',
+          '--format',
+          'json'
         },
-        filetypes = vim.tbl_keys(formatConfig)
+        sourceName = 'eslint',
+        parseJson = {
+          errorsRoot = '[0].messages',
+          line = 'line',
+          column = 'column',
+          endLine = 'endLine',
+          endColumn = 'endColumn',
+          message = '${message} [${ruleId}]',
+          security = 'severity'
+        },
+        securities = {
+          [2] = 'error',
+          [1] = 'warning',
+        },
+      },
     },
-    "tsserver",
-    "vuels"
+    filetypes = {
+      javascript = 'eslint',
+      typescript = 'eslint'
+    },
+    formatters = {
+      prettier = {
+        command = "./node_modules/.bin/prettier",
+        args = {"--stdin-filepath" ,"%filepath", '--single-quote', '--print-width 120'}
+      }
+    },
+    formatFiletypes = {
+      javascript = "prettier"
+    },
+  }
 }
-
-
-local lspConfig = require('lspconfig')
-local lspInstall = require('lspinstall')
-local function setup_servers()
-    lspInstall.setup()
-    local installed = lspInstall.installed_servers()
-    for _, server in pairs(installed) do
-        local config = servers[server] or {root_dir = lspConfig.util.root_pattern({'./git/', '.'})}
-        config.capabilities = capabilities
-        config.on_attach = on_attach
-        lspConfig[server].setup(config)
-    end
-end
-
-setup_servers()
