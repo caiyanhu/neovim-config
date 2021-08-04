@@ -11,6 +11,9 @@ require('telescope').setup {
             n = {
                 ["q"] = actions.close
             },
+            i = {
+                ["<esc>"] = actions.close
+            },
         },
     },
 }

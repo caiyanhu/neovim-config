@@ -13,6 +13,14 @@ require 'nvim-treesitter.configs'.setup {
        "yaml",
        "html",
        "scss",
-       "lua"
+       "lua",
+       "css",
+       "javascript",
+       "vue",
+       "go",
+       "graphql"
     },
+    rainbow = {
+        enable = true,
+    }
 }

@@ -114,6 +114,8 @@ ins_left {
   left_padding = 0
 }
 
+ins_left {'mode'}
+
 ins_left {
   -- filesize component
   function()

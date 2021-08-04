@@ -44,8 +44,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/Users/caiyanhu/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/Users/caiyanhu/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/Users/caiyanhu/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/Users/caiyanhu/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/Users/caiyanhu/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
+local package_path_str = "/Users/optimus/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/Users/optimus/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/Users/optimus/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/Users/optimus/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/Users/optimus/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -69,110 +69,110 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ale = {
-    loaded = true,
-    path = "/Users/caiyanhu/.local/share/nvim/site/pack/packer/start/ale"
-  },
   ["editorconfig-vim"] = {
     loaded = true,
-    path = "/Users/caiyanhu/.local/share/nvim/site/pack/packer/start/editorconfig-vim"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/editorconfig-vim"
   },
   ["emmet-vim"] = {
     loaded = true,
-    path = "/Users/caiyanhu/.local/share/nvim/site/pack/packer/start/emmet-vim"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/emmet-vim"
   },
   ["git-blame.nvim"] = {
     loaded = true,
-    path = "/Users/caiyanhu/.local/share/nvim/site/pack/packer/start/git-blame.nvim"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/git-blame.nvim"
   },
   ["gitsigns.nvim"] = {
     loaded = true,
-    path = "/Users/caiyanhu/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
+  },
+  ["hop.nvim"] = {
+    loaded = true,
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/hop.nvim"
   },
   kommentary = {
     loaded = true,
-    path = "/Users/caiyanhu/.local/share/nvim/site/pack/packer/start/kommentary"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/kommentary"
   },
   ["lspkind-nvim"] = {
     loaded = true,
-    path = "/Users/caiyanhu/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
   },
   ["lspsaga.nvim"] = {
     loaded = true,
-    path = "/Users/caiyanhu/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
-    path = "/Users/caiyanhu/.local/share/nvim/site/pack/packer/start/lualine.nvim"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/lualine.nvim"
   },
   ["material.vim"] = {
     loaded = true,
-    path = "/Users/caiyanhu/.local/share/nvim/site/pack/packer/start/material.vim"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/material.vim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
-    path = "/Users/caiyanhu/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
   },
   ["nvim-colorizer.lua"] = {
     loaded = true,
-    path = "/Users/caiyanhu/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
   },
   ["nvim-compe"] = {
     loaded = true,
-    path = "/Users/caiyanhu/.local/share/nvim/site/pack/packer/start/nvim-compe"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-compe"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "/Users/caiyanhu/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
-  },
-  ["nvim-lspinstall"] = {
-    loaded = true,
-    path = "/Users/caiyanhu/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
-    path = "/Users/caiyanhu/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
-    path = "/Users/caiyanhu/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+  },
+  ["nvim-ts-rainbow"] = {
+    loaded = true,
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
-    path = "/Users/caiyanhu/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = false,
     needs_bufread = false,
-    path = "/Users/caiyanhu/.local/share/nvim/site/pack/packer/opt/packer.nvim"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/opt/packer.nvim"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "/Users/caiyanhu/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/plenary.nvim"
   },
   ["popup.nvim"] = {
     loaded = true,
-    path = "/Users/caiyanhu/.local/share/nvim/site/pack/packer/start/popup.nvim"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/popup.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
-    path = "/Users/caiyanhu/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
   ["vim-js"] = {
     loaded = true,
-    path = "/Users/caiyanhu/.local/share/nvim/site/pack/packer/start/vim-js"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/vim-js"
   },
   ["vim-jsx-pretty"] = {
     loaded = true,
-    path = "/Users/caiyanhu/.local/share/nvim/site/pack/packer/start/vim-jsx-pretty"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/vim-jsx-pretty"
   },
   ["vim-surround"] = {
     loaded = true,
-    path = "/Users/caiyanhu/.local/share/nvim/site/pack/packer/start/vim-surround"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/vim-surround"
   },
   ["vim-vsnip"] = {
     loaded = true,
-    path = "/Users/caiyanhu/.local/share/nvim/site/pack/packer/start/vim-vsnip"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/vim-vsnip"
   }
 }
 

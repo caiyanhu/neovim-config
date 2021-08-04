@@ -15,7 +15,8 @@ return require('packer').startup(function()
     -- LSP and completion
     use {'neovim/nvim-lspconfig'}
     use {'hrsh7th/nvim-compe'}
-    
+    use {'kabouzeid/nvim-lspinstall'}
+
     -- LSP completion items icons
     use {"onsails/lspkind-nvim"}
 
@@ -45,6 +46,7 @@ return require('packer').startup(function()
 
     -- Auto Pairs
     use {'windwp/nvim-autopairs'}
+    use {'p00f/nvim-ts-rainbow'}
 
     -- Comment
     use {'b3nj5m1n/kommentary'}
@@ -55,9 +57,6 @@ return require('packer').startup(function()
 
     -- Color Highlighter
     use {'norcalli/nvim-colorizer.lua'}
-
-    -- ALE
-    use {'dense-analysis/ale'}
 
     -- Emmet
     use {'mattn/emmet-vim'}
@@ -70,4 +69,7 @@ return require('packer').startup(function()
 
     -- EditorConfig,这样格式化时会使用项目的editorconfig
     use {'editorconfig/editorconfig-vim'}
+
+    -- jump anywhere
+    use {'phaazon/hop.nvim'}
 end)
