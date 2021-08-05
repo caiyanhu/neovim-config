@@ -69,6 +69,10 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ale = {
+    loaded = true,
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/ale"
+  },
   ["editorconfig-vim"] = {
     loaded = true,
     path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/editorconfig-vim"
@@ -157,6 +161,10 @@ _G.packer_plugins = {
   ["popup.nvim"] = {
     loaded = true,
     path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/popup.nvim"
+  },
+  smartim = {
+    loaded = true,
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/smartim"
   },
   ["telescope.nvim"] = {
     loaded = true,
