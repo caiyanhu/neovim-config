@@ -27,6 +27,6 @@ utils.opt('o', 'hlsearch', true)
 utils.opt('o', 'incsearch', true)
 utils.opt('o', 'clipboard', 'unnamed,unnamedplus')
 utils.opt('o', 'showcmd', true)
-
+utils.opt('b', 'swapfile', false)
 -- Highlight on yank
 vim.cmd 'au TextYankPost * lua vim.highlight.on_yank {on_visual = false}'

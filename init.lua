@@ -32,50 +32,10 @@ require('colorizer').setup()
 
 -- LSP Configuration
 require('languageServerConfig')
-local nvim_lsp = require('lspconfig')
-nvim_lsp.diagnosticls.setup {
-  filetypes = {'javascript', 'typescript'},
-  init_options = {
-    linters = {
-      eslint = {
-        command = './node_modules/.bin/eslint',
-        rootPatterns = {'.git'},
-        debounce = 100,
-        args = {
-          '--stdin',
-          '--stdin-filename',
-          '%filepath',
-          '--format',
-          'json'
-        },
-        sourceName = 'eslint',
-        parseJson = {
-          errorsRoot = '[0].messages',
-          line = 'line',
-          column = 'column',
-          endLine = 'endLine',
-          endColumn = 'endColumn',
-          message = '${message} [${ruleId}]',
-          security = 'severity'
-        },
-        securities = {
-          [2] = 'error',
-          [1] = 'warning',
-        },
-      },
-    },
-    filetypes = {
-      javascript = 'eslint',
-      typescript = 'eslint'
-    },
-    formatters = {
-      prettier = {
-        command = "./node_modules/.bin/prettier",
-        args = {"--stdin-filepath" ,"%filepath", '--single-quote', '--print-width 120'}
-      }
-    },
-    formatFiletypes = {
-      javascript = "prettier"
-    },
-  }
-}
+
+vim.cmd [[
+augroup FiletypeGroup
+    autocmd!
+    au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+augroup END
+]]

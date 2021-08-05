@@ -36,6 +36,3 @@ utils.map('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', {silent = true})
 utils.map('n', 'gr', ':Lspsaga rename<CR>', {silent = true})
 -- show signature help
 utils.map('n', 'gs', ':Lspsaga signature_help<CR>', {silent = true})
--- jump diagnostic
-utils.map('n', '[e', ':Lspsaga diagnostic_jump_prev<CR>', {silent = true})
-utils.map('n', ']e', ':Lspsaga diagnostic_jump_next<CR>', {silent = true})

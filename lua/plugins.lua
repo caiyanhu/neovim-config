@@ -61,8 +61,8 @@ return require('packer').startup(function()
     -- Emmet
     use {'mattn/emmet-vim'}
 
-    -- Format
-    use {'lukas-reineke/format.nvim'}
+    -- Linter And Prettier
+    use {'dense-analysis/ale'}
 
     -- Surround
     use {'tpope/vim-surround'}
