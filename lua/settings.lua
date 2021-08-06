@@ -1,17 +1,17 @@
 local utils = require('utils')
 
 local cmd = vim.cmd
-local indent = 4
+local indent = 2
 
 cmd 'syntax enable'
 cmd 'filetype plugin indent on'
 utils.opt('b', 'smartindent', true)
 -- tab扩展为空格
 utils.opt('b', 'expandtab', true)
-utils.opt('b', 'tabstop', 4)
+utils.opt('b', 'tabstop', 2)
 -- 连续数量的空格看作一个制表符
-utils.opt('b', 'softtabstop', 4)
-utils.opt('b', 'shiftwidth', 4)
+utils.opt('b', 'softtabstop', 2)
+utils.opt('b', 'shiftwidth', 2)
 utils.opt('o', 'smarttab', true)
 utils.opt('o', 'hidden', true)
 utils.opt('o', 'ignorecase', true)
