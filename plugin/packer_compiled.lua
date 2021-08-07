@@ -162,10 +162,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/popup.nvim"
   },
-  smartim = {
-    loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/smartim"
-  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/telescope.nvim"
