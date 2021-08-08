@@ -177,10 +177,6 @@ _G.packer_plugins = {
   ["vim-surround"] = {
     loaded = true,
     path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/vim-surround"
-  },
-  ["vim-vsnip"] = {
-    loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/vim-vsnip"
   }
 }
 

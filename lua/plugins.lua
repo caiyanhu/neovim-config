@@ -69,6 +69,7 @@ return require('packer').startup(function()
 
     -- Snippets
     use {'hrsh7th/vim-vsnip'}
+    use {'hrsh7th/vim-vsnip-integ'}
 
     -- EditorConfig,这样格式化时会使用项目的editorconfig
     use {'editorconfig/editorconfig-vim'}
