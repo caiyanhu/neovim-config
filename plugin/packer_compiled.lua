@@ -69,6 +69,10 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["FTerm.nvim"] = {
+    loaded = true,
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/FTerm.nvim"
+  },
   ale = {
     loaded = true,
     path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/ale"
@@ -162,6 +166,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/popup.nvim"
   },
+  ["spellsitter.nvim"] = {
+    loaded = true,
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/spellsitter.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/telescope.nvim"
@@ -177,6 +185,14 @@ _G.packer_plugins = {
   ["vim-surround"] = {
     loaded = true,
     path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/vim-surround"
+  },
+  ["vim-vsnip"] = {
+    loaded = true,
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/vim-vsnip"
+  },
+  ["vim-vsnip-integ"] = {
+    loaded = true,
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ"
   }
 }
 

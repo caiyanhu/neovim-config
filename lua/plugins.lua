@@ -76,4 +76,10 @@ return require('packer').startup(function()
 
     -- jump anywhere
     use {'phaazon/hop.nvim'}
+
+    -- Spell Checker
+    use {'lewis6991/spellsitter.nvim'}
+
+    -- Floating Terminal Plugin
+    use {'numToStr/FTerm.nvim'}
 end)
