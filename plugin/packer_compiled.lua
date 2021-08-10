@@ -77,10 +77,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/ale"
   },
-  ["editorconfig-vim"] = {
-    loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/editorconfig-vim"
-  },
   ["emmet-vim"] = {
     loaded = true,
     path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/emmet-vim"

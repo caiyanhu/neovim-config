@@ -71,14 +71,8 @@ return require('packer').startup(function()
     use {'hrsh7th/vim-vsnip'}
     use {'hrsh7th/vim-vsnip-integ'}
 
-    -- EditorConfig,这样格式化时会使用项目的editorconfig
-    use {'editorconfig/editorconfig-vim'}
-
     -- jump anywhere
     use {'phaazon/hop.nvim'}
-
-    -- Spell Checker
-    use {'lewis6991/spellsitter.nvim'}
 
     -- Floating Terminal Plugin
     use {'numToStr/FTerm.nvim'}
