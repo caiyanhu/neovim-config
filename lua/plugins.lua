@@ -76,4 +76,7 @@ return require('packer').startup(function()
 
     -- Floating Terminal Plugin
     use {'numToStr/FTerm.nvim'}
+
+    -- Highlight, List and Search todo comments
+    use {"folke/todo-comments.nvim"}
 end)
