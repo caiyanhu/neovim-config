@@ -4,8 +4,8 @@ vim.g.mapleader = ' '
 local fn = vim.fn
 local execute = vim.api.nvim_command
 
--- Sensible defaults
-require('settings')
+-- Load Configuration
+require('config')
 
 -- Auto install packer.nvim if not exits
 local install_path = fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
@@ -17,12 +17,6 @@ vim.cmd 'autocmd BufWritePost plugins.lua PackerCompile' -- Auto compile when th
 
 -- Install plugins
 require('plugins')
-
--- Key mappings
-require('keymappings')
-
--- Group configuration in one folder
-require('config')
 
 -- Init Auto Pairs
 require('nvim-autopairs').setup()
