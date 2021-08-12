@@ -4,7 +4,7 @@ return require('packer').startup(function()
     use {'wbthomason/packer.nvim', opt = true}
 
     -- Color scheme
-    use {'kaicataldo/material.vim'}
+    use {'NLKNguyen/papercolor-theme'}
 
     -- Fuzzy finder
     use {

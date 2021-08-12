@@ -154,6 +154,10 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/Users/optimus/.local/share/nvim/site/pack/packer/opt/packer.nvim"
   },
+  ["papercolor-theme"] = {
+    loaded = true,
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/papercolor-theme"
+  },
   ["plenary.nvim"] = {
     loaded = true,
     path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/plenary.nvim"
@@ -165,6 +169,10 @@ _G.packer_plugins = {
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+  },
+  ["todo-comments.nvim"] = {
+    loaded = true,
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/todo-comments.nvim"
   },
   ["vim-js"] = {
     loaded = true,
