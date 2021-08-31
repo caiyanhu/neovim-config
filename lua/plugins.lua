@@ -78,5 +78,8 @@ return require('packer').startup(function()
     use {'numToStr/FTerm.nvim'}
 
     -- Highlight, List and Search todo comments
-    use {"folke/todo-comments.nvim"}
+    use {'folke/todo-comments.nvim'}
+
+    -- Spell Check
+    use {'kamykn/spelunker.vim'}
 end)

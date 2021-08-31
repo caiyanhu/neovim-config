@@ -109,10 +109,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/lualine.nvim"
   },
-  ["material.vim"] = {
-    loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/material.vim"
-  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
@@ -154,9 +150,9 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/Users/optimus/.local/share/nvim/site/pack/packer/opt/packer.nvim"
   },
-  ["papercolor-theme"] = {
+  ["palenight.vim"] = {
     loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/papercolor-theme"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/palenight.vim"
   },
   ["plenary.nvim"] = {
     loaded = true,

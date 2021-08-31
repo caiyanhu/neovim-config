@@ -33,7 +33,7 @@ vim.g.ale_fixers = {
     jsx = {'prettier'}
 }
 
-vim.g.ale_fix_on_save = 1
+vim.g.ale_fix_on_save = 0
 
 -- change the signs ALE use
 vim.g.ale_sign_error = '🔞'
