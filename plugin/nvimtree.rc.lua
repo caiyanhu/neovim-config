@@ -49,8 +49,8 @@ vim.g.nvim_tree_icons = {
       ignored = "◌"
     },
     folder = {
-      arrow_open = "",
-      arrow_closed = "",
+      arrow_open = "ᗐ",
+      arrow_closed = "ᗒ",
       default = "",
       open = "",
       empty = "",
