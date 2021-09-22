@@ -85,10 +85,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/git-blame.nvim"
   },
-  ["gitsigns.nvim"] = {
-    loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
-  },
   ["hop.nvim"] = {
     loaded = true,
     path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/hop.nvim"
@@ -162,6 +158,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/popup.nvim"
   },
+  ["spelunker.vim"] = {
+    loaded = true,
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/spelunker.vim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/telescope.nvim"
@@ -177,6 +177,10 @@ _G.packer_plugins = {
   ["vim-jsx-pretty"] = {
     loaded = true,
     path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/vim-jsx-pretty"
+  },
+  ["vim-signify"] = {
+    loaded = true,
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/vim-signify"
   },
   ["vim-surround"] = {
     loaded = true,

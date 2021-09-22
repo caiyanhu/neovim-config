@@ -53,7 +53,7 @@ return require('packer').startup(function()
 
     -- Git Blammer and Git Sign
     use {'f-person/git-blame.nvim'}
-    use {'lewis6991/gitsigns.nvim'}
+    use {'mhinz/vim-signify'}
 
     -- Color Highlighter
     use {'norcalli/nvim-colorizer.lua'}
