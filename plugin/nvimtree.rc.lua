@@ -74,3 +74,5 @@ vim.g.nvim_tree_updated_cwd = 1
 local utils = require('utils')
 utils.map('n', '<leader>e', ':NvimTreeToggle<CR>')
 utils.map('n', '<leader>r', ':NvimTreeRefresh<CR>')
+utils.map('v', '<leader>e', ':NvimTreeToggle<CR>')
+utils.map('v', '<leader>r', ':NvimTreeRefresh<CR>')
