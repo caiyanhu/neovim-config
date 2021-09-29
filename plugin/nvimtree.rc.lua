@@ -1,8 +1,7 @@
-require'nvim-tree'.setup {}
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 
 -- default mappings
-vim.g.nvim_tree_bindings = {
+local map_list= {
   { key = {"<CR>", "o", "<2-LeftMouse>"}, cb = tree_cb("edit") },
   { key = {"<2-RightMouse>", "<C-]>"},    cb = tree_cb("cd") },
   { key = "<C-v>",                        cb = tree_cb("vsplit") },
@@ -34,6 +33,15 @@ vim.g.nvim_tree_bindings = {
   { key = "-",                            cb = tree_cb("dir_up") },
   { key = "q",                            cb = tree_cb("close") },
   { key = "g?",                           cb = tree_cb("toggle_help") },
+}
+
+require'nvim-tree'.setup {
+  view = {
+    mappings = {
+      custom_only = false,
+      list = map_list
+    }
+  }
 }
 
 -- icon settings
