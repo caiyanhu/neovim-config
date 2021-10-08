@@ -30,7 +30,8 @@ vim.g.ale_fixers = {
     less = {'prettier'},
     css = {'prettier'},
     html = {'prettier'},
-    jsx = {'prettier'}
+    jsx = {'prettier'},
+    go = {'gofmt'}
 }
 
 vim.g.ale_fix_on_save = 0
