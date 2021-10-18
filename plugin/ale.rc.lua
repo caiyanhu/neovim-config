@@ -16,21 +16,23 @@ vim.g.ale_linters = {
     less = {'stylelint'},
     css = {'stylelint'},
     html = {'prettier'},
-    jsx = {'stylelint', 'eslint'},
+    jsx = {'eslint'},
+    tsx = {'eslint'},
 }
 
 -- fixers
 vim.g.ale_fixers = {
-    javascript = {"prettier"},
+    javascript = {'eslint', 'prettier'},
     json = {'prettier'},
-    typescript = {'prettier'},
+    typescript = {'eslint', 'prettier'},
     vue = {'prettier'},
     scss = {'prettier'},
     sass = {'prettier'},
     less = {'prettier'},
     css = {'prettier'},
     html = {'prettier'},
-    jsx = {'prettier'},
+    jsx = {'eslint', 'prettier'},
+    tsx = {'eslint', 'prettier'},
     go = {'gofmt'}
 }
 

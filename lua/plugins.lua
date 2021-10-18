@@ -84,4 +84,11 @@ return require('packer').startup(function()
 
     -- Spell Check
     use {'kamykn/spelunker.vim'}
+
+    -- Debug
+    use {'mfussenegger/nvim-dap'}
+    use {'rcarriga/nvim-dap-ui'}
+
+    -- Background Transparent
+    use {'xiyaowong/nvim-transparent'}
 end)
