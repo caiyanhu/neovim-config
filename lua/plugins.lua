@@ -87,7 +87,7 @@ return require('packer').startup(function()
 
     -- Debug
     use {'mfussenegger/nvim-dap'}
-    use {'rcarriga/nvim-dap-ui'}
+    use {'nvim-telescope/telescope-dap.nvim'}
 
     -- Background Transparent
     use {'xiyaowong/nvim-transparent'}
