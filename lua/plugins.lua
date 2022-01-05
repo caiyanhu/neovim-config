@@ -51,7 +51,7 @@ return require('packer').startup(function()
     use {'p00f/nvim-ts-rainbow'}
 
     -- Comment
-    use {'b3nj5m1n/kommentary'}
+    use {'numToStr/Comment.nvim'}
 
     -- Git Blammer and Git Sign
     use {'f-person/git-blame.nvim'}

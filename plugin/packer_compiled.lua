@@ -121,10 +121,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-dap"
   },
-  ["nvim-dap-ui"] = {
-    loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-dap-ui"
-  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
@@ -174,6 +170,10 @@ _G.packer_plugins = {
   ["spelunker.vim"] = {
     loaded = true,
     path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/spelunker.vim"
+  },
+  ["telescope-dap.nvim"] = {
+    loaded = true,
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/telescope-dap.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
