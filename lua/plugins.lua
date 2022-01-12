@@ -76,9 +76,6 @@ return require('packer').startup(function()
     -- jump anywhere
     use {'phaazon/hop.nvim'}
 
-    -- Floating Terminal Plugin
-    use {'numToStr/FTerm.nvim'}
-
     -- Highlight, List and Search todo comments
     use {'folke/todo-comments.nvim'}
 
@@ -86,9 +83,7 @@ return require('packer').startup(function()
     use {'kamykn/spelunker.vim'}
 
     -- Debug
-    use {'mfussenegger/nvim-dap'}
-    use {'nvim-telescope/telescope-dap.nvim'}
-
+    use {'puremourning/vimspector'}
     -- Background Transparent
     use {'xiyaowong/nvim-transparent'}
 end)

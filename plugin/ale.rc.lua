@@ -8,7 +8,7 @@ vim.g.ale_linters_aliases = {
 }
 vim.g.ale_linters = {
     javascript = {"eslint"},
-    json = {'prettier'},
+    json = {'eslint'},
     typescript = {'eslint'},
     vue = {'eslint', 'vls'},
     scss = {'stylelint'},

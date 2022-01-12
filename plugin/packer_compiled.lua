@@ -57,7 +57,7 @@ end
 time([[Luarocks path setup]], false)
 time([[try_loadstring definition]], true)
 local function try_loadstring(s, component, name)
-  local success, result = pcall(loadstring(s))
+  local success, result = pcall(loadstring(s), name, _G.packer_plugins[name])
   if not success then
     vim.schedule(function()
       vim.api.nvim_notify('packer.nvim: Error running ' .. component .. ' for ' .. name .. ': ' .. result, vim.log.levels.ERROR, {})
@@ -69,143 +69,172 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["FTerm.nvim"] = {
+  ["Comment.nvim"] = {
     loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/FTerm.nvim"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/Comment.nvim",
+    url = "https://github.com/numToStr/Comment.nvim"
   },
   ale = {
     loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/ale"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/ale",
+    url = "https://github.com/dense-analysis/ale"
   },
   ["emmet-vim"] = {
     loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/emmet-vim"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/emmet-vim",
+    url = "https://github.com/mattn/emmet-vim"
   },
   ["git-blame.nvim"] = {
     loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/git-blame.nvim"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/git-blame.nvim",
+    url = "https://github.com/f-person/git-blame.nvim"
   },
   ["hop.nvim"] = {
     loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/hop.nvim"
-  },
-  kommentary = {
-    loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/kommentary"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/hop.nvim",
+    url = "https://github.com/phaazon/hop.nvim"
   },
   ["lspkind-nvim"] = {
     loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
+    url = "https://github.com/onsails/lspkind-nvim"
   },
   ["lspsaga.nvim"] = {
     loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
+    url = "https://github.com/glepnir/lspsaga.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/lualine.nvim"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/hoob3rt/lualine.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-colorizer.lua"] = {
     loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
+    url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
   ["nvim-compe"] = {
     loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-compe"
-  },
-  ["nvim-dap"] = {
-    loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-dap"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-compe",
+    url = "https://github.com/hrsh7th/nvim-compe"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-lspinstall"] = {
     loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-lspinstall",
+    url = "https://github.com/kabouzeid/nvim-lspinstall"
+  },
+  ["nvim-terminal"] = {
+    loaded = true,
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-terminal",
+    url = "https://github.com/s1n7ax/nvim-terminal"
   },
   ["nvim-transparent"] = {
     loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-transparent"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-transparent",
+    url = "https://github.com/xiyaowong/nvim-transparent"
   },
   ["nvim-tree.lua"] = {
     config = { "\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14nvim-tree\frequire\0" },
     loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-ts-rainbow"] = {
     loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow",
+    url = "https://github.com/p00f/nvim-ts-rainbow"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = false,
     needs_bufread = false,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/opt/packer.nvim"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/opt/packer.nvim",
+    url = "https://github.com/wbthomason/packer.nvim"
   },
   ["palenight.vim"] = {
     loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/palenight.vim"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/palenight.vim",
+    url = "https://github.com/drewtempelmeyer/palenight.vim"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    url = "https://github.com/nvim-lua/plenary.nvim"
   },
   ["popup.nvim"] = {
     loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/popup.nvim"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/popup.nvim",
+    url = "https://github.com/nvim-lua/popup.nvim"
   },
   ["spelunker.vim"] = {
     loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/spelunker.vim"
-  },
-  ["telescope-dap.nvim"] = {
-    loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/telescope-dap.nvim"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/spelunker.vim",
+    url = "https://github.com/kamykn/spelunker.vim"
   },
   ["telescope.nvim"] = {
     loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["todo-comments.nvim"] = {
     loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/todo-comments.nvim"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/todo-comments.nvim",
+    url = "https://github.com/folke/todo-comments.nvim"
   },
   ["vim-js"] = {
     loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/vim-js"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/vim-js",
+    url = "https://github.com/yuezk/vim-js"
   },
   ["vim-jsx-pretty"] = {
     loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/vim-jsx-pretty"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/vim-jsx-pretty",
+    url = "https://github.com/MaxMEllon/vim-jsx-pretty"
   },
   ["vim-signify"] = {
     loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/vim-signify"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/vim-signify",
+    url = "https://github.com/mhinz/vim-signify"
   },
   ["vim-surround"] = {
     loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/vim-surround"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/vim-surround",
+    url = "https://github.com/tpope/vim-surround"
   },
   ["vim-vsnip"] = {
     loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/vim-vsnip"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/vim-vsnip",
+    url = "https://github.com/hrsh7th/vim-vsnip"
   },
   ["vim-vsnip-integ"] = {
     loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ",
+    url = "https://github.com/hrsh7th/vim-vsnip-integ"
+  },
+  vimspector = {
+    loaded = true,
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/vimspector",
+    url = "https://github.com/puremourning/vimspector"
   }
 }
 
