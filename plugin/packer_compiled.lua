@@ -134,10 +134,10 @@ _G.packer_plugins = {
     path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-lspinstall",
     url = "https://github.com/kabouzeid/nvim-lspinstall"
   },
-  ["nvim-terminal"] = {
+  ["nvim-toggle-terminal"] = {
     loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-terminal",
-    url = "https://github.com/s1n7ax/nvim-terminal"
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-toggle-terminal",
+    url = "https://github.com/caenrique/nvim-toggle-terminal"
   },
   ["nvim-transparent"] = {
     loaded = true,

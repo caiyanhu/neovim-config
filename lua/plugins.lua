@@ -84,6 +84,10 @@ return require('packer').startup(function()
 
     -- Debug
     use {'puremourning/vimspector'}
+
     -- Background Transparent
     use {'xiyaowong/nvim-transparent'}
+
+    -- Floating Terminal
+    use {'numToStr/FTerm.nvim'}
 end)
