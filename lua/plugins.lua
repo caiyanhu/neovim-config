@@ -5,6 +5,7 @@ return require('packer').startup(function()
 
     -- Color scheme
     use {'drewtempelmeyer/palenight.vim'}
+    use {'joshdick/onedark.vim'}
 
     -- Fuzzy finder
     use {
@@ -83,7 +84,8 @@ return require('packer').startup(function()
     use {'kamykn/spelunker.vim'}
 
     -- Debug
-    use {'puremourning/vimspector'}
+    use {'mfussenegger/nvim-dap'}
+    use {'rcarriga/nvim-dap-ui'}
 
     -- Background Transparent
     use {'xiyaowong/nvim-transparent'}

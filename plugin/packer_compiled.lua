@@ -74,6 +74,11 @@ _G.packer_plugins = {
     path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/Comment.nvim",
     url = "https://github.com/numToStr/Comment.nvim"
   },
+  ["FTerm.nvim"] = {
+    loaded = true,
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/FTerm.nvim",
+    url = "https://github.com/numToStr/FTerm.nvim"
+  },
   ale = {
     loaded = true,
     path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/ale",
@@ -134,11 +139,6 @@ _G.packer_plugins = {
     path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-lspinstall",
     url = "https://github.com/kabouzeid/nvim-lspinstall"
   },
-  ["nvim-toggle-terminal"] = {
-    loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-toggle-terminal",
-    url = "https://github.com/caenrique/nvim-toggle-terminal"
-  },
   ["nvim-transparent"] = {
     loaded = true,
     path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-transparent",
@@ -164,6 +164,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
+  },
+  ["onedark.vim"] = {
+    loaded = true,
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/onedark.vim",
+    url = "https://github.com/joshdick/onedark.vim"
   },
   ["packer.nvim"] = {
     loaded = false,
