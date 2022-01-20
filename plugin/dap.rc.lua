@@ -83,6 +83,7 @@ utils.map('n', '<F10>', ':lua require("dap").step_over()<CR>', {silent = true})
 utils.map('n', '<F11>', ':lua require("dap").step_into()<CR>', {silent = true})
 utils.map('n', '<F12>', ':lua require("dap").step_out()<CR>', {silent = true})
 utils.map('n', '<leader>dt', ':lua require("dap").toggle_breakpoint()<CR>', {silent = true})
+utils.map('n', '<leader>dc', ':lua require("dap").clear_breakpoints()<CR>', {silent = true})
 
 vim.fn.sign_define('DapBreakpoint', {text = '🔴', texthl = '', linehl = '', numhl = ''});
 vim.fn.sign_define('DapStopped', {text = '👉', texthl = '', linehl = '', numhl = ''});
