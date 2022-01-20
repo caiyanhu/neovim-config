@@ -52,3 +52,4 @@ end
 
 local utils = require('utils')
 utils.map('n', '<leader>df', ':lua require("dapui").float_element()<CR>', {silent = true})
+utils.map('n', '<leader>de', ':lua require("dapui").eval()<CR>', {silent = true})
