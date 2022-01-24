@@ -129,6 +129,16 @@ _G.packer_plugins = {
     path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-compe",
     url = "https://github.com/hrsh7th/nvim-compe"
   },
+  ["nvim-dap"] = {
+    loaded = true,
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    url = "https://github.com/mfussenegger/nvim-dap"
+  },
+  ["nvim-dap-ui"] = {
+    loaded = true,
+    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
+    url = "https://github.com/rcarriga/nvim-dap-ui"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
@@ -235,11 +245,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ",
     url = "https://github.com/hrsh7th/vim-vsnip-integ"
-  },
-  vimspector = {
-    loaded = true,
-    path = "/Users/optimus/.local/share/nvim/site/pack/packer/start/vimspector",
-    url = "https://github.com/puremourning/vimspector"
   }
 }
 
