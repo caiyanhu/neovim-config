@@ -2,6 +2,7 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin', '~/.neovim/plugins')
 -- Color Scheme
 Plug 'folke/tokyonight.nvim'
+Plug 'dracula/vim'
 -- Fuzzy finder
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -29,6 +30,8 @@ Plug 'kyazdani42/nvim-tree.lua'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'yuezk/vim-js' 
 
+-- List for showing diagnostics, references,telescope results,quickfix and location lists
+Plug 'folke/trouble.nvim'
 
 -- Lualine
 Plug 'hoob3rt/lualine.nvim'
@@ -75,6 +78,9 @@ Plug 'rcarriga/nvim-dap-ui'
 
 -- Background Transparent
 Plug 'xiyaowong/nvim-transparent'
+
+-- smooth scrolling plugin
+Plug 'karb94/neoscroll.nvim'
 
 -- Floating Terminal
 Plug 'numToStr/FTerm.nvim'

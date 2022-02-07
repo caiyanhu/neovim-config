@@ -19,6 +19,11 @@ require('colorizer').setup()
 -- LSP Configuration
 require('languageServerConfig')
 
+-- Init smooth scrolling
+require('neoscroll').setup({
+  mappings = {'<C-u>', '<C-d>', '<C-b>', '<C-f>', '<C-y>', '<C-e>', 'zt', 'zz', 'zb', 'G', 'gg'},
+})
+
 vim.cmd [[
 augroup FiletypeGroup
     autocmd!
