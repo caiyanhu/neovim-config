@@ -8,10 +8,14 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
--- LSP and completion
+-- LSP Config
 Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/nvim-compe'
 Plug 'kabouzeid/nvim-lspinstall'
+
+-- Completion
+Plug ('ms-jpq/coq_nvim', {branch = 'coq'})
+Plug ('ms-jpq/coq.artifacts', {branch = 'artifacts'})
+Plug ('ms-jpq/coq.thirdparty', {branch = '3p'})
 
 -- LSP completion items icons
 Plug "onsails/lspkind-nvim"
