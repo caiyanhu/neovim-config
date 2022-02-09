@@ -15,9 +15,6 @@ Plug 'kabouzeid/nvim-lspinstall'
 -- Completion
 Plug ('neoclide/coc.nvim', {branch = 'release'})
 
--- LSP completion items icons
-Plug "onsails/lspkind-nvim"
-
 -- LSP UI
 Plug 'glepnir/lspsaga.nvim'
 

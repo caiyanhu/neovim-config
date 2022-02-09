@@ -1,0 +1,29 @@
+{
+  "suggest.completionItemKindLabels": {
+    "keyword":       "",
+    "variable":      "\ue79b",
+    "value":         "",
+    "operator":      "ﬦ",
+    "function":      "",
+    "reference":     "",
+    "constant":      "",
+    "method":        "ƒ",
+    "struct":        "",
+    "class":         "",
+    "interface":     "ﰮ",
+    "text":          "",
+    "enum":          "",
+    "enumMember":    "",
+    "module":        "",
+    "color":         "",
+    "property":      "",
+    "field":         "",
+    "unit":          "",
+    "event":         "",
+    "file":          "",
+    "folder":        "",
+    "snippet":       "﬌",
+    "typeParameter": "",
+    "default":       "\uf29c"
+  }
+}
