@@ -13,9 +13,7 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'kabouzeid/nvim-lspinstall'
 
 -- Completion
-Plug ('ms-jpq/coq_nvim', {branch = 'coq'})
-Plug ('ms-jpq/coq.artifacts', {branch = 'artifacts'})
-Plug ('ms-jpq/coq.thirdparty', {branch = '3p'})
+Plug ('neoclide/coc.nvim', {branch = 'release'})
 
 -- LSP completion items icons
 Plug "onsails/lspkind-nvim"

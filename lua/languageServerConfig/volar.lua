@@ -1,5 +1,3 @@
-local nvim_lsp = require('lspconfig')
-local coq = require("coq")
 local util = require 'lspconfig.util'
 
 local function get_typescript_server_path(root_dir)
@@ -15,19 +13,12 @@ local function get_typescript_server_path(root_dir)
   end
 end
 
-nvim_lsp.volar.setup(coq.lsp_ensure_capabilities( vim.tbl_deep_extend("force", {
-    on_attach = lsp_on_attach,
-    capabilities = capabilities,
-    flags = {debounce_text_changes = 150},
-    init_options = config,
+require'lspconfig'.volar.setup{
+  config = {
     on_new_config = function(new_config, new_root_dir)
       new_config.init_options.typescript.serverPath = get_typescript_server_path(new_root_dir)
     end,
     -- enable Take Over Mode
     -- filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
-}, {})))
-
-local cfg = nvim_lsp.volar
-if not (cfg and cfg.cmd and vim.fn.executable(cfg.cmd[1]) == 1) then
-    print(server .. ": cmd not found: " .. vim.inspect(cfg.cmd))
-end
+  }
+}
