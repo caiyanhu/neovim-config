@@ -3,6 +3,7 @@ utils.map('n', '<BS>', ':nohlsearch<CR>') -- Clear highlights
 utils.map('n', 'L', '$')
 utils.map('n', 'H', '^')
 utils.map('n', 'Q', 'q') -- use Q to record macro
+utils.map('n', 'q', '<Nop>')
 utils.map('n', 'Y', 'y$') -- yank to end of line
 utils.map('n', '<C-s>', ':write<CR>')
 utils.map('n', '<M-h>', '<C-w>h')
