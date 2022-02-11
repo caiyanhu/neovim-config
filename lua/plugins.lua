@@ -57,10 +57,6 @@ Plug 'dense-analysis/ale'
 -- Surround
 Plug 'tpope/vim-surround'
 
--- Snippets
-Plug 'hrsh7th/vim-vsnip' 
-Plug 'hrsh7th/vim-vsnip-integ'
-
 -- jump anywhere
 Plug 'phaazon/hop.nvim'
 
