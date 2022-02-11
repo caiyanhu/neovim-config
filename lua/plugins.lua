@@ -75,4 +75,9 @@ Plug 'karb94/neoscroll.nvim'
 
 -- Floating Terminal
 Plug 'numToStr/FTerm.nvim'
+
+-- snippets
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
 vim.call('plug#end')
