@@ -25,5 +25,6 @@
     "snippet":       "﬌",
     "typeParameter": "",
     "default":       "\uf29c"
-  }
+  },
+  "snippets.userSnippetsDirectory": "~/.config/nvim/snippets"
 }
