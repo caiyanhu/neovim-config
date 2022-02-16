@@ -76,7 +76,4 @@ Plug 'karb94/neoscroll.nvim'
 -- Floating Terminal
 Plug 'numToStr/FTerm.nvim'
 
--- snippets
-
-
 vim.call('plug#end')
