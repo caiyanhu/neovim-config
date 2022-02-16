@@ -3,5 +3,8 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 require'lspconfig'.cssls.setup {
-  capabilities = capabilities,
+    require('coq').lsp_ensure_capabilities({
+        capabilities = capabilities,
+    })
 }
+vim.cmd('COQnow -s')
