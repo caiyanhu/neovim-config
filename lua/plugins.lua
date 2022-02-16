@@ -12,8 +12,8 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'kabouzeid/nvim-lspinstall'
 
 -- Completion
-Plug ('neoclide/coc.nvim', {branch = 'release'})
-
+Plug ('ms-jpq/coq_nvim', {branch= 'coq'})
+Plug ('ms-jpq/coq.artifacts', {branch= 'artifacts'})
 -- LSP UI
 Plug 'glepnir/lspsaga.nvim'
 
@@ -77,7 +77,6 @@ Plug 'karb94/neoscroll.nvim'
 Plug 'numToStr/FTerm.nvim'
 
 -- snippets
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+
 
 vim.call('plug#end')
