@@ -4,7 +4,7 @@ local function get_typescript_server_path(root_dir)
   local project_root = util.find_node_modules_ancestor(root_dir)
 
   local local_tsserverlib = project_root ~= nil and util.path.join(project_root, 'node_modules', 'typescript', 'lib', 'tsserverlibrary.js')
-  local global_tsserverlib = '/home/caiyanhu/.npm/lib/node_modules/typescript/lib/tsserverlibrary.js'
+  local global_tsserverlib = '/usr/local/lib/node_modules/typescript/lib/tsserverlibrary.js'
 
   if local_tsserverlib and util.path.exists(local_tsserverlib) then
     return local_tsserverlib
@@ -14,12 +14,13 @@ local function get_typescript_server_path(root_dir)
 end
 
 require'lspconfig'.volar.setup{
-  config = {
-    on_new_config = function(new_config, new_root_dir)
-      new_config.init_options.typescript.serverPath = get_typescript_server_path(new_root_dir)
-    end,
-    -- enable Take Over Mode
-    -- filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
-  }
+  require('coq').lsp_ensure_capabilities({
+    config = {
+      on_new_config = function(new_config, new_root_dir)
+        new_config.init_options.typescript.serverPath = get_typescript_server_path(new_root_dir)
+      end,
+      filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
+    }
+  })
 }
 vim.cmd('COQnow -s')
