@@ -34,7 +34,8 @@ vim.g.ale_fixers = {
     html = {'prettier'},
     jsx = {'eslint', 'prettier'},
     tsx = {'eslint', 'prettier'},
-    go = {'gofmt'}
+    go = {'gofmt'},
+    rust = {'rustfmt'}
 }
 
 vim.g.ale_fix_on_save = 0
