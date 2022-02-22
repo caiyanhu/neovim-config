@@ -10,7 +10,7 @@ vim.g.ale_linters = {
     javascript = {"eslint"},
     json = {'eslint'},
     typescript = {'eslint'},
-    vue = {'volar'},
+    vue = {'eslint', 'vls'},
     scss = {'stylelint'},
     sass = {'stylelint'},
     less = {'stylelint'},
@@ -18,6 +18,7 @@ vim.g.ale_linters = {
     html = {'prettier'},
     jsx = {'eslint'},
     tsx = {'eslint'},
+    rust = {'analyzer'}
 }
 
 -- fixers
