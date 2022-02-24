@@ -2,6 +2,8 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin', '~/.neovim/plugins')
 -- Color Scheme
 Plug 'dracula/vim'
+Plug 'EdenEast/nightfox.nvim'
+Plug ('folke/tokyonight.nvim', { branch= 'main' })
 -- Fuzzy finder
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
