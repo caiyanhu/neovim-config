@@ -47,12 +47,6 @@ utils.map('n', '<leader>r', ':NvimTreeRefresh<CR>')
 utils.map('v', '<leader>e', ':NvimTreeToggle<CR>')
 utils.map('v', '<leader>r', ':NvimTreeRefresh<CR>') 
 
--- auto pairs
-require('nvim-autopairs').setup({
-  map_cr = false
-})
-
-
 -- git sign
 vim.g.signify_sign_add               = "+"
 vim.g.signify_sign_delete            = '_'
@@ -64,3 +58,33 @@ vim.g.user_emmet_mode = 'a'
 vim.g.user_emmet_leader_key = '<C-y>'
 
 -- coc config
+local function check_back_space()
+  local col = vim.fn.col('.') - 1
+  return col <= 0 or vim.fn.getline('.'):sub(col, col):match('%s')
+end
+function tab_completion()
+  if vim.fn.pumvisible() > 0 then
+    return utils.esc('<C-n>') 
+  end
+  if check_back_space() then
+    return utils.esc('<TAB>')
+  end
+  return vim.fn['coc#refresh']()
+end
+utils.map('i', '<TAB>', 'v:lua.tab_completion()', { expr = true, noremap = false })
+utils.map('i', '<S-TAB>', 'pumvisible() ? "<C-p>" : "<S-TAB>"', { expr = true, noremap = false })
+
+-- Auto Pairs
+local npairs = require('nvim-autopairs')
+npairs.setup({
+  map_cr = false
+})
+_G.MUtils= {}
+MUtils.completion_confirm=function()
+  if vim.fn.pumvisible() ~= 0  then
+    return vim.fn["coc#_select_confirm"]()
+  else
+    return npairs.autopairs_cr()
+  end
+end
+utils.map('i' , '<CR>','v:lua.MUtils.completion_confirm()', {expr = true , noremap = true})

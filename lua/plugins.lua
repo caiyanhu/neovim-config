@@ -21,9 +21,6 @@ return require('packer').startup(function(use)
   -- completion
   use {'neoclide/coc.nvim', branch = 'release'}
   
-  -- Auto Pairs
-  use {'windwp/nvim-autopairs'}
-  
   -- Comment
   use {'numToStr/Comment.nvim', config = function()
     require('Comment').setup()
@@ -37,4 +34,6 @@ return require('packer').startup(function(use)
   -- Emmet
   use {'mattn/emmet-vim'}
   
+  -- Auto Pairs
+  use {'windwp/nvim-autopairs'}
 end)
