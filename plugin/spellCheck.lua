@@ -1,9 +1,0 @@
-vim.g.enable_spelunker_vim = 1
-vim.g.enable_spelunker_vim_on_readonly = 0
-vim.g.spelunker_target_min_char_len = 4
-vim.g.spelunker_max_suggest_words = 15
-vim.g.spelunker_max_hi_words_each_buf = 100
-vim.g.spelunker_check_type = 2
-vim.g.spelunker_highlight_type = 2
-vim.g.spelunker_disable_uri_checking = 1
-vim.g.spelunker_disable_email_checking = 1
