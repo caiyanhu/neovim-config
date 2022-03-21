@@ -38,10 +38,6 @@ keymap("n", "<C-Down>", ":resize -2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
--- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
-
 -- Insert --
 keymap("i", "<M-o>", "<Esc>o", opts) -- open next line with insert mode
 keymap("i", "<M-h>", "<Esc>^i", opts) -- jump to start with insert mode
@@ -71,6 +67,8 @@ keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Terminal --
+-- Toggle terminal
+keymap("n", "<M-`>", ":ToggleTerm<cr>", opts)
 -- Better terminal navigation
 keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
@@ -88,3 +86,7 @@ keymap("n", "<leader>f", "<cmd>Telescope live_grep<cr>", opts)
 
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+
+-- Comment
+keymap("n", "<leader>/", "<cmd>lua require('Comment').toggle()<CR>", opts)
+keymap("v", "<leader>/", ':lua require("Comment.api").gc(vim.fn.visualmode())<CR>', opts)
