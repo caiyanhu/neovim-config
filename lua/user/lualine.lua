@@ -9,7 +9,7 @@ end
 
 local diagnostics = {
 	"diagnostics",
-	sources = { "nvim_diagnostic" },
+	sources = { "nvim_lsp" },
 	sections = { "error", "warn" },
 	symbols = { error = " ", warn = " " },
 	colored = false,
@@ -58,10 +58,6 @@ local progress = function()
 	return chars[index]
 end
 
-local spaces = function()
-	return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
-end
-
 lualine.setup({
 	options = {
 		icons_enabled = true,
@@ -75,8 +71,7 @@ lualine.setup({
 		lualine_a = { branch, diagnostics },
 		lualine_b = { mode },
 		lualine_c = {},
-		-- lualine_x = { "encoding", "fileformat", "filetype" },
-		lualine_x = { diff, spaces, "encoding", filetype },
+		lualine_x = { diff, filetype },
 		lualine_y = { location },
 		lualine_z = { progress },
 	},

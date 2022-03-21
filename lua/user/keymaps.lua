@@ -86,7 +86,3 @@ keymap("n", "<leader>f", "<cmd>Telescope live_grep<cr>", opts)
 
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
-
--- Comment
-keymap("n", "<leader>/", "<cmd>lua require('Comment').toggle()<CR>", opts)
-keymap("v", "<leader>/", ':lua require("Comment.api").gc(vim.fn.visualmode())<CR>', opts)
