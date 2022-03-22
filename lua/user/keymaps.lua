@@ -83,6 +83,7 @@ keymap(
 	opts
 )
 keymap("n", "<leader>f", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>b", "<cmd>Telescope buffers<cr>", opts)
 
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
