@@ -19,12 +19,12 @@ local autocmds = {
 			"source <afile> | PackerSync",
 		},
 	},
-	-- no highlight search while cursor hold
-	no_hlsearch_cursor_hold = {
+	-- enable emmet just for html/css/less
+	enable_emmet_for_specific_types = {
 		{
-			"cursorhold",
-			"*",
-			"set nohlsearch",
+			"FileType",
+			"html,css,less",
+			"EmmetInstall",
 		},
 	},
 }

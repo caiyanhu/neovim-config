@@ -32,13 +32,6 @@ keymap("n", "Q", "q", opts)
 keymap("n", "q", "<Nop>", opts)
 keymap("n", "Y", "y$", opts)
 
--- Enable hlsearch while search
-keymap("n", "n", ":set hlsearch<cr>n", opts)
-keymap("n", "N", ":set hlsearch<cr>N", opts)
-keymap("n", "/", ":set hlsearch<cr>/", opts)
-keymap("n", "N", ":set hlsearch<cr>?", opts)
-keymap("n", "*", "*:set hlsearch<cr>", opts)
-
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
 keymap("n", "<C-Down>", ":resize -2<CR>", opts)
