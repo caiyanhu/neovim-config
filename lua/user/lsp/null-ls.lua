@@ -24,7 +24,6 @@ null_ls.setup({
 				"html",
 				"json",
 				"yaml",
-				"toml",
 			},
 		}),
 		formatting.stylua,
