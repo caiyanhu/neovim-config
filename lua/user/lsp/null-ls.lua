@@ -28,6 +28,7 @@ null_ls.setup({
 			},
 		}),
 		formatting.stylua,
+    formatting.rustfmt,
 		diagnostics.eslint_d,
 	},
 	diagnostics_format = "[#{c}] #{m} (#{s})",
