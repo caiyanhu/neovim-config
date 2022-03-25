@@ -33,6 +33,7 @@ local servers = {
 	},
 	tsserver = {},
 	volar = {},
+	rust_analyzer = {},
 }
 
 local function on_attach(client, bufnr)
