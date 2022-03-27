@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 configs.setup({
-	ensure_instjlled = { "tsx", "json", "html", "scss", "lua", "css", "vue" },
+	ensure_instjlled = { "tsx", "json", "html", "scss", "lua", "css", "vue", "rust" },
 	sync_install = false,
 	ignore_install = { "" },
 	autopairs = {

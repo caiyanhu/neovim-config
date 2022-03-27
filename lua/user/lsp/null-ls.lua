@@ -11,7 +11,7 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
 	debug = false,
 	sources = {
-		formatting.prettierd.with({
+		formatting.prettier.with({
 			filetypes = {
 				"javascript",
 				"javascriptreact",
@@ -27,8 +27,8 @@ null_ls.setup({
 			},
 		}),
 		formatting.stylua,
-    formatting.rustfmt,
-		diagnostics.eslint_d,
+		formatting.rustfmt,
+		diagnostics.eslint,
 	},
 	diagnostics_format = "[#{c}] #{m} (#{s})",
 })
