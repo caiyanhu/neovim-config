@@ -17,7 +17,6 @@ null_ls.setup({
 				"javascriptreact",
 				"typescript",
 				"typescriptreact",
-				"vue",
 				"css",
 				"scss",
 				"less",
@@ -29,6 +28,7 @@ null_ls.setup({
 		formatting.stylua,
 		formatting.rustfmt,
 		diagnostics.eslint,
+    diagnostics.codespell,
 	},
 	diagnostics_format = "[#{c}] #{m} (#{s})",
 })
