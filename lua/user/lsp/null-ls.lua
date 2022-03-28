@@ -13,22 +13,17 @@ null_ls.setup({
 	sources = {
 		formatting.prettier.with({
 			filetypes = {
-				"javascript",
-				"javascriptreact",
-				"typescript",
-				"typescriptreact",
 				"css",
 				"scss",
 				"less",
 				"html",
-				"json",
 				"yaml",
 			},
 		}),
 		formatting.stylua,
 		formatting.rustfmt,
 		diagnostics.eslint,
-    diagnostics.codespell,
+		diagnostics.codespell,
 	},
 	diagnostics_format = "[#{c}] #{m} (#{s})",
 })

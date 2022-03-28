@@ -37,10 +37,9 @@ local servers = {
 }
 
 local function on_attach(client, bufnr)
-	if client.name == "tsserver" or client.name == "jsonls" then
-		client.resolved_capabilities.document_formatting = false
-	end
-
+	-- if client.name == "tsserver" or client.name == "jsonls" then
+	-- client.resolved_capabilities.document_formatting = false
+	-- end
 	-- Configure key mappings
 	require("user.lsp.keymaps").setup(client, bufnr)
 
