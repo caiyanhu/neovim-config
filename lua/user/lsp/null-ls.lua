@@ -18,6 +18,8 @@ null_ls.setup({
 				"less",
 				"html",
 				"yaml",
+				"vue",
+				"javascript",
 			},
 		}),
 		formatting.stylua,
