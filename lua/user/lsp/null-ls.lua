@@ -9,24 +9,27 @@ local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 
 null_ls.setup({
-  debug = false,
-  sources = {
-    formatting.prettier.with({
-      filetypes = {
-        "css",
-        "scss",
-        "less",
-        "html",
-        "yaml",
-        "vue",
-        "javascript",
-      },
-    }),
-    formatting.stylua,
-    formatting.rustfmt,
+	debug = false,
+	sources = {
+		formatting.prettier.with({
+			filetypes = {
+				"css",
+				"scss",
+				"less",
+				"html",
+				"yaml",
+				"vue",
+				"javascript",
+				"typescript",
+				"javascriptreact",
+				"typescriptreact",
+			},
+		}),
+		formatting.stylua,
+		formatting.rustfmt,
     formatting.taplo,
-    diagnostics.eslint,
-    diagnostics.codespell,
-  },
-  diagnostics_format = "[#{c}] #{m} (#{s})",
+		diagnostics.eslint,
+		diagnostics.codespell,
+	},
+	diagnostics_format = "[#{c}] #{m} (#{s})",
 })
