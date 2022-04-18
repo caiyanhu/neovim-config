@@ -37,7 +37,12 @@ local servers = {
 }
 
 local function on_attach(client, bufnr)
-	if client.name == "tsserver" or client.name == "jsonls" or client.name == "volar" then
+	if
+		client.name == "tsserver"
+		or client.name == "jsonls"
+		or client.name == "volar"
+		or client.name == "rust_analyzer"
+	then
 		client.resolved_capabilities.document_formatting = false
 	end
 	-- Configure key mappings
