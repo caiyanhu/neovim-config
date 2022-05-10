@@ -43,7 +43,7 @@ local function on_attach(client, bufnr)
       or client.name == "rust_analyzer"
       or client.name == "taplo"
   then
-    client.resolved_capabilities.document_formatting = false
+    client.server_capabilities.document_formatting = false
   end
   -- Configure key mappings
   require("user.lsp.keymaps").setup(client, bufnr)
@@ -70,5 +70,6 @@ local opts = {
 
 -- Setup LSP handlers
 require("user.lsp.handlers").setup()
+require("nvim-lsp-installer").setup{}
 
 require("user.lsp.installer").setup(servers, opts)
