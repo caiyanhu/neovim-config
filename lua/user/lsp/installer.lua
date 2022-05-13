@@ -11,11 +11,6 @@ function M.setup(servers, options)
       server:on_ready(function()
         local opts = vim.tbl_deep_extend("force", options, servers[server.name] or {})
 
-        if server.name == "jsonls" then
-          local jsonls_opts = require("user.lsp.settings.jsonls")
-          opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
-        end
-
         if server.name == "sumneko_lua" then
           local lua_opts = require("user.lsp.settings.sumneko_lua")
           opts = vim.tbl_deep_extend("force", lua_opts, opts)

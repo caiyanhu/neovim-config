@@ -88,6 +88,9 @@ return packer.startup(function(use)
   -- Motions
   use("phaazon/hop.nvim")
 
+  -- JSON Schema Store
+  use("b0o/schemastore.nvim")
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

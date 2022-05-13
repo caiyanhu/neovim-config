@@ -7,7 +7,13 @@ local M = {}
 
 local servers = {
   html = {},
-  jsonls = {},
+  jsonls = {
+    settings = {
+      json = {
+        schemas = require('schemastore').json.schemas(),
+      }
+    }
+  },
   sumneko_lua = {
     settings = {
       Lua = {
@@ -38,7 +44,6 @@ local servers = {
 
 local function on_attach(client, bufnr)
   if client.name == "tsserver"
-      or client.name == "jsonls"
       or client.name == "volar"
       or client.name == "rust_analyzer"
       or client.name == "taplo"
@@ -70,6 +75,6 @@ local opts = {
 
 -- Setup LSP handlers
 require("user.lsp.handlers").setup()
-require("nvim-lsp-installer").setup{}
+require("nvim-lsp-installer").setup {}
 
 require("user.lsp.installer").setup(servers, opts)
