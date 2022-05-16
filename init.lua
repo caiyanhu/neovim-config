@@ -25,4 +25,5 @@ else
   require("user.utils")
   require("user.floaterm")
   require("user.hop")
+  require("user.todo")
 end

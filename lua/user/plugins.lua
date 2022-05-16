@@ -76,7 +76,6 @@ return packer.startup(function(use)
 
   -- Git
   use("lewis6991/gitsigns.nvim")
-  use("f-person/git-blame.nvim")
   use("sindrets/diffview.nvim")
 
   -- Emmet
@@ -90,6 +89,9 @@ return packer.startup(function(use)
 
   -- JSON Schema Store
   use("b0o/schemastore.nvim")
+
+  -- todos
+  use("folke/todo-comments.nvim")
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
