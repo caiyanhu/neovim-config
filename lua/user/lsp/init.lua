@@ -5,51 +5,7 @@ end
 
 local M = {}
 
-local servers = {
-  html = {},
-  jsonls = {
-    settings = {
-      json = {
-        schemas = require('schemastore').json.schemas(),
-      }
-    }
-  },
-  sumneko_lua = {
-    settings = {
-      Lua = {
-        runtime = {
-          -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-          version = "LuaJIT",
-          -- Setup your lua path
-          path = vim.split(package.path, ";"),
-        },
-        diagnostics = {
-          -- Get the language server to recognize the `vim` global
-          globals = { "vim" },
-        },
-        workspace = {
-          -- Make the server aware of Neovim runtime files
-          library = {
-            [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-            [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
-          },
-        },
-      },
-    },
-  },
-  tsserver = {},
-  volar = {},
-  rust_analyzer = {},
-}
-
 local function on_attach(client, bufnr)
-  if client.name == "tsserver"
-      or client.name == "volar"
-      or client.name == "rust_analyzer"
-      or client.name == "taplo"
-  then
-    client.server_capabilities.document_formatting = false
-  end
   -- Configure key mappings
   require("user.lsp.keymaps").setup(client, bufnr)
 
@@ -72,9 +28,13 @@ local opts = {
     debounce_text_changes = 150,
   },
 }
-
--- Setup LSP handlers
 require("user.lsp.handlers").setup()
-require("nvim-lsp-installer").setup {}
 
-require("user.lsp.installer").setup(servers, opts)
+local servers = { "tsserver", "volar", "html", "cssls", "jsonls", "rust_analyzer", "volar", "sumneko_lua" }
+for _, lsp in pairs(servers) do
+  if lsp == "sumneko_lua" then
+    local lua_opts = require("user.lsp.settings.sumneko_lua")
+    opts = vim.tbl_deep_extend("force", lua_opts, opts)
+  end
+  require("lspconfig")[lsp].setup(opts)
+end
