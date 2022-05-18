@@ -94,6 +94,9 @@ return packer.startup(function(use)
   -- todos
   use("folke/todo-comments.nvim")
 
+  -- preview color
+  use("norcalli/nvim-colorizer.lua")
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
