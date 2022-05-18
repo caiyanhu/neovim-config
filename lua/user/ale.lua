@@ -2,49 +2,46 @@
 vim.g.ale_linters_explicit = 1
 
 -- linters
-vim.g.ale_linters_aliases = {
-  vue = { 'vue', 'javascript' },
-  jsx = { 'css', 'javascript' },
-}
 vim.g.ale_linters = {
+  css = { "vscode-css-language-server" },
+  scss = { "vscode-css-language-server" },
+  sass = { "vscode-css-language-server" },
+  less = { "stylelint" },
+  html = { "vscode-html-language-server" },
+  json = { "vscode-json-language-server" },
   javascript = { "eslint" },
-  json = { 'eslint' },
-  typescript = { 'eslint' },
-  vue = { 'eslint', 'volar' },
-  scss = { 'stylelint' },
-  sass = { 'stylelint' },
-  less = { 'stylelint' },
-  css = { 'stylelint' },
-  html = { 'prettier' },
-  jsx = { 'eslint' },
-  tsx = { 'eslint' },
-  rust = { 'analyzer' }
+  typescript = { "eslint", "tsserver" },
+  vue = { "volar" },
+  jsx = { "eslint", "tsserver" },
+  tsx = { "eslint", "tsserver" },
+  rust = { "analyzer" },
+  lua = { "luac" }
 }
 
 -- fixers
 vim.g.ale_fixers = {
-  javascript = { 'eslint', 'prettier' },
-  json = { 'prettier' },
-  typescript = { 'eslint', 'prettier' },
-  vue = { 'prettier' },
-  scss = { 'prettier' },
-  sass = { 'prettier' },
-  less = { 'prettier' },
-  css = { 'prettier' },
-  html = { 'prettier' },
-  jsx = { 'eslint', 'prettier' },
-  tsx = { 'eslint', 'prettier' },
-  go = { 'gofmt' },
-  rust = { 'rustfmt' }
+  scss = { "prettier" },
+  sass = { "prettier" },
+  less = { "prettier" },
+  css = { "prettier" },
+  html = { "prettier" },
+  json = { "prettier" },
+  rust = { "rustfmt" },
+  lua = { "stylua" },
+  javascript = { "eslint", "prettier" },
+  typescript = { "eslint", "prettier" },
+  vue = { "prettier" },
+  jsx = { "eslint", "prettier" },
+  tsx = { "eslint", "prettier" },
 }
 
 vim.g.ale_fix_on_save = 0
 
 -- change the signs ALE use
-vim.g.ale_sign_error = '🔞'
-vim.g.ale_sign_warning = '⚠️ '
-vim.cmd [[ highlight clear ALEErrorSign ]]
-vim.cmd [[ highlight clear ALEWarningSign ]]
+vim.g.ale_sign_error = "💩"
+vim.g.ale_sign_warning = "🚨"
+vim.cmd([[ highlight clear ALEErrorSign ]])
+vim.cmd([[ highlight clear ALEWarningSign ]])
 
 -- jump diagnostic
 vim.api.nvim_set_keymap("n", "[e", ":ALEPreviousWrap<CR>", { silent = true })
