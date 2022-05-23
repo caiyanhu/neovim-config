@@ -98,10 +98,6 @@ return packer.startup(function(use)
   -- preview color
   use("norcalli/nvim-colorizer.lua")
 
-
-  -- marks
-  use("chentoast/marks.nvim")
-
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
