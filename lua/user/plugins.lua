@@ -64,6 +64,7 @@ return packer.startup(function(use)
 
   -- formatters and linters
   use("dense-analysis/ale")
+  use("jose-elias-alvarez/null-ls.nvim") -- use null-ls' codespell
 
   -- Telescope
   use("nvim-telescope/telescope.nvim")
