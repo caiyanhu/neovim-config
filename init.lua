@@ -32,4 +32,5 @@ else
 	require("user.hop")
 	require("user.todo")
 	require("user.colorizer")
+  require("user.marks")
 end
