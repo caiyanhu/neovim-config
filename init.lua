@@ -18,7 +18,6 @@ else
 	require("user.cmp")
 	require("user.lsp")
 	require("user.ale")
-  require("user.null-ls")
 	require("user.treesitter")
 	require("user.autopairs")
 	require("user.comment")
