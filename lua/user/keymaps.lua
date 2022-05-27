@@ -32,16 +32,8 @@ keymap("n", "Q", "q", opts)
 keymap("n", "q", "<Nop>", opts)
 keymap("n", "Y", "y$", opts)
 
--- Resize with arrows
-keymap("n", "<C-Up>", ":resize +2<CR>", opts)
-keymap("n", "<C-Down>", ":resize -2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
-
 -- Insert --
 keymap("i", "<M-o>", "<Esc>o", opts) -- open next line with insert mode
-keymap("i", "<M-h>", "<Esc>^i", opts) -- jump to start with insert mode
-keymap("i", "<M-l>", "<END>", opts) -- jump to end without leaving mode
 keymap("i", "<C-h>", "<left>", opts)
 keymap("i", "<C-j>", "<down>", opts)
 keymap("i", "<C-k>", "<up>", opts)
