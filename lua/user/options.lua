@@ -32,6 +32,7 @@ local options = {
 	wrap = false,
 	scrolloff = 8,
 	sidescrolloff = 8,
+  laststatus = 3,
 }
 
 vim.opt.shortmess:append("c")
@@ -43,3 +44,5 @@ end
 vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd([[set iskeyword+=-]])
 vim.cmd([[set formatoptions-=cro]])
+
+vim.o.winbar = "%{%v:lua.require('user.winbar').eval()%}"
