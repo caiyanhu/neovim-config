@@ -1,6 +1,6 @@
 vim.cmd([[
 try
-  colorscheme spaceduck
+  colorscheme nightfox
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme default
   set background=dark
