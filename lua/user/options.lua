@@ -32,7 +32,9 @@ local options = {
 	wrap = false,
 	scrolloff = 8,
 	sidescrolloff = 8,
-  laststatus = 3,
+	laststatus = 3,
+	spell = true,
+	spelllang = { "en_us" },
 }
 
 vim.opt.shortmess:append("c")
