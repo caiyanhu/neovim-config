@@ -35,6 +35,12 @@ local options = {
 	laststatus = 3,
 	spell = true,
 	spelllang = { "en_us", "cjk" },
+  -- fold with nvim_treesitter
+  foldmethod = "expr",
+  foldexpr = "nvim_treesitter#foldexpr()",
+  -- no fold to be applied when open a file
+  foldenable = false,
+  foldlevel = 9
 }
 
 vim.opt.shortmess:append("c")
