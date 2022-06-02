@@ -57,10 +57,6 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-nvim-lua")
 	use("onsails/lspkind.nvim") -- icons on the completion popups
 
-	-- snippets
-	use("L3MON4D3/LuaSnip") -- snippet engine
-	use("saadparwaiz1/cmp_luasnip") -- snippet source
-
 	-- LSP
 	use("neovim/nvim-lspconfig") -- enable LSP
 

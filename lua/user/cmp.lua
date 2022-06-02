@@ -3,17 +3,10 @@ if not cmp_status_ok then
   return
 end
 
-local snip_status_ok, luasnip = pcall(require, "luasnip")
-if not snip_status_ok then
-  return
-end
-
 local lspkind_status_ok, lspkind = pcall(require, "lspkind")
 if not lspkind_status_ok then
   return
 end
-
-require("luasnip/loaders/from_vscode").lazy_load()
 
 local check_backspace = function()
   local col = vim.fn.col(".") - 1
@@ -21,11 +14,6 @@ local check_backspace = function()
 end
 
 cmp.setup({
-  snippet = {
-    expand = function(args)
-      luasnip.lsp_expand(args.body) -- For `luasnip` users.
-    end,
-  },
   mapping = {
     ["<C-k>"] = cmp.mapping.select_prev_item(),
     ["<C-j>"] = cmp.mapping.select_next_item(),
@@ -43,10 +31,6 @@ cmp.setup({
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
-      elseif luasnip.expandable() then
-        luasnip.expand()
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
       elseif check_backspace() then
         fallback()
       else
@@ -59,8 +43,6 @@ cmp.setup({
     ["<S-Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
-      elseif luasnip.jumpable(-1) then
-        luasnip.jump(-1)
       else
         fallback()
       end
@@ -77,7 +59,6 @@ cmp.setup({
         buffer = "[Buf]",
         path = "[Path]",
         nvim_lsp = "[Lsp]",
-        luasnip = "[Snip]",
         nvim_lua = "[Lua]",
       }
     }),
@@ -85,7 +66,6 @@ cmp.setup({
   sources = {
     { name = "nvim_lsp" },
     { name = "nvim_lua" },
-    { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },
   },
