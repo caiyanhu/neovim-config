@@ -53,8 +53,10 @@ return packer.startup(function(use)
 	use("hrsh7th/nvim-cmp") -- The completion plugin
 	use("hrsh7th/cmp-buffer") -- buffer completions
 	use("hrsh7th/cmp-path") -- path completions
+	use("hrsh7th/cmp-cmdline") -- vim command completion
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-nvim-lua")
+	use("f3fora/cmp-spell") -- spell check
 	use("onsails/lspkind.nvim") -- icons on the completion popups
 
 	-- LSP

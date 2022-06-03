@@ -43,6 +43,14 @@ local autocmds = {
 			"set filetype=typescript.tsx",
 		},
 	},
+	-- fix telescope fold bug https://github.com/nvim-telescope/telescope.nvim/issues/559
+	fix_telescope_fold_bug = {
+		{
+			"BufRead,BufWinEnter",
+			"*",
+			"++once normal! zx",
+		},
+	},
 }
 
 Nvim_Create_Augroups(autocmds)
