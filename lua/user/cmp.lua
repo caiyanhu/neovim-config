@@ -41,7 +41,6 @@ cmp.setup({
 				path = "[Path]",
 				nvim_lsp = "[Lsp]",
 				nvim_lua = "[Lua]",
-				spell = "[Spell]",
 			},
 		}),
 	},
@@ -50,7 +49,6 @@ cmp.setup({
 		{ name = "nvim_lua" },
 		{ name = "buffer" },
 		{ name = "path" },
-		{ name = "spell" },
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,

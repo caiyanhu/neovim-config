@@ -56,7 +56,6 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-cmdline") -- vim command completion
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-nvim-lua")
-	use("f3fora/cmp-spell") -- spell check
 	use("onsails/lspkind.nvim") -- icons on the completion popups
 
 	-- LSP
