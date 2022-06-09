@@ -28,7 +28,6 @@ else
 	require("user.indentline")
 	require("user.utils")
 	require("user.floaterm")
-	require("user.hop")
-	require("user.todo")
 	require("user.colorizer")
+	require("user.snippets")
 end

@@ -34,10 +34,6 @@ keymap("n", "Y", "y$", opts)
 
 -- Insert --
 keymap("i", "<M-o>", "<Esc>o", opts) -- open next line with insert mode
-keymap("i", "<C-h>", "<left>", opts)
-keymap("i", "<C-j>", "<down>", opts)
-keymap("i", "<C-k>", "<up>", opts)
-keymap("i", "<C-l>", "<right>", opts)
 keymap("i", "<C-a>", "<HOME>", opts)
 keymap("i", "<C-e>", "<END>", opts)
 keymap("i", "<C-c>", "<Esc>", opts)
@@ -69,10 +65,10 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Telescope --
 keymap(
-  "n",
-  "<c-p>",
-  "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({}))<cr>",
-  opts
+	"n",
+	"<C-p>",
+	"<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({}))<cr>",
+	opts
 )
 keymap("n", "<leader>f", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<leader>b", "<cmd>Telescope buffers<cr>", opts)

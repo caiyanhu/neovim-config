@@ -33,8 +33,9 @@ local options = {
 	scrolloff = 8,
 	sidescrolloff = 8,
 	laststatus = 3,
-	spell = true,
-	spelllang = { "en_us", "cjk" },
+  -- spell
+	spell = false,
+	-- spelllang = { "en_us", "cjk" },
 	-- fold with nvim_treesitter
 	foldmethod = "expr",
 	foldexpr = "nvim_treesitter#foldexpr()",

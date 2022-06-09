@@ -46,8 +46,7 @@ return packer.startup(function(use)
 
 	-- Colorschemes
 	use("folke/tokyonight.nvim")
-	use("EdenEast/nightfox.nvim")
-	use({ "pineapplegiant/spaceduck", branch = "main" })
+	use("Mofiqul/vscode.nvim")
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
@@ -84,17 +83,18 @@ return packer.startup(function(use)
 	-- Float Terminal
 	use("voldikss/vim-floaterm")
 
-	-- Motions
-	use("phaazon/hop.nvim")
-
 	-- JSON Schema Store
 	use("b0o/schemastore.nvim")
 
-	-- todos
-	use("folke/todo-comments.nvim")
-
 	-- preview color
 	use("norcalli/nvim-colorizer.lua")
+
+	-- Snippet
+	use("saadparwaiz1/cmp_luasnip")
+	use("L3MON4D3/LuaSnip")
+
+  -- Spell Checker
+  use("kamykn/spelunker.vim")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

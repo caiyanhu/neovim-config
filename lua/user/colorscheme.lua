@@ -1,16 +1,12 @@
-vim.cmd([[
-try
-  colorscheme nightfox
-catch /^Vim\%((\a\+)\)\=:E185/
-  colorscheme default
-  set background=dark
-endtry
-]])
-
-vim.cmd([[
-  if exists('+termguicolors')
-    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-    set termguicolors
-  endif
-]])
+-- Lua:
+-- For dark theme (neovim's default)
+vim.o.background = "dark"
+-- For light theme
+-- vim.o.background = "light"
+-- Enable transparent background
+vim.g.vscode_transparent = 1
+-- Enable italic comment
+vim.g.vscode_italic_comment = 1
+-- Disable nvim-tree background color
+vim.g.vscode_disable_nvimtree_bg = true
+vim.cmd([[colorscheme vscode]])
