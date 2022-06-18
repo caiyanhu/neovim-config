@@ -46,6 +46,7 @@ return packer.startup(function(use)
 
 	-- Colorschemes
 	use("bluz71/vim-nightfly-guicolors")
+  use("haishanh/night-owl.vim")
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
