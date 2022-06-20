@@ -46,7 +46,7 @@ return packer.startup(function(use)
 
 	-- Colorschemes
 	use("bluz71/vim-nightfly-guicolors")
-  use("haishanh/night-owl.vim")
+	use("haishanh/night-owl.vim")
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
@@ -92,9 +92,6 @@ return packer.startup(function(use)
 	-- Snippet
 	use("saadparwaiz1/cmp_luasnip")
 	use("L3MON4D3/LuaSnip")
-
-	-- Spell Checker
-	use("kamykn/spelunker.vim")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

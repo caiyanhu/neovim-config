@@ -3,36 +3,36 @@ vim.g.ale_linters_explicit = 1
 
 -- linters
 vim.g.ale_linters = {
-  css = { "vscode-css-language-server" },
-  scss = { "vscode-css-language-server" },
-  sass = { "vscode-css-language-server" },
-  less = { "stylelint" },
-  html = { "vscode-html-language-server" },
-  json = { "vscode-json-language-server" },
-  javascript = { "eslint" },
-  typescript = { "eslint", "tsserver" },
-  vue = { "volar" },
-  jsx = { "eslint", "tsserver" },
-  tsx = { "eslint", "tsserver" },
-  rust = { "analyzer" },
-  lua = { "luac" }
+	css = { "vscode-css-language-server" },
+	scss = { "vscode-css-language-server" },
+	sass = { "vscode-css-language-server" },
+	less = { "stylelint" },
+	html = { "vscode-html-language-server" },
+	json = { "vscode-json-language-server" },
+	javascript = { "eslint" },
+	typescript = { "eslint", "tsserver" },
+	vue = { "volar" },
+	jsx = { "eslint", "tsserver" },
+	tsx = { "eslint", "tsserver" },
+	rust = { "analyzer" },
+	lua = { "luac" },
 }
 
 -- fixers
 vim.g.ale_fixers = {
-  scss = { "prettier" },
-  sass = { "prettier" },
-  less = { "prettier" },
-  css = { "prettier" },
-  html = { "prettier" },
-  json = { "prettier" },
-  rust = { "rustfmt" },
-  lua = { "stylua" },
-  javascript = { "eslint", "prettier" },
-  typescript = { "eslint", "prettier" },
-  vue = { "prettier" },
-  jsx = { "eslint", "prettier" },
-  tsx = { "eslint", "prettier" },
+	scss = { "prettier" },
+	sass = { "prettier" },
+	less = { "prettier" },
+	css = { "prettier" },
+	html = { "prettier" },
+	json = { "prettier" },
+	rust = { "rustfmt" },
+	lua = { "stylua" },
+	javascript = { "eslint", "prettier" },
+	typescript = { "eslint", "prettier" },
+	vue = { "prettier" },
+	jsx = { "eslint", "prettier" },
+	tsx = { "eslint", "prettier" },
 }
 
 vim.g.ale_fix_on_save = 0

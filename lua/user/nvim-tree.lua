@@ -50,8 +50,10 @@ nvim_tree.setup({
 			custom_only = false,
 			list = {
 				{ key = { "l", "<CR>", "o" }, cb = tree_cb("edit") },
-				{ key = "h", cb = tree_cb("close_node") },
-				{ key = "v", cb = tree_cb("split") },
+				{ key = "h", cb = tree_cb("split") },
+				{ key = "v", cb = tree_cb("vsplit") },
+				{ key = "]", cb = tree_cb("cd") },
+				{ key = "[", cb = tree_cb("dir_up") },
 			},
 		},
 		number = true,
