@@ -38,8 +38,8 @@ vim.g.ale_fixers = {
 vim.g.ale_fix_on_save = 0
 
 -- change the signs ALE use
-vim.g.ale_sign_error = "💩"
-vim.g.ale_sign_warning = "🚨"
+vim.g.ale_sign_error = "🔴"
+vim.g.ale_sign_warning = "🟡"
 vim.cmd([[ highlight clear ALEErrorSign ]])
 vim.cmd([[ highlight clear ALEWarningSign ]])
 
