@@ -45,8 +45,7 @@ return packer.startup(function(use)
 	use("lukas-reineke/indent-blankline.nvim")
 
 	-- Colorschemes
-	use("bluz71/vim-nightfly-guicolors")
-	use("haishanh/night-owl.vim")
+	use("martinsione/darkplus.nvim")
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
@@ -72,6 +71,7 @@ return packer.startup(function(use)
 
 	-- Auto Pairs
 	use("windwp/nvim-autopairs")
+	use("windwp/nvim-ts-autotag")
 
 	-- Git
 	use("lewis6991/gitsigns.nvim")

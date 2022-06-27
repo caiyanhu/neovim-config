@@ -4,15 +4,19 @@ if not status_ok then
 end
 
 configs.setup({
-	ensure_instjlled = { "tsx", "json", "html", "scss", "lua", "css", "vue", "rust" },
+	ensure_installed = { "tsx", "json", "html", "scss", "lua", "css", "vue", "rust" },
 	sync_install = false,
 	ignore_install = { "" },
 	autopairs = {
 		enable = true,
 	},
+	autotag = {
+		enable = true,
+		filetypes = { "html", "jsx", "tsx", "vue" },
+	},
 	highlight = {
 		enable = true,
-		disable = { "" },
+		disable = { "html", "vue" },
 		additional_vim_regex_highlighting = true,
 	},
 	indent = {
