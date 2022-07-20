@@ -42,12 +42,8 @@ local servers = {
 	"tailwindcss",
 }
 for _, lsp in pairs(servers) do
-	if lsp == "sumneko_lua" then
-		local lua_opts = require("user.lsp.settings.sumneko_lua")
-		opts = vim.tbl_deep_extend("force", lua_opts, opts)
-	end
-	if lsp == "volar" then
-		local lua_opts = require("user.lsp.settings.volor")
+	if lsp == "volar" or lsp == "sumneko_lua" or lsp == "tailwindcss" then
+		local lua_opts = require("user.lsp.settings." .. lsp)
 		opts = vim.tbl_deep_extend("force", lua_opts, opts)
 	end
 	require("lspconfig")[lsp].setup(opts)
