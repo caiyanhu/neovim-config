@@ -40,7 +40,7 @@ local autocmds = {
 		{
 			"BufNewFile,BufRead",
 			"*.tsx",
-			"set filetype=typescript.tsx",
+			"set filetype=typescriptreact",
 		},
 	},
 }
