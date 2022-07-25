@@ -1,7 +1,6 @@
 vue
 pinia
 css
-#tml javascriptreact
 html
 javascriptreact
 typescriptreact
@@ -15,3 +14,5 @@ dev
 config
 tailwindcss
 src
+yaml
+k8s

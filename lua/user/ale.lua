@@ -12,8 +12,8 @@ vim.g.ale_linters = {
 	javascript = { "eslint" },
 	typescript = { "eslint", "tsserver" },
 	vue = { "volar" },
-	jsx = { "eslint", "tsserver" },
-	tsx = { "eslint", "tsserver" },
+	javascriptreact = { "eslint", "tsserver" },
+	typescriptreact = { "eslint", "tsserver" },
 	rust = { "analyzer" },
 	lua = { "luac" },
 }
@@ -31,8 +31,8 @@ vim.g.ale_fixers = {
 	javascript = { "eslint", "prettier" },
 	typescript = { "eslint", "prettier" },
 	vue = { "prettier" },
-	jsx = { "eslint", "prettier" },
-	tsx = { "eslint", "prettier" },
+	javascriptreact = { "eslint", "prettier" },
+	typescriptreact = { "eslint", "prettier" },
 }
 
 vim.g.ale_fix_on_save = 0
