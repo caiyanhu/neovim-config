@@ -24,3 +24,7 @@ cors
 api
 js
 axios
+mongodb
+dotenv
+env
+MySQL
