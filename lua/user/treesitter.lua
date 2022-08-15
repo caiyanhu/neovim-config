@@ -3,8 +3,12 @@ if not status_ok then
 	return
 end
 
+-- Fix Error opening archive
+-- https://github.com/nvim-treesitter/nvim-treesitter/issues/2847
+require("nvim-treesitter.install").prefer_git = true
+
 configs.setup({
-	ensure_installed = { "tsx", "json", "html", "scss", "lua", "css", "vue", "rust" },
+	ensure_installed = { "tsx", "typescript", "javascript", "json", "html", "scss", "lua", "css", "vue", "rust" },
 	sync_install = false,
 	ignore_install = { "" },
 	autopairs = {
