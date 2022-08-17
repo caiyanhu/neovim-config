@@ -45,7 +45,7 @@ return packer.startup(function(use)
 	use("lukas-reineke/indent-blankline.nvim")
 
 	-- Colorschemes
-	use("martinsione/darkplus.nvim")
+	use("yong1le/darkplus.nvim")
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
@@ -58,7 +58,7 @@ return packer.startup(function(use)
 
 	-- LSP
 	use("neovim/nvim-lspconfig") -- enable LSP
-  use("williamboman/nvim-lsp-installer")
+	use("williamboman/nvim-lsp-installer")
 
 	-- formatters and linters
 	use("dense-analysis/ale")
@@ -96,6 +96,9 @@ return packer.startup(function(use)
 
 	-- Fold
 	use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
+
+	-- Bookmark
+	use("MattesGroeger/vim-bookmarks")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
