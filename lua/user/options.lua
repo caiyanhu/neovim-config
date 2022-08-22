@@ -33,7 +33,7 @@ local options = {
 	scrolloff = 8,
 	sidescrolloff = 8,
 	laststatus = 3,
-  -- spell
+	-- spell
 	spell = true,
 	spelllang = { "en_us", "cjk" },
 	-- fold with nvim_treesitter
@@ -54,4 +54,7 @@ vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd([[set iskeyword+=-]])
 vim.cmd([[set formatoptions-=cro]])
 
-vim.o.winbar = "%{%v:lua.require('user.winbar').eval()%}"
+local status_ok = pcall(require, "user.winbar")
+if not status_ok then
+	vim.o.winbar = "%{%v:lua.require('user.winbar').eval()%}"
+end
