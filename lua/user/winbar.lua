@@ -13,6 +13,18 @@ local winbar_filetype_exclude = {
 	"Outline",
 	"spectre_panel",
 	"toggleterm",
+	"DressingSelect",
+	"Jaq",
+	"harpoon",
+	"dapui_scopes",
+	"dapui_breakpoints",
+	"dapui_stacks",
+	"dapui_watches",
+	"dap-repl",
+	"dap-terminal",
+	"dapui_console",
+	"lab",
+	"Markdown",
 }
 
 vim.api.nvim_set_hl(0, "WinBarPath", { bg = "#4A3E4B", fg = "#C1ADC4" })
