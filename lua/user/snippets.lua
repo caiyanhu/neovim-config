@@ -16,15 +16,6 @@ local date = function()
 end
 
 ls.add_snippets(nil, {
-	all = {
-		snip({
-			trig = "date",
-			namr = "Date",
-			dscr = "Date in the form of YYYY-MM-DD",
-		}, {
-			func(date, {}),
-		}),
-	},
 	typescript = {
 		snip("clg", {
 			text("console.log("),
