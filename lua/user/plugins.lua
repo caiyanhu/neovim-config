@@ -76,6 +76,10 @@ return packer.startup(function(use)
 
 	-- Git
 	use("lewis6991/gitsigns.nvim")
+	use({
+		"akinsho/git-conflict.nvim",
+		tag = "*",
+	})
 
 	-- Emmet
 	use("mattn/emmet-vim")
@@ -98,6 +102,9 @@ return packer.startup(function(use)
 
 	-- Bookmark
 	use("MattesGroeger/vim-bookmarks")
+
+	-- Pretty Quickfix Window
+	use("folke/trouble.nvim")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
