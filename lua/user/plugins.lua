@@ -65,7 +65,11 @@ return packer.startup(function(use)
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")
-	use("nvim-telescope/telescope-media-files.nvim")
+	local os_name = vim.loop.os_uname().sysname
+	if os_name == "Linux" then
+		-- This plugin only support on Linux
+		use("nvim-telescope/telescope-media-files.nvim")
+	end
 
 	-- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
