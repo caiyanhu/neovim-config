@@ -1,7 +1,7 @@
 local options = {
 	backup = false,
 	clipboard = "unnamedplus",
-	cmdheight = 0,
+	cmdheight = 1,
 	completeopt = { "menuone", "noselect" },
 	conceallevel = 0,
 	fileencoding = "utf-8",
@@ -32,7 +32,7 @@ local options = {
 	wrap = false,
 	scrolloff = 8,
 	sidescrolloff = 8,
-	laststatus = 0,
+	laststatus = 3,
 	-- spell
 	spell = true,
 	spelllang = { "en_us", "cjk" },
