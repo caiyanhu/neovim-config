@@ -37,9 +37,8 @@ local servers = {
 	"cssls",
 	"jsonls",
 	"rust_analyzer",
-	"volar",
 	"sumneko_lua",
-	"tailwindcss",
+	"taplo",
 }
 for _, lsp in pairs(servers) do
 	if lsp == "volar" or lsp == "sumneko_lua" or lsp == "tailwindcss" then

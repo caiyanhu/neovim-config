@@ -63,7 +63,7 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
--- Telescope --
+-- Telescope
 keymap(
 	"n",
 	"<C-p>",
@@ -75,3 +75,12 @@ keymap("n", "<leader>b", "<cmd>Telescope buffers<cr>", opts)
 
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+
+-- nvim-dap
+keymap("n", "<F5>", "<Cmd>lua require'dap'.continue()<CR>", opts)
+keymap("n", "<F10>", "<Cmd>lua require'dap'.step_over()<CR>", opts)
+keymap("n", "<F11>", "<Cmd>lua require'dap'.step_into()<CR>", opts)
+keymap("n", "<F12>", "<Cmd>lua require'dap'.step_out()<CR>", opts)
+keymap("n", "<Leader>B", "<Cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)
+keymap("n", "<Leader>BC", "<Cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", opts)
+keymap("n", "<Leader>dr", "<Cmd>lua require'dap'.repl.open()<CR>", opts)

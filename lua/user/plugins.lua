@@ -110,6 +110,11 @@ return packer.startup(function(use)
 	-- Pretty Quickfix Window
 	use("folke/trouble.nvim")
 
+	-- Debug Adapter Protocol
+	use("mfussenegger/nvim-dap")
+	use("theHamsta/nvim-dap-virtual-text")
+	use("rcarriga/nvim-dap-ui")
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
