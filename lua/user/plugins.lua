@@ -46,6 +46,7 @@ return packer.startup(function(use)
 
 	-- editor config
 	use("gpanders/editorconfig.nvim")
+
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
 	use("hrsh7th/cmp-buffer") -- buffer completions
@@ -76,7 +77,7 @@ return packer.startup(function(use)
 
 	-- Auto Pairs
 	use("windwp/nvim-autopairs")
-	use("windwp/nvim-ts-autotag")
+	use("windwp/nvim-ts-autotag") -- Use treesitter to auto close and auto rename html tag
 
 	-- Git
 	use("lewis6991/gitsigns.nvim")
@@ -110,10 +111,6 @@ return packer.startup(function(use)
 	-- Pretty Quickfix Window
 	use("folke/trouble.nvim")
 
-	-- Debug Adapter Protocol
-	use("mfussenegger/nvim-dap")
-	use("theHamsta/nvim-dap-virtual-text")
-	use("rcarriga/nvim-dap-ui")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
