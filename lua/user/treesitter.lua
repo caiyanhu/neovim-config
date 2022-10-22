@@ -8,7 +8,19 @@ end
 require("nvim-treesitter.install").prefer_git = true
 
 configs.setup({
-	ensure_installed = { "tsx", "typescript", "javascript", "json", "html", "scss", "lua", "css", "vue", "rust" },
+	ensure_installed = {
+		"tsx",
+		"typescript",
+		"javascript",
+		"json",
+		"html",
+		"scss",
+		"lua",
+		"css",
+		"vue",
+		"rust",
+		"toml",
+	},
 	sync_install = false,
 	ignore_install = { "" },
 	autopairs = {
