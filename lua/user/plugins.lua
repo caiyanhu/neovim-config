@@ -62,7 +62,8 @@ return packer.startup(function(use)
 	use("williamboman/mason-lspconfig.nvim")
 
 	-- formatters and linters
-	use("dense-analysis/ale")
+	use("mhartington/formatter.nvim")
+	use("mfussenegger/nvim-lint")
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")
@@ -110,7 +111,6 @@ return packer.startup(function(use)
 
 	-- Pretty Quickfix Window
 	use("folke/trouble.nvim")
-
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
