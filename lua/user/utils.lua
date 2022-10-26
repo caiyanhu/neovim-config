@@ -43,6 +43,14 @@ local autocmds = {
 			"set filetype=typescriptreact",
 		},
 	},
+	-- show diagnostic in open float
+	show_diagnostics_in_open_flot = {
+		{
+			"CursorHold,CursorHoldI",
+			"*",
+			"lua vim.diagnostic.open_float(nil, {focus = false})",
+		},
+	},
 }
 
 Nvim_Create_Augroups(autocmds)

@@ -62,8 +62,7 @@ return packer.startup(function(use)
 	use("williamboman/mason-lspconfig.nvim")
 
 	-- formatters and linters
-	use("mhartington/formatter.nvim")
-	use("mfussenegger/nvim-lint")
+	use("jose-elias-alvarez/null-ls.nvim")
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")

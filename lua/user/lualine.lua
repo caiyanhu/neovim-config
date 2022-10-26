@@ -161,12 +161,12 @@ ins_left({
 })
 
 -- Add components to right sections
-ins_right({
-	"o:encoding", -- option component same as &encoding in viml
-	upper = true, -- I'm not sure why it's upper case either ;)
-	condition = conditions.hide_in_width,
-	color = { fg = colors.green, gui = "bold" },
-})
+-- ins_right({
+-- 	"o:encoding", -- option component same as &encoding in viml
+-- 	upper = true, -- I'm not sure why it's upper case either ;)
+-- 	condition = conditions.hide_in_width,
+-- 	color = { fg = colors.green, gui = "bold" },
+-- })
 
 ins_right({
 	"branch",
@@ -175,15 +175,15 @@ ins_right({
 	color = { fg = colors.violet, gui = "bold" },
 })
 
-ins_right({
-	"diff",
-	-- Is it me or the symbol for modified us really weird
-	symbols = { added = " ", modified = "柳", removed = " " },
-	color_added = colors.green,
-	color_modified = colors.orange,
-	color_removed = colors.red,
-	condition = conditions.hide_in_width,
-})
+-- ins_right({
+-- 	"diff",
+-- 	-- Is it me or the symbol for modified us really weird
+-- 	symbols = { added = " ", modified = "柳", removed = " " },
+-- 	color_added = colors.green,
+-- 	color_modified = colors.orange,
+-- 	color_removed = colors.red,
+-- 	condition = conditions.hide_in_width,
+-- })
 
 ins_right({
 	function()

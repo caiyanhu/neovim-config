@@ -5,12 +5,35 @@ end
 
 local M = {}
 
+local lsp_formatting = function(bufnr)
+	vim.lsp.buf.format({
+		filter = function(client)
+			-- only use null-ls for format
+			return client.name == "null-ls"
+		end,
+		bufnr = bufnr,
+	})
+end
+
 local function on_attach(client, bufnr)
 	-- Configure key mappings
 	require("user.lsp.keymaps").setup(client, bufnr)
 
 	-- Configure highlighting
 	require("user.lsp.highlighting").setup(client)
+
+	-- if you want to set up formatting on save, you can use this as a callback
+	local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+	if client.supports_method("textDocument/formatting") then
+		vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			group = augroup,
+			buffer = bufnr,
+			callback = function()
+				lsp_formatting(bufnr)
+			end,
+		})
+	end
 end
 
 local has_cmp, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
@@ -40,7 +63,7 @@ local servers = {
 	"taplo",
 }
 for _, lsp in pairs(servers) do
-	if lsp == "volar" or lsp == "sumneko_lua" or lsp == "tailwindcss" then
+	if lsp == "volar" or lsp == "sumneko_lua" then
 		local lua_opts = require("user.lsp.settings." .. lsp)
 		opts = vim.tbl_deep_extend("force", lua_opts, opts)
 	end

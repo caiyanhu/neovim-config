@@ -49,8 +49,6 @@ keymap("v", "<A-k>", ":m .-2<CR>==", opts)
 
 -- Visual Block --
 -- Move text up and down
-keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
@@ -75,12 +73,3 @@ keymap("n", "<leader>b", "<cmd>Telescope buffers<cr>", opts)
 
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
-
--- nvim-dap
-keymap("n", "<F5>", "<Cmd>lua require'dap'.continue()<CR>", opts)
-keymap("n", "<F10>", "<Cmd>lua require'dap'.step_over()<CR>", opts)
-keymap("n", "<F11>", "<Cmd>lua require'dap'.step_into()<CR>", opts)
-keymap("n", "<F12>", "<Cmd>lua require'dap'.step_out()<CR>", opts)
-keymap("n", "<Leader>B", "<Cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)
-keymap("n", "<Leader>BC", "<Cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", opts)
-keymap("n", "<Leader>dr", "<Cmd>lua require'dap'.repl.open()<CR>", opts)
