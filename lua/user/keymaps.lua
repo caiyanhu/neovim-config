@@ -31,6 +31,8 @@ keymap("n", "H", "^", opts)
 keymap("n", "Q", "q", opts)
 keymap("n", "q", "<Nop>", opts)
 keymap("n", "Y", "y$", opts)
+keymap("n", "+", "<C-a>", opts)
+keymap("n", "-", "<C-x>", opts)
 
 -- Insert --
 keymap("i", "<M-o>", "<Esc>o", opts) -- open next line with insert mode

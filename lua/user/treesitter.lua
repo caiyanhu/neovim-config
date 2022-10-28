@@ -21,23 +21,19 @@ configs.setup({
 		"rust",
 		"toml",
 	},
-	sync_install = false,
-	ignore_install = { "" },
 	autopairs = {
 		enable = true,
 	},
 	autotag = {
 		enable = true,
-		filetypes = { "html", "jsx", "tsx", "vue" },
 	},
 	highlight = {
 		enable = true,
-		disable = { "html", "vue" },
-		additional_vim_regex_highlighting = true,
+		disable = {},
 	},
 	indent = {
 		enable = true,
-		disable = { "yaml" },
+		disable = {},
 	},
 	rainbow = {
 		enable = true,
@@ -45,3 +41,6 @@ configs.setup({
 		max_file_lines = nil, -- Do not enable for files with more than n lines, int
 	},
 })
+
+local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+parser_config.tsx.filetype_to_parsername = { "javascript", "typescript.tsx" }

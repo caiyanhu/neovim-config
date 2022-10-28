@@ -9,7 +9,7 @@ end
 return {
 	init_options = {
 		typescript = {
-			serverPath = path .. "/node_modules/typescript/lib/tsserverlibrary.js", -- Alternative location if installed as root:
+			tsdk = path .. "/node_modules/typescript/lib", -- Alternative location if installed as root:
 		},
 	},
 }
