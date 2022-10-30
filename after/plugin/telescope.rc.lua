@@ -3,11 +3,6 @@ if not status_ok then
 	return
 end
 
-local os_name = vim.loop.os_uname().sysname
-if os_name == "Linux" then
-	telescope.load_extension("media_files")
-end
-
 local actions = require("telescope.actions")
 
 telescope.setup({

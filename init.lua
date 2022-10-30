@@ -1,25 +1,17 @@
-require("user.impatient")
-require("user.options")
-require("user.keymaps")
-require("user.plugins")
-require("user.telescope")
-require("user.colorscheme")
-require("user.mason")
-require("user.cmp")
-require("user.lsp")
-require("user.null")
-require("user.treesitter")
-require("user.autopairs")
-require("user.comment")
-require("user.gitsigns")
-require("user.nvim-tree")
-require("user.lualine")
-require("user.indentline")
+require("user.base")
+require("user.highlights")
+require("user.maps")
 require("user.utils")
-require("user.floaterm")
-require("user.colorizer")
-require("user.snippets")
-require("user.ufo")
-require("user.bookmarks")
-require("user.trouble")
-require("user.git-conflict")
+require("user.plugins")
+
+local has = vim.fn.has
+local is_mac = has "macunix"
+local is_win = has "win32"
+
+if is_mac then
+  require("user.macos")
+end
+
+if is_win then
+  require("user.windows")
+end

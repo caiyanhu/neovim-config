@@ -31,85 +31,96 @@ packer.init({
 })
 
 -- Install your plugins here
-return packer.startup(function(use)
+packer.startup(function(use)
 	-- My plugins here
 	use("wbthomason/packer.nvim") -- Have packer manage itself
-	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
-	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
+	use({
+		"svrana/neosolarized.nvim",
+		requires = { "tjdevries/colorbuddy.nvim" },
+	})
+	use("nvim-lua/popup.nvim")
+	use("nvim-lua/plenary.nvim") -- Common utilities
 	use("numToStr/Comment.nvim") -- Easily comment stuff
 	use("p00f/nvim-ts-rainbow") -- Rainbow parentheses for neovim using tree-sitter
-	use("kyazdani42/nvim-web-devicons")
+	use("kyazdani42/nvim-web-devicons") -- File icons
 	use("kyazdani42/nvim-tree.lua")
-	use("nvim-lualine/lualine.nvim")
-	use("lewis6991/impatient.nvim")
+	use("nvim-lualine/lualine.nvim") -- Statusline
 	use("lukas-reineke/indent-blankline.nvim")
 
-	-- editor config
-	use("gpanders/editorconfig.nvim")
-
 	-- cmp plugins
-	use("hrsh7th/nvim-cmp") -- The completion plugin
-	use("hrsh7th/cmp-buffer") -- buffer completions
-	use("hrsh7th/cmp-path") -- path completions
-	use("hrsh7th/cmp-cmdline") -- vim command completion
-	use("hrsh7th/cmp-nvim-lsp")
-	use("hrsh7th/cmp-nvim-lua")
-	use("onsails/lspkind.nvim") -- icons on the completion popups
+	use("hrsh7th/nvim-cmp") -- Completion
+	use("hrsh7th/cmp-buffer") -- nvim-cmp source for buffer words
+	use("hrsh7th/cmp-nvim-lsp") -- nvim-cmp source for neovim's built-in LSP
+	use("onsails/lspkind-nvim") -- vscode-like pictograms
 
 	-- LSP
-	use("neovim/nvim-lspconfig") -- enable LSP
+	use("neovim/nvim-lspconfig") -- LSP
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
+    use("jose-elias-alvarez/null-ls.nvim") -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
+	use("glepnir/lspsaga.nvim") -- LSP UIs
 
-	-- formatters and linters
-	use("jose-elias-alvarez/null-ls.nvim")
+    -- Telescope
+    use("nvim-telescope/telescope.nvim")
+	use("nvim-telescope/telescope-file-browser.nvim")
 
-	-- Telescope
-	use("nvim-telescope/telescope.nvim")
-	local os_name = vim.loop.os_uname().sysname
-	if os_name == "Linux" then
-		-- This plugin only support on Linux
-		use("nvim-telescope/telescope-media-files.nvim")
-	end
+    -- Treesitter
+    use({
+		"nvim-treesitter/nvim-treesitter",
+		run = function()
+			require("nvim-treesitter.install").update({ with_sync = true })
+		end,
+	})
 
-	-- Treesitter
-	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+    -- Auto pairs and tags
+    use("windwp/nvim-autopairs")
+	use("windwp/nvim-ts-autotag")
 
-	-- Auto Pairs
-	use("windwp/nvim-autopairs")
-	use("windwp/nvim-ts-autotag") -- Use treesitter to auto close and auto rename html tag
-
-	-- Git
-	use("lewis6991/gitsigns.nvim")
+    -- Git
+    use("lewis6991/gitsigns.nvim")
 	use({
 		"akinsho/git-conflict.nvim",
 		tag = "*",
 	})
 
-	-- Emmet
-	use("mattn/emmet-vim")
+    -- Emmet
+    use("mattn/emmet-vim")
 
 	-- Float Terminal
 	use("voldikss/vim-floaterm")
 
-	-- JSON Schema Store
+    -- JSON Schema Store
 	use("b0o/schemastore.nvim")
 
-	-- preview color
+	-- Preview color
 	use("norcalli/nvim-colorizer.lua")
 
 	-- Snippet
 	use("saadparwaiz1/cmp_luasnip")
 	use("L3MON4D3/LuaSnip")
-
-	-- Fold
+	
+    -- Fold
 	use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
 
 	-- Bookmark
 	use("MattesGroeger/vim-bookmarks")
 
-	-- Pretty Quickfix Window
-	use("folke/trouble.nvim")
+	
+	---- Automatically set up your configuration after cloning packer.nvim
+	-- Put this at the end after all plugins
+	if PACKER_BOOTSTRAP then
+		require("packer").sync()
+	end
+	-- Automatically set up your configuration after cloning packer.nvim
+	-- Put this at the end after all plugins
+	if PACKER_BOOTSTRAP then
+		require("packer").sync()
+	end
+	-- Automatically set up your configuration after cloning packer.nvim
+	-- Put this at the end after all plugins
+	if PACKER_BOOTSTRAP then
+		require("packer").sync()
+	end
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
