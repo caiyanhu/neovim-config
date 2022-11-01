@@ -35,7 +35,7 @@ local options = {
 	laststatus = 3,
 	-- spell
 	spell = true,
-	spelllang = { "en_us", "cjk" },
+	spelllang = { "en", "cjk" },
 	spelloptions = { "camel" },
 	-- fold with nvim_treesitter
 	foldmethod = "expr",
