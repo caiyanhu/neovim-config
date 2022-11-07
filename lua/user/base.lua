@@ -34,7 +34,7 @@ local options = {
 	sidescrolloff = 8,
 	laststatus = 3,
 	-- spell
-	spell = true,
+	spell = false,
 	spelllang = { "en", "cjk" },
 	spelloptions = { "camel" },
 	-- fold with nvim_treesitter

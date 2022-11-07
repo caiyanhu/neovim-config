@@ -7,44 +7,34 @@ local diagnostics = null_ls.builtins.diagnostics
 local code_actions = null_ls.builtins.code_actions
 local formatting = null_ls.builtins.formatting
 
-local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-
-local lsp_formatting = function(bufnr)
-  vim.lsp.buf.format({
-    filter = function(client)
-      return client.name == "null-ls"
-    end,
-    bufnr = bufnr,
-  })
-end
+local au_group = vim.api.nvim_create_augroup("LspFormatting", {})
 
 null_ls.setup({
   sources = {
+    -- code actions
+    code_actions.cspell,
     -- diagnostics
-    diagnostics.eslint_d.with({
+    diagnostics.cspell, -- use ~/.cspell.json as config file
+    diagnostics.eslint.with({
       diagnostics_format = "[eslint] #{m}\n(#{c})",
     }),
     diagnostics.tsc,
     diagnostics.selene,
     -- formatting
     formatting.stylua,
-    formatting.prettierd,
+    formatting.prettier,
     formatting.rustfmt,
   },
   on_attach = function(client, bufnr)
     if client.supports_method("textDocument/formatting") then
-      vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+      vim.api.nvim_clear_autocmds({ group = au_group, buffer = bufnr })
       vim.api.nvim_create_autocmd("BufWritePre", {
-        group = augroup,
+        group = au_group,
         buffer = bufnr,
         callback = function()
-          lsp_formatting(bufnr)
+          vim.lsp.buf.format({ bufnr = bufnr })
         end,
       })
     end
   end,
 })
-
-vim.api.nvim_create_user_command("DisableLspFormatting", function()
-  vim.api.nvim_clear_autocmds({ group = augroup, buffer = 0 })
-end, { nargs = 0 })

@@ -100,6 +100,12 @@ nvim_lsp.cssls.setup({
 nvim_lsp.jsonls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
+	settings = {
+		json = {
+			schemas = require("schemastore").json.schemas(),
+			validate = { enable = true },
+		},
+	},
 })
 
 local util = require("lspconfig.util")
