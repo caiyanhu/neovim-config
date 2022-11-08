@@ -55,8 +55,6 @@ keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Terminal --
--- Toggle terminal
-keymap("n", "<M-`>", ":ToggleTerm<cr>", opts)
 -- Better terminal navigation
 keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
@@ -65,13 +63,30 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Telescope
 keymap(
-  "n",
-  "<C-p>",
-  "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({}))<cr>",
-  opts
+	"n",
+	"<C-p>",
+	"<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({}))<cr>",
+	opts
 )
 keymap("n", "<leader>f", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<leader>b", "<cmd>Telescope buffers<cr>", opts)
 
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+
+-- ALE
+vim.api.nvim_set_keymap("n", "[e", ":ALEPreviousWrap<CR>", { silent = true })
+vim.api.nvim_set_keymap("n", "]e", ":ALENextWrap<CR>", { silent = true })
+
+-- LSP saga
+keymap("n", "]d", "<Cmd>Lspsaga diagnostic_jump_next<CR>", opts)
+keymap("n", "[d", "<Cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
+keymap("n", "K", "<Cmd>Lspsaga hover_doc<CR>", opts)
+keymap("n", "gd", "<Cmd>Lspsaga lsp_finder<CR>", opts)
+keymap("i", "<C-k>", "<Cmd>Lspsaga signature_help<CR>", opts)
+keymap("n", "gp", "<Cmd>Lspsaga peek_definition<CR>", opts)
+keymap("n", "gr", "<Cmd>Lspsaga rename<CR>", opts)
+keymap("n", "<leader>o", "<Cmd>LSoutlineToggle<CR>", opts)
+-- Toggle terminal
+keymap("n", "<M-`>", "<cmd>Lspsaga open_floaterm<CR>", opts)
+keymap("t", "<M-`>", [[<C-\><C-n><cmd>Lspsaga close_floaterm<CR>]], opts)

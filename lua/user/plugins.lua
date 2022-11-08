@@ -34,10 +34,6 @@ packer.init({
 packer.startup(function(use)
 	-- My plugins here
 	use("wbthomason/packer.nvim") -- Have packer manage itself
-	use({
-		"svrana/neosolarized.nvim",
-		requires = { "tjdevries/colorbuddy.nvim" },
-	})
 	use("nvim-lua/popup.nvim")
 	use("nvim-lua/plenary.nvim") -- Common utilities
 	use("numToStr/Comment.nvim") -- Easily comment stuff
@@ -47,6 +43,9 @@ packer.startup(function(use)
 	use("nvim-lualine/lualine.nvim") -- Statusline
 	use("lukas-reineke/indent-blankline.nvim")
 
+	-- Colorschemes
+	use({ "catppuccin/nvim", as = "catppuccin" })
+
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- Completion
 	use("hrsh7th/cmp-buffer") -- nvim-cmp source for buffer words
@@ -55,10 +54,12 @@ packer.startup(function(use)
 
 	-- LSP
 	use("neovim/nvim-lspconfig") -- LSP
+	use("glepnir/lspsaga.nvim") -- LSP UIs
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
-	use("jose-elias-alvarez/null-ls.nvim") -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
-	use("glepnir/lspsaga.nvim") -- LSP UIs
+
+	-- formatters and linters
+	use("dense-analysis/ale")
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")
@@ -86,9 +87,6 @@ packer.startup(function(use)
 	-- Emmet
 	use("mattn/emmet-vim")
 
-	-- Float Terminal
-	use("voldikss/vim-floaterm")
-
 	-- JSON Schema Store
 	use("b0o/schemastore.nvim")
 
@@ -104,6 +102,9 @@ packer.startup(function(use)
 
 	-- Bookmark
 	use("MattesGroeger/vim-bookmarks")
+
+	-- Rust
+	use("simrat39/rust-tools.nvim")
 
 	---- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

@@ -40,7 +40,7 @@ local autocmds = {
     {
       "BufNewFile,BufRead",
       "*.tsx",
-      "set filetype=typescriptreact",
+      "set filetype=typescript.tsx",
     },
   },
   -- show diagnostic in open float
