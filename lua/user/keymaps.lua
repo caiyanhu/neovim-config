@@ -55,6 +55,9 @@ keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Terminal --
+keymap("n", "<M-`>", ":FloatermToggle<cr>", opts)
+keymap("i", "<M-`>", "<Esc>:FloatermToggle<cr>", opts)
+keymap("t", "<M-`>", "<C-\\><C-n>:FloatermToggle<cr>", term_opts)
 -- Better terminal navigation
 keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
@@ -87,6 +90,3 @@ keymap("i", "<C-k>", "<Cmd>Lspsaga signature_help<CR>", opts)
 keymap("n", "gp", "<Cmd>Lspsaga peek_definition<CR>", opts)
 keymap("n", "gr", "<Cmd>Lspsaga rename<CR>", opts)
 keymap("n", "<leader>o", "<Cmd>LSoutlineToggle<CR>", opts)
--- Toggle terminal
-keymap("n", "<M-`>", "<cmd>Lspsaga open_floaterm<CR>", opts)
-keymap("t", "<M-`>", [[<C-\><C-n><cmd>Lspsaga close_floaterm<CR>]], opts)

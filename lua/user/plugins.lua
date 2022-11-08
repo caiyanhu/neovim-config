@@ -87,6 +87,9 @@ packer.startup(function(use)
 	-- Emmet
 	use("mattn/emmet-vim")
 
+	-- Float Terminal
+	use("voldikss/vim-floaterm")
+
 	-- JSON Schema Store
 	use("b0o/schemastore.nvim")
 
