@@ -78,8 +78,8 @@ keymap("n", "<leader>b", "<cmd>Telescope buffers<cr>", opts)
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
 -- ALE
-vim.api.nvim_set_keymap("n", "[e", ":ALEPreviousWrap<CR>", { silent = true })
-vim.api.nvim_set_keymap("n", "]e", ":ALENextWrap<CR>", { silent = true })
+keymap("n", "[e", ":ALEPreviousWrap<CR>", opts)
+keymap("n", "]e", ":ALENextWrap<CR>", opts)
 
 -- LSP saga
 keymap("n", "]d", "<Cmd>Lspsaga diagnostic_jump_next<CR>", opts)
@@ -90,3 +90,4 @@ keymap("i", "<C-k>", "<Cmd>Lspsaga signature_help<CR>", opts)
 keymap("n", "gp", "<Cmd>Lspsaga peek_definition<CR>", opts)
 keymap("n", "gr", "<Cmd>Lspsaga rename<CR>", opts)
 keymap("n", "<leader>o", "<Cmd>LSoutlineToggle<CR>", opts)
+keymap("n", "<leader>ca", "<Cmd>Lspsaga code_action<CR>", opts)

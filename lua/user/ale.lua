@@ -29,7 +29,7 @@ vim.g.ale_fixers = {
 	vue = { "prettier" },
 }
 
-vim.g.ale_fix_on_save = 0
+vim.g.ale_fix_on_save = 1
 
 -- change the signs ALE use
 vim.g.ale_sign_error = "🔴"
