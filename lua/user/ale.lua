@@ -22,6 +22,7 @@ vim.g.ale_fixers = {
 	javascript = { "prettier" },
 	javascriptreact = { "prettier" },
 	json = { "prettier" },
+	less = { "prettier" },
 	lua = { "stylua" },
 	rust = { "rustfmt" },
 	typescript = { "prettier" },
