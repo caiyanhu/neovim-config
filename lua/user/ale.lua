@@ -3,7 +3,7 @@ vim.g.ale_linters_explicit = 1
 
 -- linters
 vim.g.ale_linters = {
-	css = { "stylint", "vscode-css-language-server", "cspell" },
+	css = { "stylelint", "vscode-css-language-server", "cspell" },
 	html = { "cspell" },
 	javascript = { "tsserver", "eslint", "cspell" },
 	javascriptreact = { "stylint", "vscode-css-language-server", "eslint", "cspell" },
@@ -33,7 +33,7 @@ vim.g.ale_fixers = {
 vim.g.ale_fix_on_save = 1
 
 -- change the signs ALE use
-vim.g.ale_sign_error = "🔴"
-vim.g.ale_sign_warning = "🟡"
+vim.g.ale_sign_error = "♦️"
+vim.g.ale_sign_warning = "🔸"
 vim.cmd([[ highlight clear ALEErrorSign ]])
 vim.cmd([[ highlight clear ALEWarningSign ]])
