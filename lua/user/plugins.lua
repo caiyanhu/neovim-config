@@ -115,8 +115,10 @@ packer.startup(function(use)
 	use("Numkil/ag.nvim")
 
 	-- Extends the default quickfix and location lists
+	use("ten3roberts/qf.nvim")
 
 	-- motions on speed
+	use({ "phaazon/hop.nvim", branch = "v2" })
 
 	---- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
