@@ -118,7 +118,13 @@ packer.startup(function(use)
 	use("ten3roberts/qf.nvim")
 
 	-- motions on speed
-	use({ "phaazon/hop.nvim", branch = "v2" })
+	use("ggandor/leap.nvim")
+
+	-- todo-comments
+	use({
+		"folke/todo-comments.nvim",
+		requires = "nvim-lua/plenary.nvim",
+	})
 
 	---- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

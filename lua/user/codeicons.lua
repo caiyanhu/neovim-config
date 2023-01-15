@@ -3,4 +3,7 @@ if not status_ok then
 	return
 end
 
-icon.setup()
+icon.setup({
+	-- Override by mapping name to icon
+	["account"] = "",
+})

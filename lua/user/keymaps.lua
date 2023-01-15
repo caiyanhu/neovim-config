@@ -68,14 +68,14 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 keymap(
 	"n",
 	"<C-p>",
-	"<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({}))<cr>",
+	"<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({}))<CR>",
 	opts
 )
-keymap("n", "<leader>f", "<cmd>Telescope live_grep<cr>", opts)
-keymap("n", "<leader>b", "<cmd>Telescope buffers<cr>", opts)
+keymap("n", "<leader>ff", "<cmd>Telescope live_grep<CR>", opts)
+keymap("n", "<leader>b", "<cmd>Telescope buffers<CR>", opts)
 
 -- Nvimtree
-keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- ALE
 keymap("n", "[e", ":ALEPreviousWrap<CR>", opts)
@@ -109,5 +109,7 @@ keymap("n", "<leader>K", "<cmd>lua require'qf'.above('c', true)<CR>", opts) -- G
 keymap("n", "]q", "<cmd>lua require'qf'.below('visible')<CR>", opts) -- Go to next entry from cursor in visible list
 keymap("n", "[q", "<cmd>lua require'qf'.above('visible')<CR>", opts) -- Go to previous entry from cursor in visible list
 
--- hop
-keymap("n", "<leader>h", ":HopWord<CR>", opts)
+-- todo-comments
+keymap("n", "]t", "<cmd>lua require'todo-comments'.jump_next()<CR>", opts) -- Go to next entry from cursor in visible list
+keymap("n", "[t", "<cmd>lua require'todo-comments'.jump_prev()<CR>", opts) -- Go to previous entry from cursor in visible list
+keymap("n", "<leader>ft", "<cmd>TodoTelescope<CR>", opts)
