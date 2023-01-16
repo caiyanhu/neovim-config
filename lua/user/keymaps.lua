@@ -113,3 +113,7 @@ keymap("n", "[q", "<cmd>lua require'qf'.above('visible')<CR>", opts) -- Go to pr
 keymap("n", "]t", "<cmd>lua require'todo-comments'.jump_next()<CR>", opts) -- Go to next entry from cursor in visible list
 keymap("n", "[t", "<cmd>lua require'todo-comments'.jump_prev()<CR>", opts) -- Go to previous entry from cursor in visible list
 keymap("n", "<leader>ft", "<cmd>TodoTelescope<CR>", opts)
+
+-- leap.nvim
+keymap("n", "z", "<Plug>(leap-forward-to)", opts) -- change s to z
+keymap("n", "Z", "<Plug>(leap-backward-to)", opts) -- change S to Z
