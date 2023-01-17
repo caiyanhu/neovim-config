@@ -77,20 +77,16 @@ keymap("n", "<leader>b", "<cmd>Telescope buffers<CR>", opts)
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
--- ALE
-keymap("n", "[e", ":ALEPreviousWrap<CR>", opts)
-keymap("n", "]e", ":ALENextWrap<CR>", opts)
-
 -- LSP saga
-keymap("n", "]d", "<Cmd>Lspsaga diagnostic_jump_next<CR>", opts)
-keymap("n", "[d", "<Cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
+keymap("n", "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
+keymap("n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
+keymap("n", "]E", "<cmd>lua require'lspsaga.diagnostic'.goto_next({ severity = vim.diagnostic.severity.ERROR })", opts)
+keymap("n", "[E", "<cmd>lua require'lspsaga.diagnostic'.goto_prev({ severity = vim.diagnostic.severity.ERROR })", opts)
+keymap("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
+keymap("n", "gr", "<cmd>Lspsaga rename<CR>", opts)
+keymap("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts)
+keymap("n", "<leader>o", "<cmd>Lspsaga outline<CR>", opts)
 keymap("n", "K", "<Cmd>Lspsaga hover_doc<CR>", opts)
-keymap("n", "gd", "<Cmd>Lspsaga lsp_finder<CR>", opts)
-keymap("i", "<C-k>", "<Cmd>Lspsaga signature_help<CR>", opts)
-keymap("n", "gp", "<Cmd>Lspsaga peek_definition<CR>", opts)
-keymap("n", "gr", "<Cmd>Lspsaga rename<CR>", opts)
-keymap("n", "<leader>o", "<Cmd>LSoutlineToggle<CR>", opts)
-keymap("n", "<leader>ca", "<Cmd>Lspsaga code_action<CR>", opts)
 keymap("n", ">d", "<Cmd>lua vim.diagnostic.open_float()<CR>", opts)
 
 -- qf.nvim
@@ -114,6 +110,5 @@ keymap("n", "]t", "<cmd>lua require'todo-comments'.jump_next()<CR>", opts) -- Go
 keymap("n", "[t", "<cmd>lua require'todo-comments'.jump_prev()<CR>", opts) -- Go to previous entry from cursor in visible list
 keymap("n", "<leader>ft", "<cmd>TodoTelescope<CR>", opts)
 
--- leap.nvim
-keymap("n", "z", "<Plug>(leap-forward-to)", opts) -- change s to z
-keymap("n", "Z", "<Plug>(leap-backward-to)", opts) -- change S to Z
+-- hop.nvim
+keymap("n", "<leader>h", ":HopWord<CR>", opts)

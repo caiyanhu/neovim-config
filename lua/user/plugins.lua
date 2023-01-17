@@ -101,6 +101,7 @@ packer.startup(function(use)
 	-- Snippet
 	use("saadparwaiz1/cmp_luasnip")
 	use("L3MON4D3/LuaSnip")
+	use("rafamadriz/friendly-snippets")
 
 	-- Fold
 	use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
@@ -118,7 +119,10 @@ packer.startup(function(use)
 	use("ten3roberts/qf.nvim")
 
 	-- motions on speed
-	use("ggandor/leap.nvim")
+	use({
+		"phaazon/hop.nvim",
+		branch = "v2", -- optional but strongly recommended
+	})
 
 	-- todo-comments
 	use({
