@@ -84,7 +84,7 @@ keymap("n", "]E", "<cmd>lua require'lspsaga.diagnostic'.goto_next({ severity = v
 keymap("n", "[E", "<cmd>lua require'lspsaga.diagnostic'.goto_prev({ severity = vim.diagnostic.severity.ERROR })", opts)
 keymap("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
 keymap("n", "gr", "<cmd>Lspsaga rename<CR>", opts)
-keymap("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts)
+keymap("n", "gd", "<cmd>Lspsaga goto_definition<CR>", opts)
 keymap("n", "<leader>o", "<cmd>Lspsaga outline<CR>", opts)
 keymap("n", "K", "<Cmd>Lspsaga hover_doc<CR>", opts)
 keymap("n", ">d", "<Cmd>lua vim.diagnostic.open_float()<CR>", opts)
