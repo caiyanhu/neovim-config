@@ -113,3 +113,7 @@ keymap("n", "<leader>ft", "<cmd>TodoTelescope<CR>", opts)
 
 -- hop.nvim
 keymap("n", "<leader>h", ":HopWord<CR>", opts)
+
+-- nvim-dap
+keymap("n", "<leader>dd", "<cmd>lua require'dap'.continue()<CR>", opts)
+keymap("n", "<leader>dt", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)

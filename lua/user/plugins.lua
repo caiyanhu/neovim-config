@@ -130,6 +130,10 @@ packer.startup(function(use)
 		requires = "nvim-lua/plenary.nvim",
 	})
 
+	-- debug adapter protocal client
+	use("mfussenegger/nvim-dap")
+	use("rcarriga/nvim-dap-ui")
+
 	---- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
