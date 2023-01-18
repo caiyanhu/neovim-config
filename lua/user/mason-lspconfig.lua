@@ -10,6 +10,12 @@ local rust_tools_status, rust_tools = pcall(require, "rust-tools")
 if not rust_tools_status then
 	return
 end
+-- Change Severity signs in nvim lsp diagnostics
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " } -- Default: E W H I
+for type, icon in pairs(signs) do
+	local hl = "DiagnosticSign" .. type
+	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
 mason_lsp_config.setup({
 	-- A list of servers to automatically install if they're not already installed. Example: { "rust_analyzer@nightly", "sumneko_lua" }
 	-- This setting has no relation with the `automatic_installation` setting.
