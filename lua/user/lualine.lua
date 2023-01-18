@@ -17,6 +17,7 @@ local colors = {
 	blue = "#51afef",
 	red = "#ec5f67",
 	graybg = "#e6e9ef",
+	jordyblue = "#96b4f7",
 }
 
 local conditions = {
@@ -37,8 +38,10 @@ local conditions = {
 local config = {
 	options = {
 		-- Disable sections and component separators
-		component_separators = "",
-		section_separators = "",
+		-- component_separators = "",
+		-- section_separators = "",
+		section_separators = { left = "", right = "" },
+		component_separators = { left = "", right = "" },
 		-- theme = {
 		-- 	-- We are going to use lualine_c an lualine_x as left and
 		-- 	-- right section. Both are highlighted by c theme .  So we
@@ -69,61 +72,33 @@ local config = {
 	},
 }
 
+-- Inserts a component in lualine_a at left section
+local function ins_left_a(component)
+	table.insert(config.sections.lualine_a, component)
+end
+-- Inserts a component in lualine_b at left section
+local function ins_left_b(component)
+	table.insert(config.sections.lualine_b, component)
+end
 -- Inserts a component in lualine_c at left section
-local function ins_left(component)
+local function ins_left_c(component)
 	table.insert(config.sections.lualine_c, component)
 end
 
 -- Inserts a component in lualine_x ot right section
-local function ins_right(component)
+local function ins_right_x(component)
 	table.insert(config.sections.lualine_x, component)
 end
+-- Inserts a component in lualine_y ot right section
+local function ins_right_y(component)
+	table.insert(config.sections.lualine_y, component)
+end
 
-ins_left({
-	function()
-		return "▊"
-	end,
-	color = { fg = colors.blue }, -- Sets highlighting of component
-	left_padding = 0, -- We don't need space before this
-})
+ins_left_a({ "mode" })
 
-ins_left({
-	-- mode component
-	function()
-		-- auto change color according to neovims mode
-		local mode_color = {
-			n = colors.red,
-			i = colors.green,
-			v = colors.blue,
-			V = colors.blue,
-			c = colors.magenta,
-			no = colors.red,
-			s = colors.orange,
-			S = colors.orange,
-			[""] = colors.orange,
-			ic = colors.yellow,
-			R = colors.violet,
-			Rv = colors.violet,
-			cv = colors.red,
-			ce = colors.red,
-			r = colors.cyan,
-			rm = colors.cyan,
-			["r?"] = colors.cyan,
-			["!"] = colors.red,
-			t = colors.red,
-		}
-		vim.api.nvim_command("hi! LualineMode guifg=" .. mode_color[vim.fn.mode()] .. " guibg=" .. colors.bg)
-		return ""
-	end,
-	color = "LualineMode",
-	left_padding = 0,
-})
+ins_left_a({ "location" })
 
-ins_left({ "mode" })
-
-ins_left({ "location" })
-
-ins_left({
+ins_left_b({
 	"diagnostics",
 	sources = { "nvim_diagnostic" },
 	sections = { "error", "warn", "info" },
@@ -136,13 +111,18 @@ ins_left({
 
 -- Insert mid section. You can make any number of sections in neovim :)
 -- for lualine it's any number greater then 2
-ins_left({
-	function()
-		return "%="
-	end,
+ins_left_c({
+	"filename",
+	path = 2, -- 0 = just filename, 1 = relative path, 2 = absolute path
+	symbols = {
+		modified = "♻️", -- Text to show when the file is modified.
+		readonly = "🚫", -- Text to show when the file is non-modifiable or readonly.
+		unnamed = "[No Name]", -- Text to show for unnamed buffers.
+		newfile = "[New]", -- Text to show for newly created file before first write
+	},
 })
 
-ins_left({
+ins_right_x({
 	-- Lsp server name .
 	function()
 		local msg = "No Active Lsp"
@@ -159,7 +139,7 @@ ins_left({
 		end
 		return msg
 	end,
-	icon = " LSP:",
+	icon = "",
 	color = { fg = colors.magenta, gui = "bold" },
 })
 
@@ -171,7 +151,7 @@ ins_left({
 -- 	color = { fg = colors.green, gui = "bold" },
 -- })
 
-ins_right({
+ins_right_y({
 	"branch",
 	icon = "",
 	condition = conditions.check_git_workspace,
@@ -187,13 +167,5 @@ ins_right({
 -- 	color_removed = colors.red,
 -- 	condition = conditions.hide_in_width,
 -- })
-
-ins_right({
-	function()
-		return "▊"
-	end,
-	color = { fg = colors.blue },
-	right_padding = 0,
-})
 
 lualine.setup(config)

@@ -77,13 +77,14 @@ keymap("n", "<leader>b", "<cmd>Telescope buffers<CR>", opts)
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
+-- LSP
+keymap("n", "gr", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 -- LSP saga
 keymap("n", "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
 keymap("n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
 keymap("n", "]E", "<cmd>lua require'lspsaga.diagnostic'.goto_next({ severity = vim.diagnostic.severity.ERROR })", opts)
 keymap("n", "[E", "<cmd>lua require'lspsaga.diagnostic'.goto_prev({ severity = vim.diagnostic.severity.ERROR })", opts)
 keymap("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
-keymap("n", "gr", "<cmd>Lspsaga rename<CR>", opts)
 keymap("n", "gd", "<cmd>Lspsaga goto_definition<CR>", opts)
 keymap("n", "<leader>o", "<cmd>Lspsaga outline<CR>", opts)
 keymap("n", "K", "<Cmd>Lspsaga hover_doc<CR>", opts)

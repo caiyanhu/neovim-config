@@ -55,5 +55,3 @@ end
 vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd([[set iskeyword+=-]])
 vim.cmd([[set formatoptions-=cro]])
-
-vim.o.winbar = "%{%v:lua.require('user.winbar').eval()%}"
