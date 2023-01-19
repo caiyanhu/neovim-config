@@ -133,6 +133,7 @@ packer.startup(function(use)
 	-- debug adapter protocal client
 	use("mfussenegger/nvim-dap")
 	use("rcarriga/nvim-dap-ui")
+	use("theHamsta/nvim-dap-virtual-text")
 
 	---- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
