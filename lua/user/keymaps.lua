@@ -116,3 +116,17 @@ keymap("n", "<leader>h", ":HopWord<CR>", opts)
 -- nvim-dap
 keymap("n", "<leader>dd", "<cmd>lua require'dap'.continue()<CR>", opts)
 keymap("n", "<leader>dt", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)
+
+-- diffview
+keymap("n", "]x", "<cmd>lua require'diffview.actions'.prev_conflict()<CR>", opts)
+keymap("n", "[x", "<cmd>lua require'diffview.actions'.next_conflict()<CR>", opts)
+keymap("n", "<leader>co", "<cmd>lua require'diffview.actions'.conflict_choose('ours')<CR>", opts)
+keymap("n", "<leader>ct", "<cmd>lua require'diffview.actions'.conflict_choose('theirs')<CR>", opts)
+keymap("n", "<leader>cb", "<cmd>lua require'diffview.actions'.conflict_choose('base')<CR>", opts)
+keymap("n", "<leader>ca", "<cmd>lua require'diffview.actions'.conflict_choose('all')<CR>", opts)
+keymap("n", "<leader>c0", "<cmd>lua require'diffview.actions'.conflict_choose('none')<CR>", opts)
+keymap("n", "<leader>-", "<cmd>lua require'diffview.actions'.toggle_stage_entry()<CR>", opts)
+keymap("n", "<leader>S", "<cmd>lua require'diffview.actions'.stage_all()<CR>", opts)
+keymap("n", "<leader>U", "<cmd>lua require'diffview.actions'.unstage_all()<CR>", opts)
+keymap("n", "<leader><CR>", "<cmd>lua require'diffview.actions'.select_entry()<CR>", opts)
+keymap("n", "<leader>X", "<cmd>lua require'diffview.actions'.restore_entry()<CR>", opts)

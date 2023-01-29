@@ -81,10 +81,7 @@ packer.startup(function(use)
 
 	-- Git
 	use("lewis6991/gitsigns.nvim")
-	use({
-		"akinsho/git-conflict.nvim",
-		tag = "*",
-	})
+	use("sindrets/diffview.nvim")
 
 	-- Emmet
 	use("mattn/emmet-vim")
