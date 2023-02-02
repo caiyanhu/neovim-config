@@ -35,6 +35,7 @@ ts.setup({
 		"vue",
 		"rust",
 		"toml",
+		"vim",
 	},
 })
 

@@ -113,7 +113,13 @@ packer.startup(function(use)
 	use("Numkil/ag.nvim")
 
 	-- Extends the default quickfix and location lists
-	use("ten3roberts/qf.nvim")
+	use({ "kevinhwang91/nvim-bqf" })
+	use({
+		"junegunn/fzf",
+		run = function()
+			vim.fn["fzf#install"]()
+		end,
+	})
 
 	-- motions on speed
 	use({
