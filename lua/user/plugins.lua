@@ -114,12 +114,7 @@ packer.startup(function(use)
 
 	-- Extends the default quickfix and location lists
 	use({ "kevinhwang91/nvim-bqf" })
-	use({
-		"junegunn/fzf",
-		run = function()
-			vim.fn["fzf#install"]()
-		end,
-	})
+	use({ "junegunn/fzf" })
 
 	-- motions on speed
 	use({
@@ -137,6 +132,9 @@ packer.startup(function(use)
 	use("mfussenegger/nvim-dap")
 	use("rcarriga/nvim-dap-ui")
 	use("theHamsta/nvim-dap-virtual-text")
+
+	-- A pretty diagnostics, references, telescope results, quickfix and location list
+	use({ "folke/trouble.nvim" })
 
 	---- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
