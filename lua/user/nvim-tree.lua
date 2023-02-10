@@ -86,6 +86,6 @@ nvim_tree.setup({
 		},
 	},
 	filters = {
-		exclude = { "node_modules" },
+		exclude = { "node_modules", "lib" },
 	},
 })

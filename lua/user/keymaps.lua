@@ -130,3 +130,4 @@ keymap("n", "<leader>S", "<cmd>lua require'diffview.actions'.stage_all()<CR>", o
 keymap("n", "<leader>U", "<cmd>lua require'diffview.actions'.unstage_all()<CR>", opts)
 keymap("n", "<leader><CR>", "<cmd>lua require'diffview.actions'.select_entry()<CR>", opts)
 keymap("n", "<leader>X", "<cmd>lua require'diffview.actions'.restore_entry()<CR>", opts)
+keymap("n", "<leader>dv", ":DiffviewOpen<CR>", opts)
