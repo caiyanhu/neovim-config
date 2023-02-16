@@ -17,9 +17,9 @@ for type, icon in pairs(signs) do
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 mason_lsp_config.setup({
-	-- A list of servers to automatically install if they're not already installed. Example: { "rust_analyzer@nightly", "sumneko_lua" }
+	-- A list of servers to automatically install if they're not already installed. Example: { "rust_analyzer@nightly", "lua_ls" }
 	-- This setting has no relation with the `automatic_installation` setting.
-	ensure_installed = { "sumneko_lua" },
+	ensure_installed = { "lua_ls" },
 	-- Whether servers that are set up (via lspconfig) should be automatically installed if they're not already installed.
 	-- This setting has no relation with the `ensure_installed` setting.
 	-- Can either be:
@@ -79,22 +79,23 @@ mason_lsp_config.setup_handlers({
 		opts = vim.tbl_deep_extend("force", volar_opts, opts)
 		nvim_lsp["volar"].setup(opts)
 	end,
-	["sumneko_lua"] = function()
+	["lua_ls"] = function()
 		local lua_opts = {
 			settings = {
 				Lua = {
 					diagnostics = {
+						-- Get the language server to recognize the `vim` global
 						globals = { "vim" },
 					},
 					workspace = {
+						-- Make the server aware of Neovim runtime files
 						library = vim.api.nvim_get_runtime_file("", true),
-						checkThirdParty = false,
 					},
 				},
 			},
 		}
 		opts = vim.tbl_deep_extend("force", lua_opts, opts)
-		nvim_lsp["sumneko_lua"].setup(opts)
+		nvim_lsp["lua_ls"].setup(opts)
 	end,
 	["rust_analyzer"] = function()
 		rust_tools.setup({})
