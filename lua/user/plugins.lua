@@ -117,11 +117,7 @@ packer.startup(function(use)
 	use({ "junegunn/fzf" })
 
 	-- motions on speed
-	use({
-		"phaazon/hop.nvim",
-		branch = "v2", -- optional but strongly recommended
-	})
-
+	use("rlane/pounce.nvim")
 	-- todo-comments
 	use({
 		"folke/todo-comments.nvim",

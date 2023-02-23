@@ -110,8 +110,8 @@ keymap("n", "]t", "<cmd>lua require'todo-comments'.jump_next()<CR>", opts) -- Go
 keymap("n", "[t", "<cmd>lua require'todo-comments'.jump_prev()<CR>", opts) -- Go to previous entry from cursor in visible list
 keymap("n", "<leader>ft", "<cmd>TodoTelescope<CR>", opts)
 
--- hop.nvim
-keymap("n", "<leader>h", ":HopWord<CR>", opts)
+-- pounce.nvim
+keymap("n", "<leader>f", ":Pounce<CR>", opts)
 
 -- nvim-dap
 keymap("n", "<leader>dd", "<cmd>lua require'dap'.continue()<CR>", opts)
