@@ -106,9 +106,6 @@ packer.startup(function(use)
 	-- Bookmark
 	use("MattesGroeger/vim-bookmarks")
 
-	-- Rust
-	use("simrat39/rust-tools.nvim")
-
 	-- the silver searcher, A.K.A ag
 	use("Numkil/ag.nvim")
 
@@ -116,18 +113,11 @@ packer.startup(function(use)
 	use({ "kevinhwang91/nvim-bqf" })
 	use({ "junegunn/fzf" })
 
-	-- motions on speed
-	use("rlane/pounce.nvim")
 	-- todo-comments
 	use({
 		"folke/todo-comments.nvim",
 		requires = "nvim-lua/plenary.nvim",
 	})
-
-	-- debug adapter protocal client
-	use("mfussenegger/nvim-dap")
-	use("rcarriga/nvim-dap-ui")
-	use("theHamsta/nvim-dap-virtual-text")
 
 	---- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
