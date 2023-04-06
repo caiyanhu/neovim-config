@@ -72,8 +72,7 @@ packer.startup(function(use)
   }) -- improve neovim lsp experience
 
   -- formatters and linters
-  -- use("dense-analysis/ale")
-  use("jose-elias-alvarez/null-ls.nvim")
+  use("dense-analysis/ale")
 
   -- Telescope
   use("nvim-telescope/telescope.nvim")
