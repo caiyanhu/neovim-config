@@ -74,6 +74,9 @@ keymap(
 keymap("n", "<leader>ff", "<cmd>Telescope live_grep<CR>", opts)
 keymap("n", "<leader>b", "<cmd>Telescope buffers<CR>", opts)
 
+-- Nvimtree
+keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+
 -- LSP saga
 keymap("n", "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
 keymap("n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)

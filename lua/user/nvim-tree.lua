@@ -74,7 +74,6 @@ local function on_attach(bufnr)
 	vim.keymap.set("n", "v", api.node.open.vertical, opts("Open: Vertical Split"))
 	vim.keymap.set("n", "]", api.tree.change_root_to_node, opts("CD"))
 	vim.keymap.set("n", "[", api.tree.change_root_to_parent, opts("Up"))
-	vim.keymap.set("n", "<leader>e", api.tree.toggle, opts("Toggle Tree"))
 end
 
 nvim_tree.setup({
