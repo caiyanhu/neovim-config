@@ -1,5 +1,7 @@
 if vim.fn.exists("g:vscode") ~= 0 then
--- VSCode extension
+	-- VSCode extension
+	require("user.options")
+	require("user.keymaps")
 else
 	require("user.options")
 	require("user.keymaps")
@@ -23,5 +25,4 @@ else
 	require("user.bookmarks")
 	require("user.todo-comments")
 	require("user.diffview")
-	require("user.tabnine")
 end
