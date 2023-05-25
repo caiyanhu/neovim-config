@@ -129,6 +129,9 @@ packer.startup(function(use)
 		requires = "nvim-lua/plenary.nvim",
 	})
 
+	-- 自动记忆当前文件位置,下次打开时定位到上次的位置
+	use("ethanholz/nvim-lastplace")
+
 	---- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
