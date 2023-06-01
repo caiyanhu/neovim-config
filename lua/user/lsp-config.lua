@@ -48,8 +48,7 @@ local path = ""
 if os_name == "Darwin" then
 	path = "/usr/local/lib"
 elseif os_name == "Linux" then
-	-- path = "/usr/lib"
-	path = "~/.local/share/nvm/v16.19.1/lib" -- 通过nvm全局安装的,路径在home目录下
+	path = "/usr/lib"
 end
 local volar_opts = {
 	init_options = {
