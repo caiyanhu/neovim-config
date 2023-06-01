@@ -38,8 +38,7 @@ packer.startup(function(use)
 	use("nvim-lua/plenary.nvim") -- Common utilities
 	use("numToStr/Comment.nvim") -- Easily comment stuff
 	use("p00f/nvim-ts-rainbow") -- Rainbow parentheses for neovim using tree-sitter
-	use("kyazdani42/nvim-web-devicons") -- File icons
-	use("mortepau/codicons.nvim") -- vscode icons, for lsp-kind
+	use("nvim-tree/nvim-web-devicons") -- 用于在nvim-tree中显示文件图标
 	use("kyazdani42/nvim-tree.lua")
 	use("nvim-lualine/lualine.nvim") -- Statusline
 	use("lukas-reineke/indent-blankline.nvim")
