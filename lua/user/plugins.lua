@@ -131,6 +131,9 @@ packer.startup(function(use)
 	-- 自动记忆当前文件位置,下次打开时定位到上次的位置
 	use("ethanholz/nvim-lastplace")
 
+	-- search and replace like vscode
+	use("AckslD/muren.nvim")
+
 	---- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then

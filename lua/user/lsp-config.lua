@@ -69,7 +69,7 @@ local jsonls_opts = {
 }
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = { "lua_ls", "tsserver", "volar", "jsonls", "html", "cssls", "rust_analyzer", "taplo" }
+local servers = { "lua_ls", "tsserver", "volar", "jsonls", "html", "cssls", "rust_analyzer", "taplo", "dockerls" }
 -- jsonls html cssls在archlinux下均通过pacman安装 https://aur.archlinux.org/packages/vscode-langservers-extracted
 -- rust_analyzer是通过rustup component add rust-src安装
 for _, lsp in ipairs(servers) do

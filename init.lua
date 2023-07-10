@@ -25,4 +25,5 @@ else
 	require("user.todo-comments")
 	require("user.diffview")
 	require("user.last-place")
+	require("user.muren")
 end
