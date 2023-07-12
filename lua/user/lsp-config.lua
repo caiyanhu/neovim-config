@@ -13,18 +13,25 @@ end
 
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = cmp_nvim_lsp.default_capabilities()
+local os_name = vim.loop.os_uname().sysname
+
+local LuaRuntime = {
+	version = "Lua 5.4",
+	path = {
+		"?/init.lua",
+	},
+}
+if os_name == "Linux" then
+	LuaRuntime = {
+		version = "LuaJIT",
+	}
+end
 
 -- lua的配置
 local lua_ls_opts = {
 	settings = {
 		Lua = {
-			runtime = {
-				-- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-				version = "Lua 5.4",
-				path = {
-					"?/init.lua",
-				},
-			},
+			runtime = LuaRuntime,
 			diagnostics = {
 				-- Get the language server to recognize the `vim` global
 				globals = { "vim" },
@@ -43,7 +50,6 @@ local lua_ls_opts = {
 }
 
 -- volar的配置
-local os_name = vim.loop.os_uname().sysname
 local path = ""
 if os_name == "Darwin" then
 	path = "/usr/local/lib"
