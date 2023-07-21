@@ -6,7 +6,7 @@ else
 	require("user.options")
 	require("user.keymaps")
 	require("user.plugins")
-	require("user.lsp-config")
+	require("user.lsp")
 	require("user.telescope")
 	require("user.colorscheme")
 	require("user.cmp")

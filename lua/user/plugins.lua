@@ -1,28 +1,17 @@
-local fn = vim.fn
-
--- Automatically install packer
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-if fn.empty(fn.glob(install_path)) > 0 then
-	PACKER_BOOTSTRAP = fn.system({
-		"git",
-		"clone",
-		"--depth",
-		"1",
-		"https://github.com/wbthomason/packer.nvim",
-		install_path,
-	})
-	print("Installing packer close and reopen Neovim...")
-	vim.cmd([[packadd packer.nvim]])
+local ensure_packer = function()
+	local fn = vim.fn
+	local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+	if fn.empty(fn.glob(install_path)) > 0 then
+		fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
+		vim.cmd([[packadd packer.nvim]])
+		return true
+	end
+	return false
 end
 
--- Use a protected call so we don't error out on first use
-local status_ok, packer = pcall(require, "packer")
-if not status_ok then
-	return
-end
+local packer_bootstrap = ensure_packer()
 
--- Have packer use a popup window
-packer.init({
+require("packer").init({
 	display = {
 		open_fn = function()
 			return require("packer.util").float({ border = "rounded" })
@@ -30,8 +19,7 @@ packer.init({
 	},
 })
 
--- Install your plugins here
-packer.startup(function(use)
+require("packer").startup(function(use)
 	-- My plugins here
 	use("wbthomason/packer.nvim") -- Have packer manage itself
 	use("nvim-lua/popup.nvim")
@@ -54,21 +42,18 @@ packer.startup(function(use)
 	use("onsails/lspkind-nvim") -- vscode-like pictograms
 
 	-- LSP
-	use("neovim/nvim-lspconfig") -- LSP
 	use({
-		"glepnir/lspsaga.nvim",
-		opt = true,
-		branch = "main",
-		event = "LspAttach", -- lazy load
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+		"neovim/nvim-lspconfig",
+	})
+	use({
+		"nvimdev/lspsaga.nvim",
+		after = "nvim-lspconfig",
 		config = function()
-			require("lspsaga").setup({
-				ui = {
-					colors = require("catppuccin.groups.integrations.lsp_saga").custom_colors(),
-					kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
-				},
-			})
+			require("lspsaga").setup({})
 		end,
-	}) -- improve neovim lsp experience
+	})
 
 	-- formatters and linters
 	use("dense-analysis/ale")
@@ -86,7 +71,7 @@ packer.startup(function(use)
 	})
 
 	-- Auto pairs and tags
-	use("windwp/nvim-autopairs")
+	use({ "echasnovski/mini.pairs", branch = "stable" })
 	use("windwp/nvim-ts-autotag")
 
 	-- Git
@@ -134,9 +119,7 @@ packer.startup(function(use)
 	-- search and replace like vscode
 	use("AckslD/muren.nvim")
 
-	---- Automatically set up your configuration after cloning packer.nvim
-	-- Put this at the end after all plugins
-	if PACKER_BOOTSTRAP then
+	if packer_bootstrap then
 		require("packer").sync()
 	end
 end)
