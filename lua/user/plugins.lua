@@ -1,125 +1,124 @@
 local ensure_packer = function()
-	local fn = vim.fn
-	local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-	if fn.empty(fn.glob(install_path)) > 0 then
-		fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
-		vim.cmd([[packadd packer.nvim]])
-		return true
-	end
-	return false
+  local fn = vim.fn
+  local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
+    vim.cmd([[packadd packer.nvim]])
+    return true
+  end
+  return false
 end
 
 local packer_bootstrap = ensure_packer()
 
 require("packer").init({
-	display = {
-		open_fn = function()
-			return require("packer.util").float({ border = "rounded" })
-		end,
-	},
+  display = {
+    open_fn = function()
+      return require("packer.util").float({ border = "rounded" })
+    end,
+  },
 })
 
 require("packer").startup(function(use)
-	-- My plugins here
-	use("wbthomason/packer.nvim") -- Have packer manage itself
-	use("nvim-lua/popup.nvim")
-	use("nvim-lua/plenary.nvim") -- Common utilities
-	use("numToStr/Comment.nvim") -- Easily comment stuff
-	use("p00f/nvim-ts-rainbow") -- Rainbow parentheses for neovim using tree-sitter
-	use("nvim-tree/nvim-web-devicons") -- 用于在nvim-tree中显示文件图标
-	use("kyazdani42/nvim-tree.lua")
-	use("nvim-lualine/lualine.nvim") -- Statusline
-	use("lukas-reineke/indent-blankline.nvim")
+  -- My plugins here
+  use("wbthomason/packer.nvim")     -- Have packer manage itself
+  use("nvim-lua/popup.nvim")
+  use("nvim-lua/plenary.nvim")      -- Common utilities
+  use("numToStr/Comment.nvim")      -- Easily comment stuff
+  use("p00f/nvim-ts-rainbow")       -- Rainbow parentheses for neovim using tree-sitter
+  use("nvim-tree/nvim-web-devicons") -- 用于在nvim-tree中显示文件图标
+  use("kyazdani42/nvim-tree.lua")
+  use("nvim-lualine/lualine.nvim")  -- Statusline
+  use("lukas-reineke/indent-blankline.nvim")
 
-	-- Colorschemes
-	use({ "catppuccin/nvim", as = "catppuccin" })
+  -- Colorschemes
+  use({ "catppuccin/nvim", as = "catppuccin" })
 
-	-- cmp plugins
-	use("hrsh7th/nvim-cmp") -- Completion
-	use("hrsh7th/cmp-buffer") -- nvim-cmp source for buffer words
-	use("hrsh7th/cmp-nvim-lsp") -- nvim-cmp source for neovim's built-in LSP
-	use("hrsh7th/cmp-path") -- nvim-cmp source for path
-	use("onsails/lspkind-nvim") -- vscode-like pictograms
+  -- cmp plugins
+  use("hrsh7th/nvim-cmp")    -- Completion
+  use("hrsh7th/cmp-buffer")  -- nvim-cmp source for buffer words
+  use("hrsh7th/cmp-nvim-lsp") -- nvim-cmp source for neovim's built-in LSP
+  use("hrsh7th/cmp-path")    -- nvim-cmp source for path
+  use("onsails/lspkind-nvim") -- vscode-like pictograms
 
-	-- LSP
-	use({
-		"williamboman/mason.nvim",
-		"williamboman/mason-lspconfig.nvim",
-		"neovim/nvim-lspconfig",
-	})
-	use({
-		"nvimdev/lspsaga.nvim",
-		after = "nvim-lspconfig",
-		config = function()
-			require("lspsaga").setup({})
-		end,
-	})
+  -- LSP
+  use({
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+  })
 
-	-- formatters and linters
-	use("dense-analysis/ale")
+  -- ui
+  use({ "stevearc/dressing.nvim" })
 
-	-- Telescope
-	use("nvim-telescope/telescope.nvim")
-	use("nvim-telescope/telescope-file-browser.nvim")
+  -- formatters and linters
+  use("dense-analysis/ale")
 
-	-- Treesitter
-	use({
-		"nvim-treesitter/nvim-treesitter",
-		run = function()
-			require("nvim-treesitter.install").update({ with_sync = true })
-		end,
-	})
+  -- Telescope
+  use("nvim-telescope/telescope.nvim")
+  use("nvim-telescope/telescope-file-browser.nvim")
 
-	-- Auto pairs and tags
-	use({ "echasnovski/mini.pairs", branch = "stable" })
-	use("windwp/nvim-ts-autotag")
+  -- Treesitter
+  use({
+    "nvim-treesitter/nvim-treesitter",
+    run = function()
+      require("nvim-treesitter.install").update({ with_sync = true })
+    end,
+  })
 
-	-- Git
-	use("lewis6991/gitsigns.nvim")
-	use("sindrets/diffview.nvim")
+  -- Auto pairs and tags
+  use({ "echasnovski/mini.pairs", branch = "stable" })
+  use("windwp/nvim-ts-autotag")
 
-	-- Emmet
-	use("mattn/emmet-vim")
+  -- Git
+  use("lewis6991/gitsigns.nvim")
+  use("sindrets/diffview.nvim")
 
-	-- Float Terminal
-	use("voldikss/vim-floaterm")
+  -- Emmet
+  use("mattn/emmet-vim")
 
-	-- JSON Schema Store
-	use("b0o/schemastore.nvim")
+  -- Float Terminal
+  use("voldikss/vim-floaterm")
 
-	-- Preview color
-	use("norcalli/nvim-colorizer.lua")
+  -- JSON Schema Store
+  use("b0o/schemastore.nvim")
 
-	-- Snippet
-	use("saadparwaiz1/cmp_luasnip") -- Snippets source for nvim-cmp
-	use("L3MON4D3/LuaSnip") -- Snippets plugin
-	use("rafamadriz/friendly-snippets")
+  -- Preview color
+  use("norcalli/nvim-colorizer.lua")
 
-	-- Fold
-	use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
+  -- Snippet
+  use("saadparwaiz1/cmp_luasnip") -- Snippets source for nvim-cmp
+  use({
+    "L3MON4D3/LuaSnip",
+    tag = "v2.*",
+  }) -- Snippets plugin
+  use("rafamadriz/friendly-snippets")
 
-	-- Bookmark
-	use("MattesGroeger/vim-bookmarks")
+  -- Fold
+  use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
 
-	-- the silver searcher, A.K.A ag
-	use("Numkil/ag.nvim")
+  -- Bookmark
+  use("MattesGroeger/vim-bookmarks")
 
-	-- Extends the default quickfix and location lists
-	use({ "kevinhwang91/nvim-bqf" })
+  -- the silver searcher, A.K.A ag
+  use("Numkil/ag.nvim")
 
-	-- todo-comments
-	use({
-		"folke/todo-comments.nvim",
-		requires = "nvim-lua/plenary.nvim",
-	})
+  -- Extends the default quickfix and location lists
+  use({ "kevinhwang91/nvim-bqf" })
 
-	-- 自动记忆当前文件位置,下次打开时定位到上次的位置
-	use("ethanholz/nvim-lastplace")
+  -- todo-comments
+  use({
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
+  })
 
-	-- search and replace like vscode
-	use("AckslD/muren.nvim")
+  -- 自动记忆当前文件位置,下次打开时定位到上次的位置
+  use("ethanholz/nvim-lastplace")
 
-	if packer_bootstrap then
-		require("packer").sync()
-	end
+  -- search and replace like vscode
+  use("AckslD/muren.nvim")
+
+  if packer_bootstrap then
+    require("packer").sync()
+  end
 end)
