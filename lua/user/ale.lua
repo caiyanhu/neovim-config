@@ -28,6 +28,7 @@ vim.g.ale_fixers = {
 	typescript = { "prettier" },
 	typescriptreact = { "prettier" },
 	vue = { "prettier" },
+	yaml = { "yamlfix" },
 }
 
 vim.g.ale_fix_on_save = 1
