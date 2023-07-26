@@ -77,17 +77,6 @@ keymap("n", "<leader>b", "<cmd>Telescope buffers<CR>", opts)
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
--- LSP saga
-keymap("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
-keymap("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
-keymap("n", "]e", "<cmd>lua require'lspsaga.diagnostic'.goto_next({ severity = vim.diagnostic.severity.ERROR })", opts)
-keymap("n", "[e", "<cmd>lua require'lspsaga.diagnostic'.goto_prev({ severity = vim.diagnostic.severity.ERROR })", opts)
-keymap("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
-keymap("n", "gd", "<cmd>Lspsaga goto_definition<CR>", opts)
-keymap("n", "<leader>o", "<cmd>Lspsaga outline<CR>", opts)
-keymap("n", "K", "<Cmd>Lspsaga hover_doc<CR>", opts)
-keymap("n", ">d", "<Cmd>lua vim.diagnostic.open_float()<CR>", opts)
-
 -- qf.nvim
 keymap("n", "<leader>lo", "<cmd>lua require'qf'.open('l')<CR>", opts) -- Open location list
 keymap("n", "<leader>lc", "<cmd>lua require'qf'.close('l')<CR>", opts) -- Close location list

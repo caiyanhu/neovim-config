@@ -6,7 +6,7 @@ end
 cc.setup({
   flavour = "macchiato", -- latte, frappe, macchiato, mocha
   background = {
-                        -- :h background
+    -- :h background
     light = "latte",
     dark = "mocha",
   },
@@ -18,7 +18,7 @@ cc.setup({
     percentage = 0.15,
   },
   no_italic = false, -- Force no italic
-  no_bold = false,  -- Force no bold
+  no_bold = false,   -- Force no bold
   styles = {
     comments = { "italic" },
     conditionals = { "italic" },
@@ -43,7 +43,6 @@ cc.setup({
     hop = true,
     mason = true,
     treesitter = true,
-    lsp_saga = true,
     ts_rainbow = true,
     -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
   },
