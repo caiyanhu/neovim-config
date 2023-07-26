@@ -15,6 +15,7 @@ else
 	require("user.ale")
 	require("user.treesitter")
 	require("user.autopairs")
+	require("user.ts-autotag")
 	require("user.comment")
 	require("user.gitsigns")
 	require("user.nvim-tree")

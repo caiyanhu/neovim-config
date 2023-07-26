@@ -10,14 +10,6 @@ local has_scheme_store, schemaStore = pcall(require, "schemastore")
 if not has_scheme_store then
 	return
 end
-local status_mason, mason = pcall(require, "mason")
-if not status_mason then
-	return
-end
-local status_mason_lsp_config, masonLspConfig = pcall(require, "mason-lspconfig")
-if not status_mason_lsp_config then
-	return
-end
 
 local os_name = vim.loop.os_uname().sysname
 
@@ -88,28 +80,14 @@ local function lsp_attach(on_attach)
 	})
 end
 
-mason.setup({
-	ui = {
-		icons = {
-			package_installed = "✓",
-			package_pending = "➜",
-			package_uninstalled = "✗",
-		},
-	},
-})
-
 lsp_attach(function(client, buffer)
 	require("user.lsp.format").on_attach(client, buffer)
 	require("user.lsp.keymaps").on_attach(client, buffer)
 end)
 
-masonLspConfig.setup({
-	ensure_installed = vim.tbl_keys(servers),
-})
-masonLspConfig.setup_handlers({
-	function(server)
-		local opts = servers[server] or {}
-		opts.capabilities = lsp_capabilities()
-		lsp_config[server].setup(opts)
-	end,
-})
+local serverNames = { "lua_ls", "tsserver", "volar", "jsonls", "dockerls", "cssls", "html" }
+for _, server in ipairs(serverNames) do
+	local opts = servers[server] or {}
+	opts.capabilities = lsp_capabilities()
+	lsp_config[server].setup(opts)
+end
