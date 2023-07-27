@@ -11,13 +11,14 @@ if not has_scheme_store then
 	return
 end
 
-local os_name = vim.loop.os_uname().sysname
+local os_name = jit.os
 
 local volarRoot = ""
-if os_name == "Darwin" then
+if os_name == "OSX" then
 	volarRoot = "/usr/local/lib"
 elseif os_name == "Linux" then
 	volarRoot = "/usr/lib"
+elseif os_name == "Windows" then
 end
 
 local servers = {
