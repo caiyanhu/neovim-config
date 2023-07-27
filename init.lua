@@ -11,7 +11,6 @@ else
 	require("user.telescope")
 	require("user.colorscheme")
 	require("user.cmp")
-	require("user.lspkind")
 	require("user.ale")
 	require("user.treesitter")
 	require("user.autopairs")
