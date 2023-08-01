@@ -45,9 +45,6 @@ local options = {
 	foldlevel = 99,
 }
 
-vim.opt.shortmess:append("c")
-vim.opt.clipboard:append({ "unnamedplus" })
-
 for k, v in pairs(options) do
 	vim.opt[k] = v
 end

@@ -12,7 +12,7 @@ end
 
 local autocmds = {
 	-- Autocommand that reloads neovim whenever you save the plugins.lua file
-	packer_user_conifg = {
+	packer_user_config = {
 		{
 			"BufWritePost",
 			"plugins.lua",
@@ -44,7 +44,7 @@ local autocmds = {
 		},
 	},
 	-- show diagnostic in open float
-	show_diagnostics_in_open_flot = {
+	show_diagnostics_in_open_float = {
 		{
 			"CursorHold,CursorHoldI",
 			"*",
