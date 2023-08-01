@@ -21,7 +21,6 @@ else
 	require("user.lualine")
 	require("user.colorizer")
 	require("user.snippets")
-	require("user.ufo")
 	require("user.bookmarks")
 	require("user.todo-comments")
 	require("user.diffview")

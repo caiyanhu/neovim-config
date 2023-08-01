@@ -4,13 +4,23 @@ if not status then
 end
 
 ts.setup({
+	modules = {},
 	highlight = {
 		enable = true,
-		disable = {},
+		additional_vim_regex_highlighting = false,
 	},
 	indent = {
 		enable = true,
-		disable = {},
+	},
+	-- 启用增量选择
+	incremental_selection = {
+		enable = true,
+		keymaps = {
+			init_selection = "<CR>",
+			node_incremental = "<CR>",
+			node_decremental = "<BS>",
+			scope_incremental = "<TAB>",
+		},
 	},
 	-- comment out rainbow to fix E13 "file exists,add ! to override" error
 	-- rainbow = {
@@ -30,6 +40,7 @@ ts.setup({
 		"vue",
 		"toml",
 		"vim",
+		"yaml",
 	},
 	sync_install = false,
 	ignore_install = {},

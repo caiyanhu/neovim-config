@@ -106,9 +106,6 @@ require("packer").startup(function(use)
 	}) -- Snippets plugin
 	use("rafamadriz/friendly-snippets")
 
-	-- Fold
-	use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
-
 	-- Bookmark
 	use("MattesGroeger/vim-bookmarks")
 
