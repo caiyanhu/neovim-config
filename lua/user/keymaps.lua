@@ -55,9 +55,9 @@ keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Terminal --
-keymap("n", "<M-`>", ":FloatermToggle<cr>", opts)
-keymap("i", "<M-`>", "<Esc>:FloatermToggle<cr>", opts)
-keymap("t", "<M-`>", "<C-\\><C-n>:FloatermToggle<cr>", term_opts)
+keymap("n", "<M-`>", ":ToggleTerm<cr>", opts)
+keymap("i", "<M-`>", "<Esc>:ToggleTerm<cr>", opts)
+keymap("t", "<M-`>", "<C-\\><C-n>:ToggleTerm<cr>", term_opts)
 -- Better terminal navigation
 keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
@@ -74,8 +74,8 @@ keymap(
 keymap("n", "<leader>ff", "<cmd>Telescope live_grep<CR>", opts)
 keymap("n", "<leader>b", "<cmd>Telescope buffers<CR>", opts)
 
--- Nvimtree
-keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+-- Neotree
+keymap("n", "<leader>e", ":Neotree toggle<CR>", opts)
 
 -- qf.nvim
 keymap("n", "<leader>lo", "<cmd>lua require'qf'.open('l')<CR>", opts) -- Open location list

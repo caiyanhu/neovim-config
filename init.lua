@@ -17,7 +17,7 @@ else
 	require("user.ts-autotag")
 	require("user.comment")
 	require("user.gitsigns")
-	require("user.nvim-tree")
+	require("user.neo-tree")
 	require("user.lualine")
 	require("user.colorizer")
 	require("user.snippets")

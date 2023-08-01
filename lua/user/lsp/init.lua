@@ -18,7 +18,6 @@ if os_name == "OSX" then
 	volarRoot = "/usr/local/lib"
 elseif os_name == "Linux" then
 	volarRoot = "/usr/lib"
-elseif os_name == "Windows" then
 end
 
 local servers = {
