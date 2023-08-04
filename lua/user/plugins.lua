@@ -124,6 +124,15 @@ require("packer").startup(function(use)
 	-- search and replace like vscode
 	use("AckslD/muren.nvim")
 
+	-- markdown
+	-- install without yarn or npm
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	})
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
