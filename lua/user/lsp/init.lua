@@ -6,8 +6,8 @@ local status_lsp_source, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not status_lsp_source then
 	return
 end
-local has_scheme_store, schemaStore = pcall(require, "schemastore")
-if not has_scheme_store then
+local has_schema_store, schemaStore = pcall(require, "schemastore")
+if not has_schema_store then
 	return
 end
 

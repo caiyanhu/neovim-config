@@ -24,7 +24,6 @@ else
 	require("user.snippets")
 	require("user.bookmarks")
 	require("user.todo-comments")
-	require("user.diffview")
 	require("user.last-place")
 	require("user.muren")
 end

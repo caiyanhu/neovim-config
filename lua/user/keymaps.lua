@@ -66,10 +66,10 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Telescope
 keymap(
-	"n",
-	"<C-p>",
-	"<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({}))<CR>",
-	opts
+  "n",
+  "<C-p>",
+  "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({}))<CR>",
+  opts
 )
 keymap("n", "<leader>ff", "<cmd>Telescope live_grep<CR>", opts)
 keymap("n", "<leader>b", "<cmd>Telescope buffers<CR>", opts)
@@ -78,45 +78,25 @@ keymap("n", "<leader>b", "<cmd>Telescope buffers<CR>", opts)
 keymap("n", "<leader>e", ":Neotree toggle<CR>", opts)
 
 -- qf.nvim
-keymap("n", "<leader>lo", "<cmd>lua require'qf'.open('l')<CR>", opts) -- Open location list
-keymap("n", "<leader>lc", "<cmd>lua require'qf'.close('l')<CR>", opts) -- Close location list
+keymap("n", "<leader>lo", "<cmd>lua require'qf'.open('l')<CR>", opts)         -- Open location list
+keymap("n", "<leader>lc", "<cmd>lua require'qf'.close('l')<CR>", opts)        -- Close location list
 keymap("n", "<leader>lt", "<cmd>lua require'qf'.toggle('l', true)<CR>", opts) -- Toggle location list and stay in current window
-keymap("n", "<leader>j", "<cmd>lua require'qf'.below('l', true)<CR>", opts) -- Go to next location list entry from cursor
-keymap("n", "<leader>k", "<cmd>lua require'qf'.above('l', true)<CR>", opts) -- Go to previous location list entry from cursor
+keymap("n", "<leader>j", "<cmd>lua require'qf'.below('l', true)<CR>", opts)   -- Go to next location list entry from cursor
+keymap("n", "<leader>k", "<cmd>lua require'qf'.above('l', true)<CR>", opts)   -- Go to previous location list entry from cursor
 
-keymap("n", "<leader>co", "<cmd>lua require'qf'.open('c')<CR>", opts) -- Open quickfix list
-keymap("n", "<leader>cc", "<cmd>lua require'qf'.close('c')<CR>", opts) -- Close quickfix list
+keymap("n", "<leader>co", "<cmd>lua require'qf'.open('c')<CR>", opts)         -- Open quickfix list
+keymap("n", "<leader>cc", "<cmd>lua require'qf'.close('c')<CR>", opts)        -- Close quickfix list
 keymap("n", "<leader>ct", "<cmd>lua require'qf'.toggle('c', true)<CR>", opts) -- Toggle quickfix list and stay in current window
-keymap("n", "<leader>J", "<cmd>lua require'qf'.below('c', true)<CR>", opts) -- Go to next quickfix entry from cursor
-keymap("n", "<leader>K", "<cmd>lua require'qf'.above('c', true)<CR>", opts) -- Go to previous quickfix entry from cursor
+keymap("n", "<leader>J", "<cmd>lua require'qf'.below('c', true)<CR>", opts)   -- Go to next quickfix entry from cursor
+keymap("n", "<leader>K", "<cmd>lua require'qf'.above('c', true)<CR>", opts)   -- Go to previous quickfix entry from cursor
 
-keymap("n", "]q", "<cmd>lua require'qf'.below('visible')<CR>", opts) -- Go to next entry from cursor in visible list
-keymap("n", "[q", "<cmd>lua require'qf'.above('visible')<CR>", opts) -- Go to previous entry from cursor in visible list
+keymap("n", "]q", "<cmd>lua require'qf'.below('visible')<CR>", opts)          -- Go to next entry from cursor in visible list
+keymap("n", "[q", "<cmd>lua require'qf'.above('visible')<CR>", opts)          -- Go to previous entry from cursor in visible list
 
 -- todo-comments
 keymap("n", "]t", "<cmd>lua require'todo-comments'.jump_next()<CR>", opts) -- Go to next entry from cursor in visible list
 keymap("n", "[t", "<cmd>lua require'todo-comments'.jump_prev()<CR>", opts) -- Go to previous entry from cursor in visible list
 keymap("n", "<leader>ft", "<cmd>TodoTelescope<CR>", opts)
-
--- nvim-dap
-keymap("n", "<leader>dd", "<cmd>lua require'dap'.continue()<CR>", opts)
-keymap("n", "<leader>dt", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)
-
--- diffview
-keymap("n", "]x", "<cmd>lua require'diffview.actions'.prev_conflict()<CR>", opts)
-keymap("n", "[x", "<cmd>lua require'diffview.actions'.next_conflict()<CR>", opts)
-keymap("n", "<leader>co", "<cmd>lua require'diffview.actions'.conflict_choose('ours')<CR>", opts)
-keymap("n", "<leader>ct", "<cmd>lua require'diffview.actions'.conflict_choose('theirs')<CR>", opts)
-keymap("n", "<leader>cb", "<cmd>lua require'diffview.actions'.conflict_choose('base')<CR>", opts)
-keymap("n", "<leader>ca", "<cmd>lua require'diffview.actions'.conflict_choose('all')<CR>", opts)
-keymap("n", "<leader>cn", "<cmd>lua require'diffview.actions'.conflict_choose('none')<CR>", opts)
-keymap("n", "<leader>-", "<cmd>lua require'diffview.actions'.toggle_stage_entry()<CR>", opts)
-keymap("n", "<leader>S", "<cmd>lua require'diffview.actions'.stage_all()<CR>", opts)
-keymap("n", "<leader>U", "<cmd>lua require'diffview.actions'.unstage_all()<CR>", opts)
-keymap("n", "<leader><CR>", "<cmd>lua require'diffview.actions'.select_entry()<CR>", opts)
-keymap("n", "<leader>X", "<cmd>lua require'diffview.actions'.restore_entry()<CR>", opts)
-keymap("n", "<leader>dv", ":DiffviewOpen<CR>", opts)
-keymap("n", "<leader>dc", ":DiffviewClose<CR>", opts)
 
 -- bookmarks
 keymap("n", "mm", ":BookmarkToggle<CR>", opts)
@@ -126,7 +106,3 @@ keymap("n", "mp", ":BookmarkPrev<CR>", opts)
 keymap("n", "ma", ":BookmarkShowAll<CR>", opts)
 keymap("n", "mc", ":BookmarkClear<CR>", opts)
 keymap("n", "mx", ":BookmarkClearAll<CR>", opts)
-
--- ufo
-keymap("n", "zR", "<cmd>lua require'ufo'.openAllFolds()<CR>", opts)
-keymap("n", "zM", "<cmd>lua require'ufo'.closeAllFolds()<CR>", opts)
