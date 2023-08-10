@@ -15,7 +15,8 @@ local os_name = jit.os
 
 local volarRoot = ""
 if os_name == "OSX" then
-	volarRoot = "/usr/local/lib"
+	-- volarRoot = "/usr/local/lib"
+	volarRoot = "/Users/caiyanhu/Library/pnpm/global/5"
 elseif os_name == "Linux" then
 	volarRoot = "/usr/lib"
 end
