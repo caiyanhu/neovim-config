@@ -44,7 +44,7 @@ return {
         nmap('gR', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
         nmap('<leader>da', require('telescope.builtin').diagnostics, '[D]i[A]gnostics')
         nmap('<leader>ca', "<cmd>:Lspsaga code_action", '[C]ode [A]ctions')
-        nmap("<space>f", function()
+        nmap("<leader>f", function()
           vim.lsp.buf.format { async = true }
         end, "[F]ormat code")
       end
