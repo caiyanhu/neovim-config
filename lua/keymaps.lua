@@ -64,18 +64,6 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
--- Telescope
-keymap(
-  "n",
-  "<C-p>",
-  "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({}))<CR>",
-  opts
-)
-keymap("n", "<leader>ff", "<cmd>Telescope live_grep<CR>", opts)
-keymap("n", "<leader>b", "<cmd>Telescope buffers<CR>", opts)
-
--- Neotree
-keymap("n", "<leader>e", ":Neotree toggle<CR>", opts)
 
 -- qf.nvim
 keymap("n", "<leader>lo", "<cmd>lua require'qf'.open('l')<CR>", opts)         -- Open location list
