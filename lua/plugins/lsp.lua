@@ -33,7 +33,7 @@ return {
               validate = { enable = true },
             },
           },
-        }
+        },
       }
 
       local on_attach = function(_, bufnr)

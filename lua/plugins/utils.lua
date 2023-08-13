@@ -44,7 +44,10 @@ return {
     end
   },
   {
-    'AckslD/muren.nvim',
-    config = true,
-  }
+    "kamykn/spelunker.vim",
+    event = "VeryLazy",
+    config = function()
+      vim.g.spelunker_check_type = 2
+    end
+  },
 }
