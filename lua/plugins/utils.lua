@@ -46,8 +46,17 @@ return {
   {
     "kamykn/spelunker.vim",
     event = "VeryLazy",
+    cond = function()
+      -- TODO: Linux下加载此插件，macOs下还是想用cspell
+      return jit.os == 'Linux'
+    end,
     config = function()
       vim.g.spelunker_check_type = 2
     end
   },
+  {
+    "folke/todo-comments.nvim",
+    event = "VeryLazy",
+    opts = {}
+  }
 }
