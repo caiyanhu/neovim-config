@@ -64,27 +64,10 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
-
--- qf.nvim
-keymap("n", "<leader>lo", "<cmd>lua require'qf'.open('l')<CR>", opts)         -- Open location list
-keymap("n", "<leader>lc", "<cmd>lua require'qf'.close('l')<CR>", opts)        -- Close location list
-keymap("n", "<leader>lt", "<cmd>lua require'qf'.toggle('l', true)<CR>", opts) -- Toggle location list and stay in current window
-keymap("n", "<leader>j", "<cmd>lua require'qf'.below('l', true)<CR>", opts)   -- Go to next location list entry from cursor
-keymap("n", "<leader>k", "<cmd>lua require'qf'.above('l', true)<CR>", opts)   -- Go to previous location list entry from cursor
-
-keymap("n", "<leader>co", "<cmd>lua require'qf'.open('c')<CR>", opts)         -- Open quickfix list
-keymap("n", "<leader>cc", "<cmd>lua require'qf'.close('c')<CR>", opts)        -- Close quickfix list
-keymap("n", "<leader>ct", "<cmd>lua require'qf'.toggle('c', true)<CR>", opts) -- Toggle quickfix list and stay in current window
-keymap("n", "<leader>J", "<cmd>lua require'qf'.below('c', true)<CR>", opts)   -- Go to next quickfix entry from cursor
-keymap("n", "<leader>K", "<cmd>lua require'qf'.above('c', true)<CR>", opts)   -- Go to previous quickfix entry from cursor
-
-keymap("n", "]q", "<cmd>lua require'qf'.below('visible')<CR>", opts)          -- Go to next entry from cursor in visible list
-keymap("n", "[q", "<cmd>lua require'qf'.above('visible')<CR>", opts)          -- Go to previous entry from cursor in visible list
-
 -- todo-comments
 keymap("n", "]t", "<cmd>lua require'todo-comments'.jump_next()<CR>", opts) -- Go to next entry from cursor in visible list
 keymap("n", "[t", "<cmd>lua require'todo-comments'.jump_prev()<CR>", opts) -- Go to previous entry from cursor in visible list
-keymap("n", "<leader>ft", "<cmd>TodoTelescope<CR>", opts)
+keymap("n", "<leader>td", "<cmd>TodoTelescope<CR>", opts)
 
 -- bookmarks
 keymap("n", "mm", ":BookmarkToggle<CR>", opts)
