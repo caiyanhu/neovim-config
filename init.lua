@@ -1,10 +1,6 @@
-if vim.fn.exists("g:vscode") ~= 0 then
-  -- VSCode extension
-  require("options")
-  require("keymaps")
-else
+if not vim.g.vscode then
   vim.loader.enable()
-  require("options")
-  require("keymaps")
-  require("lazy_nvim")
 end
+require("options")
+require("keymaps")
+require("lazy_nvim")

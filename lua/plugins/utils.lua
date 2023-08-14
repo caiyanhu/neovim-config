@@ -48,5 +48,18 @@ return {
     "folke/todo-comments.nvim",
     event = "VeryLazy",
     opts = {}
+  },
+  {
+    'Exafunction/codeium.vim',
+    config = function()
+      vim.keymap.set('i', '<cr>', function() return vim.fn['codeium#Accept']() end, { expr = true })
+      vim.keymap.set('i', '<Tab>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
+      vim.keymap.set('i', '<S-Tab>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
+      vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true })
+    end
+  },
+  {
+    "vladdoster/remember.nvim",
+    opts = {}
   }
 }
