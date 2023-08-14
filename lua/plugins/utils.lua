@@ -60,6 +60,28 @@ return {
   },
   {
     "vladdoster/remember.nvim",
+    event = "VeryLazy",
     opts = {}
+  },
+  {
+    "mfussenegger/nvim-lint",
+    cond = not vim.g.vscode,
+    config = function()
+      local lint = require("lint")
+      vim.api.nvim_create_autocmd({ 'BufWritePost', 'BufReadPost', 'InsertLeave' }, {
+        desc = "nvim-lint",
+        callback = function()
+          local linters = lint.linters_by_ft[vim.bo.filetype]
+          if not linters then
+            linters = {}
+            lint.linters_by_ft[vim.bo.filetype] = linters
+          end
+          if not vim.tbl_contains(linters, "cspell") then
+            table.insert(linters, "cspell")
+          end
+          lint.try_lint()
+        end
+      })
+    end
   }
 }
