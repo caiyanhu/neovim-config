@@ -28,5 +28,35 @@ return {
     config = function()
       require 'colorizer'.setup()
     end
+  },
+  {
+    'MattesGroeger/vim-bookmarks',
+    event = "VeryLazy",
+    config = function()
+      -- vim.g.bookmark_sign = "💙"
+      -- vim.g.bookmark_sign = "♥"
+      -- vim.g.bookmark_sign = "⚑"
+      -- vim.g.bookmark_sign = "🐯"
+      -- vim.g.bookmark_sign = "🚩"
+      -- vim.g.bookmark_sign = "🎀"
+      -- vim.g.bookmark_sign = "🔵"
+      -- vim.g.bookmark_sign = "🔥"
+      -- vim.g.bookmark_sign = "⭐"
+      vim.g.bookmark_sign = "🎯"
+      vim.g.bookmark_highlight_lines = 1
+      vim.cmd([[ highlight BookmarkSign ctermbg=NONE ctermfg=160 ]])
+      vim.cmd([[ highlight BookmarkLine ctermbg=194 ctermfg=NONE ]])
+    end
+  },
+  {
+    "folke/todo-comments.nvim",
+    event = "VeryLazy",
+    opts = {}
+  },
+  {
+    "f-person/git-blame.nvim",
+    config = function()
+      vim.g.gitblame_delay = 100
+    end
   }
 }

@@ -26,30 +26,6 @@ return {
     config = true
   },
   {
-    'MattesGroeger/vim-bookmarks',
-    event = "VeryLazy",
-    config = function()
-      -- vim.g.bookmark_sign = "💙"
-      -- vim.g.bookmark_sign = "♥"
-      -- vim.g.bookmark_sign = "⚑"
-      -- vim.g.bookmark_sign = "🐯"
-      -- vim.g.bookmark_sign = "🚩"
-      -- vim.g.bookmark_sign = "🎀"
-      -- vim.g.bookmark_sign = "🔵"
-      -- vim.g.bookmark_sign = "🔥"
-      -- vim.g.bookmark_sign = "⭐"
-      vim.g.bookmark_sign = "🎯"
-      vim.g.bookmark_highlight_lines = 1
-      vim.cmd([[ highlight BookmarkSign ctermbg=NONE ctermfg=160 ]])
-      vim.cmd([[ highlight BookmarkLine ctermbg=194 ctermfg=NONE ]])
-    end
-  },
-  {
-    "folke/todo-comments.nvim",
-    event = "VeryLazy",
-    opts = {}
-  },
-  {
     'Exafunction/codeium.vim',
     config = function()
       vim.keymap.set('i', '<cr>', function() return vim.fn['codeium#Accept']() end, { expr = true })
@@ -66,6 +42,7 @@ return {
   {
     "mfussenegger/nvim-lint",
     cond = not vim.g.vscode,
+    event = "VeryLazy",
     config = function()
       local lint = require("lint")
       vim.api.nvim_create_autocmd({ 'BufWritePost', 'BufReadPost', 'InsertLeave' }, {
@@ -83,5 +60,5 @@ return {
         end
       })
     end
-  }
+  },
 }
