@@ -81,7 +81,7 @@ return {
     require("nvim-treesitter.configs").setup(opts)
 
     if jit.os == 'Windows' then
-      require("nvim-treesitter.install").compilers({ "clang" })
+      require("nvim-treesitter.install").compilers = { "clang" }
     end
   end
 }
