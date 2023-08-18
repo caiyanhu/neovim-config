@@ -102,14 +102,7 @@ return {
 
       require("neodev").setup()
       require("fidget").setup()
-      require('lspsaga').setup({
-        ui = {
-          code_action = "🏏" -- code_action icon
-        },
-        code_action = {
-          extend_gitsigns = true -- use gitsigns in code_action
-        }
-      })
+      require('lspsaga').setup()
       require("mason").setup()
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
       require("mason-lspconfig").setup({
