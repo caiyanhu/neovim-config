@@ -26,9 +26,10 @@ return {
     config = true
   },
   {
-    'jcdickinson/codeium.nvim',
+    "jcdickinson/codeium.nvim",
+    event = "VeryLazy",
     config = function()
-      require("codeium").setup()
+      require("codeium").setup {}
     end
   },
   {
