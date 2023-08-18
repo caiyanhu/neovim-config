@@ -50,7 +50,7 @@ return {
         nmap('gi', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
         nmap('gR', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
         nmap('<leader>da', require('telescope.builtin').diagnostics, '[D]i[A]gnostics')
-        nmap('<leader>ca', "<cmd>:Lspsaga code_action", '[C]ode [A]ctions')
+        nmap('<leader>ca', "<cmd>:Lspsaga code_action<cr>", '[C]ode [A]ctions')
         nmap("<leader>f", function()
           vim.lsp.buf.format { async = true }
         end, "[F]ormat code")
@@ -102,7 +102,14 @@ return {
 
       require("neodev").setup()
       require("fidget").setup()
-      require('lspsaga').setup()
+      require('lspsaga').setup({
+        ui = {
+          code_action = "🏏" -- code_action icon
+        },
+        code_action = {
+          extend_gitsigns = true -- use gitsigns in code_action
+        }
+      })
       require("mason").setup()
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
       require("mason-lspconfig").setup({
