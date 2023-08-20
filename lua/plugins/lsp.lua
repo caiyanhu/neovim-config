@@ -15,12 +15,14 @@ return {
     config = function()
       local servers = {
         lua_ls = {
-          Lua = {
-            workspace = {
-              checkThirdParty = false,
-            },
-            telemetry = {
-              enable = false
+          settings = {
+            Lua = {
+              workspace = {
+                checkThirdParty = false,
+              },
+              telemetry = {
+                enable = false
+              }
             }
           }
         },
@@ -107,16 +109,16 @@ return {
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
       require("mason-lspconfig").setup({
         ensure_installed = vim.tbl_keys(servers),
-        handlers = {
-          function(server_name)
-            require("lspconfig")[server_name].setup({
-              settings = servers[server_name],
-              on_attach = on_attach,
-              capabilities = capabilities
-            })
-          end
-        }
       })
+
+      for server, config in pairs(servers) do
+        require("lspconfig")[server].setup(
+          vim.tbl_deep_extend("keep", {
+            on_attach = on_attach,
+            capabilities = capabilities
+          }, config)
+        )
+      end
     end
   }
 }
