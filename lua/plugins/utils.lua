@@ -41,70 +41,41 @@ return {
 		opts = {},
 	},
 	{
-		"mfussenegger/nvim-lint",
-		cond = not vim.g.vscode,
+		"dense-analysis/ale",
 		event = "VeryLazy",
 		config = function()
-			local lint = require("lint")
-			vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {
-				desc = "nvim-lint",
-				callback = function()
-					local linters = lint.linters_by_ft[vim.bo.filetype]
-					if not linters then
-						linters = {}
-						lint.linters_by_ft[vim.bo.filetype] = linters
-					end
-					if not vim.tbl_contains(linters, "cspell") then
-						table.insert(linters, "cspell")
-					end
-					lint.try_lint()
-				end,
-			})
-		end,
-	},
-	{
-		"mhartington/formatter.nvim",
-		event = "VeryLazy",
-		config = function()
-			-- set keymaps
-			vim.api.nvim_set_keymap("n", "<leader>f", "<cmd>:Format<cr>", { noremap = true, silent = true })
-			-- Format after save
-			vim.cmd([[
-        augroup FormatAutogroup
-          autocmd!
-          autocmd BufWritePost * FormatWrite
-        augroup END
-      ]])
-			local fts_use_prettier = {
-				"css",
-				"html",
-				"javascript",
-				"json",
-				"typescript",
-				"typescriptreact",
-				"vue",
-				"yaml",
+			-- linters
+			vim.g.ale_linters = {
+				css = { "stylelint", "vscode-css-language-server", "cspell" },
+				html = { "cspell" },
+				javascript = { "tsserver", "eslint", "cspell" },
+				javascriptreact = { "stylelint", "vscode-css-language-server", "eslint", "cspell" },
+				json = { "vscode-json-language-server", "cspell" },
+				lua = { "cspell" },
+				rust = { "analyzer", "cspell" },
+				typescript = { "tsserver", "eslint", "cspell" },
+				typescriptreact = { "stylelint", "vscode-css-language-server", "eslint", "cspell" },
+				vue = { "volar", "cspell" },
 			}
-			local filetype = {
-				lua = {
-					require("formatter.filetypes.lua").stylua,
-				},
-				rust = {
-					require("formatter.filetypes.rust").rustfmt,
-				},
-				["*"] = {
-					require("formatter.filetypes.any").remove_trailing_whitespace,
-				},
+
+			-- fixers
+			vim.g.ale_fixers = {
+				css = { "prettier" },
+				html = { "prettier" },
+				javascript = { "prettier" },
+				javascriptreact = { "prettier" },
+				json = { "prettier" },
+				less = { "prettier" },
+				lua = { "stylua" },
+				rust = { "rustfmt" },
+				typescript = { "prettier" },
+				typescriptreact = { "prettier" },
+				vue = { "prettier" },
+				yaml = { "yamlfix" },
+				["*"] = { "remove_trailing_lines", "trim_whitespace" },
 			}
-			for _, ft_name in ipairs(fts_use_prettier) do
-				filetype[ft_name] = {
-					require("formatter.filetypes." .. ft_name).prettier,
-				}
-			end
-			require("formatter").setup({
-				logging = false,
-				filetype = filetype,
-			})
+
+			vim.g.ale_fix_on_save = 1
 		end,
 	},
 }

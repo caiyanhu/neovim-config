@@ -26,7 +26,6 @@ return {
 						},
 					},
 				},
-				eslint = {},
 				tsserver = {},
 				volar = {},
 				jsonls = {
@@ -35,7 +34,6 @@ return {
 						validate = { enable = true },
 					},
 				},
-				stylelint_lsp = {},
 			}
 
 			local on_attach = function(_, bufnr)
