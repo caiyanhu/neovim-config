@@ -2,56 +2,83 @@ return {
 	"mfussenegger/nvim-dap",
 	dependencies = {
 		"rcarriga/nvim-dap-ui",
-		"theHamsta/nvim-dap-virtual-text",
-		"nvim-telescope/telescope-dap.nvim",
+	},
+	keys = {
+		{
+			"<leader>db",
+			function()
+				require("dap").toggle_breakpoint()
+			end,
+		},
+		{
+			"<F5>",
+			function()
+				require("dap").continue()
+				require("dapui").toggle({})
+			end,
+		},
+		{
+			"<F10>",
+			function()
+				require("dap").step_over()
+			end,
+		},
+		{
+			"<F11>",
+			function()
+				require("dap").step_into()
+			end,
+		},
+		{
+			"<F12>",
+			function()
+				require("dap").step_out()
+			end,
+		},
 	},
 	config = function()
-		vim.keymap.set("n", "<F5>", function()
-			require("telescope").extensions.dap.configurations({})
-		end)
-		vim.keymap.set("n", "<F10>", function()
-			require("dap").step_over()
-		end)
-		vim.keymap.set("n", "<F11>", function()
-			require("dap").step_into()
-		end)
-		vim.keymap.set("n", "<F12>", function()
-			require("dap").step_out()
-		end)
-		vim.keymap.set("n", "<Leader>db", function()
-			require("dap").toggle_breakpoint()
-		end)
-		vim.keymap.set("n", "<Leader>dr", function()
-			require("dap").repl.open()
-		end)
-		vim.keymap.set("n", "<Leader>dl", function()
-			require("dap").run_last()
-		end)
-		vim.keymap.set({ "n", "v" }, "<Leader>dh", function()
-			require("dap.ui.widgets").hover()
-		end)
-		vim.keymap.set({ "n", "v" }, "<Leader>dp", function()
-			require("dap.ui.widgets").preview()
-		end)
-		vim.keymap.set("n", "<Leader>df", function()
-			local widgets = require("dap.ui.widgets")
-			widgets.centered_float(widgets.frames)
-		end)
-		vim.keymap.set("n", "<Leader>ds", function()
-			local widgets = require("dap.ui.widgets")
-			widgets.centered_float(widgets.scopes)
-		end)
-		local dap, dapui = require("dap"), require("dapui")
-		require("nvim-dap-virtual-text").setup({})
-		require("dapui").setup()
+		local dap, dap_ui = require("dap"), require("dapui")
+
+		dap_ui.setup()
+		dap.set_log_level("INFO")
+
+		dap.configurations = {
+			javascript = {
+				{
+					type = "node2",
+					name = "Launch",
+					request = "launch",
+					program = "${file}",
+					cwd = vim.fn.getcwd(),
+					sourceMaps = true,
+					protocol = "inspector",
+					console = "integratedTerminal",
+				},
+				{
+					type = "node2",
+					name = "Attach",
+					request = "attach",
+					program = "${file}",
+					cwd = vim.fn.getcwd(),
+					sourceMaps = true,
+					protocol = "inspector",
+					console = "integratedTerminal",
+				},
+			},
+		}
+
+		dap.adapters.node2 = {
+			type = "executable",
+			command = "node",
+			args = { vim.fn.stdpath("data") .. "/mason/packages/node-debug2-adapter/out/src/nodeDebug.js" },
+		}
+
+		vim.fn.sign_define("DapBreakpoint", { text = "🐞" })
+
 		dap.listeners.after.event_initialized["dapui_config"] = function()
-			dapui.open()
+			dap_ui.open({ reset = true })
 		end
-		dap.listeners.before.event_terminated["dapui_config"] = function()
-			dapui.close()
-		end
-		dap.listeners.before.event_exited["dapui_config"] = function()
-			dapui.close()
-		end
+		dap.listeners.before.event_terminated["dapui_config"] = dap_ui.close
+		dap.listeners.before.event_exited["dapui_config"] = dap_ui.close
 	end,
 }
