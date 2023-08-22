@@ -15,14 +15,12 @@ return {
 		config = function()
 			local servers = {
 				lua_ls = {
-					settings = {
-						Lua = {
-							workspace = {
-								checkThirdParty = false,
-							},
-							telemetry = {
-								enable = false,
-							},
+					Lua = {
+						workspace = {
+							checkThirdParty = false,
+						},
+						telemetry = {
+							enable = false,
 						},
 					},
 				},
@@ -53,6 +51,7 @@ return {
 				nmap("gR", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
 				nmap("<leader>da", require("telescope.builtin").diagnostics, "[D]i[A]gnostics")
 				nmap("<leader>ca", "<cmd>:Lspsaga code_action<cr>", "[C]ode [A]ctions")
+				nmap("<leader>o", "<cmd>:Lspsaga outline<cr>", "[O]utline")
 			end
 
 			require("neodev").setup()
@@ -62,16 +61,16 @@ return {
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			require("mason-lspconfig").setup({
 				ensure_installed = vim.tbl_keys(servers),
+				handlers = {
+					function(server_name)
+						require("lspconfig")[server_name].setup({
+							settings = servers[server_name],
+							on_attach = on_attach,
+							capabilities = capabilities,
+						})
+					end,
+				},
 			})
-
-			for server, config in pairs(servers) do
-				require("lspconfig")[server].setup({
-					vim.tbl_deep_extend("keep", {
-						on_attach = on_attach,
-						capabilities = capabilities,
-					}, config),
-				})
-			end
 		end,
 	},
 }
