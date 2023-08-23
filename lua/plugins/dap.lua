@@ -14,7 +14,6 @@ return {
 			"<F5>",
 			function()
 				require("dap").continue()
-				require("dapui").toggle({})
 			end,
 		},
 		{

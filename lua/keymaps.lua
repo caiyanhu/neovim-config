@@ -26,13 +26,6 @@ keymap("n", "<M-k>", "<C-w>k", opts)
 keymap("n", "<M-l>", "<C-w>l", opts)
 
 keymap("n", "<BS>", ":nohlsearch<CR>", opts)
--- keymap("n", "L", "$", opts)
--- keymap("n", "H", "^", opts)
--- keymap("n", "Q", "q", opts)
--- keymap("n", "q", "<Nop>", opts)
--- keymap("n", "Y", "y$", opts)
--- keymap("n", "+", "<C-a>", opts)
--- keymap("n", "-", "<C-x>", opts)
 
 -- Insert --
 keymap("i", "<M-o>", "<Esc>o", opts) -- open next line with insert mode
