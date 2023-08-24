@@ -24,6 +24,11 @@ keymap("n", "<M-h>", "<C-w>h", opts)
 keymap("n", "<M-j>", "<C-w>j", opts)
 keymap("n", "<M-k>", "<C-w>k", opts)
 keymap("n", "<M-l>", "<C-w>l", opts)
+-- Resize window size
+keymap("n", "<M-Up>", ":resize -2<CR>", opts)
+keymap("n", "<M-Down>", ":resize +2<CR>", opts)
+keymap("n", "<M-Left>", ":vertical resize +2<CR>", opts)
+keymap("n", "<M-Right>", ":vertical resize -2<CR>", opts)
 
 keymap("n", "<BS>", ":nohlsearch<CR>", opts)
 
