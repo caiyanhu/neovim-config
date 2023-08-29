@@ -34,6 +34,7 @@ keymap("n", "<BS>", ":nohlsearch<CR>", opts)
 
 -- Insert --
 keymap("i", "<M-o>", "<Esc>o", opts) -- open next line with insert mode
+keymap("i", "<M-O>", "<Esc>O", opts) -- open previous line with insert mode
 keymap("i", "<C-a>", "<HOME>", opts)
 keymap("i", "<C-e>", "<END>", opts)
 keymap("i", "<C-c>", "<Esc>", opts)

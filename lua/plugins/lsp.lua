@@ -11,6 +11,7 @@ return {
 				"j-hui/fidget.nvim",
 				tag = "legacy",
 			},
+			{ "simrat39/rust-tools.nvim" },
 		},
 		config = function()
 			local servers = {
@@ -32,6 +33,7 @@ return {
 						validate = { enable = true },
 					},
 				},
+				taplo = {},
 			}
 
 			local on_attach = function(_, bufnr)
@@ -58,6 +60,7 @@ return {
 			require("fidget").setup()
 			require("lspsaga").setup()
 			require("mason").setup()
+			require("rust-tools").setup()
 
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			require("mason-lspconfig").setup({

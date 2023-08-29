@@ -41,35 +41,40 @@ return {
 		dap_ui.setup()
 		dap.set_log_level("INFO")
 
-		dap.configurations = {
-			javascript = {
-				{
-					type = "node2",
-					name = "Launch",
-					request = "launch",
-					program = "${file}",
-					cwd = vim.fn.getcwd(),
-					sourceMaps = true,
-					protocol = "inspector",
-					console = "integratedTerminal",
-				},
-				{
-					type = "node2",
-					name = "Attach",
-					request = "attach",
-					program = "${file}",
-					cwd = vim.fn.getcwd(),
-					sourceMaps = true,
-					protocol = "inspector",
-					console = "integratedTerminal",
-				},
+		local js_config = {
+			{
+				type = "node2",
+				name = "Launch",
+				request = "launch",
+				program = "${file}",
+				cwd = vim.fn.getcwd(),
+				sourceMaps = true,
+				protocol = "inspector",
+				console = "integratedTerminal",
+			},
+			{
+				type = "node2",
+				name = "Attach",
+				request = "attach",
+				program = "${file}",
+				cwd = vim.fn.getcwd(),
+				sourceMaps = true,
+				protocol = "inspector",
+				console = "integratedTerminal",
 			},
 		}
 
-		dap.adapters.node2 = {
-			type = "executable",
-			command = "node",
-			args = { vim.fn.stdpath("data") .. "/mason/packages/node-debug2-adapter/out/src/nodeDebug.js" },
+		dap.configurations = {
+			javascript = js_config,
+			typescript = js_config,
+		}
+
+		dap.adapters = {
+			node2 = {
+				type = "executable",
+				command = "node",
+				args = { vim.fn.stdpath("data") .. "/mason/packages/node-debug2-adapter/out/src/nodeDebug.js" },
+			},
 		}
 
 		vim.fn.sign_define("DapBreakpoint", { text = "🐞" })
