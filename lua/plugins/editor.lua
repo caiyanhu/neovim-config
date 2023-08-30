@@ -64,14 +64,14 @@ return {
 				"typescript",
 				"typescriptreact",
 				"vue",
+				"yaml",
 			}
 			local formatters = {}
-			for key, _ in pairs(langs_use_prettier) do
-				formatters[key] = { "prettier" }
+			for _, name in pairs(langs_use_prettier) do
+				formatters[name] = { "prettier" }
 			end
 			formatters["lua"] = { "stylua" }
 			formatters["rust"] = { "rustfmt" }
-			formatters["yaml"] = { "yamlfix" }
 			require("conform").setup({
 				formatters_by_ft = formatters,
 				format_on_save = {
