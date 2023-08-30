@@ -1,20 +1,24 @@
 return {
 	{
 		"lukas-reineke/indent-blankline.nvim",
-		event = "VeryLazy",
-		config = true,
-	},
-	{
-		"lewis6991/gitsigns.nvim",
-		event = "VeryLazy",
-		config = function()
-			require("gitsigns").setup({
-				current_line_blame = true,
-				current_line_blame_opts = {
-					delay = 300,
-				},
-			})
-		end,
+		event = { "BufReadPost", "BufNewFile" },
+		opts = {
+			char = "│",
+			filetype_exclude = {
+				"help",
+				"alpha",
+				"dashboard",
+				"neo-tree",
+				"Trouble",
+				"lazy",
+				"mason",
+				"notify",
+				"toggleterm",
+				"lazyterm",
+			},
+			show_trailing_blankline_indent = false,
+			show_current_context = false,
+		},
 	},
 	{
 		"akinsho/bufferline.nvim",
@@ -24,13 +28,6 @@ return {
 		config = true,
 	},
 	{
-		"RRethy/vim-illuminate",
-		event = "VeryLazy",
-		config = function()
-			require("illuminate").configure()
-		end,
-	},
-	{
 		"norcalli/nvim-colorizer.lua",
 		config = function()
 			require("colorizer").setup()
@@ -38,7 +35,7 @@ return {
 	},
 	{
 		"MattesGroeger/vim-bookmarks",
-		event = "VeryLazy",
+		event = { "BufWritePost", "BufReadPost" },
 		config = function()
 			-- vim.g.bookmark_sign = "💙"
 			-- vim.g.bookmark_sign = "♥"
@@ -56,8 +53,30 @@ return {
 		end,
 	},
 	{
-		"folke/todo-comments.nvim",
+		"echasnovski/mini.pairs",
 		event = "VeryLazy",
-		opts = {},
+		version = false,
+		config = true,
+	},
+	{
+		"echasnovski/mini.comment",
+		event = "VeryLazy",
+		version = false,
+		config = true,
+	},
+	{
+		"echasnovski/mini.surround",
+		event = "VeryLazy",
+		version = false,
+		config = true,
+	},
+	{
+		"echasnovski/mini.indentscope",
+		version = false, -- wait till new 0.7.0 release to put it back on semver
+		event = { "BufReadPre", "BufNewFile" },
+		opts = {
+			symbol = "│",
+			options = { try_as_border = true },
+		},
 	},
 }
