@@ -54,41 +54,74 @@ return {
 		opts = {},
 	},
 	{
-		"dense-analysis/ale",
+		"stevearc/conform.nvim",
+		cond = not vim.g.vscode,
 		event = "VeryLazy",
 		config = function()
-			-- linters
-			vim.g.ale_linters = {
-				css = { "stylelint", "vscode-css-language-server", "cspell" },
-				html = { "cspell" },
-				javascript = { "tsserver", "eslint", "cspell" },
-				javascriptreact = { "stylelint", "vscode-css-language-server", "eslint", "cspell" },
-				json = { "vscode-json-language-server", "cspell" },
-				lua = { "cspell" },
-				rust = { "analyzer", "cspell" },
-				typescript = { "tsserver", "eslint", "cspell" },
-				typescriptreact = { "stylelint", "vscode-css-language-server", "eslint", "cspell" },
-				vue = { "volar", "cspell" },
+			local langs_use_prettier = {
+				"css",
+				"html",
+				"javascript",
+				"javascriptreact",
+				"json",
+				"less",
+				"typescript",
+				"typescriptreact",
+				"vue",
 			}
-
-			-- fixers
-			vim.g.ale_fixers = {
-				css = { "prettier" },
-				html = { "prettier" },
-				javascript = { "prettier" },
-				javascriptreact = { "prettier" },
-				json = { "prettier" },
-				less = { "prettier" },
-				lua = { "stylua" },
-				rust = { "rustfmt" },
-				typescript = { "prettier" },
-				typescriptreact = { "prettier" },
-				vue = { "prettier" },
-				yaml = { "yamlfix" },
-				["*"] = { "remove_trailing_lines", "trim_whitespace" },
+			local formatters = {}
+			for key, _ in pairs(langs_use_prettier) do
+				formatters[key] = { "prettier" }
+			end
+			formatters["lua"] = { "stylua" }
+			formatters["rust"] = { "rustfmt" }
+			formatters["yaml"] = { "yamlfix" }
+			require("conform").setup({
+				formatters_by_ft = formatters,
+				format_on_save = {
+					timeout_ms = 500,
+					lsp_fallback = true,
+				},
+			})
+		end,
+	},
+	{
+		"mfussenegger/nvim-lint",
+		cond = not vim.g.vscode,
+		event = "VeryLazy",
+		config = function()
+			local linters = {
+				css = { "stylelint" },
+				javascript = { "eslint" },
+				typescript = { "eslint" },
+				typescriptreact = { "stylelint", "eslint" },
 			}
-
-			vim.g.ale_fix_on_save = 1
+			local languages = {
+				"css",
+				"html",
+				"javascript",
+				"javascriptreact",
+				"json",
+				"lua",
+				"rust",
+				"typescript",
+				"typescriptreact",
+				"vue",
+			}
+			for _, name in pairs(languages) do
+				if not linters[name] then
+					linters[name] = { "cspell" }
+				end
+				if not vim.tbl_contains(linters[name], "cspell") then
+					table.insert(linters[name], "cspell")
+				end
+			end
+			require("lint").linters_by_ft = linters
+			vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost" }, {
+				callback = function()
+					require("lint").try_lint()
+				end,
+			})
 		end,
 	},
 }
