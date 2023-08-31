@@ -90,7 +90,7 @@ return {
 				css = { "stylelint" },
 				javascript = { "eslint" },
 				typescript = { "eslint" },
-				typescriptreact = { "stylelint", "eslint" },
+				typescriptreact = { "eslint" },
 			}
 			local languages = {
 				"css",
