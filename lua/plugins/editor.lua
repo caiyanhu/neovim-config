@@ -45,6 +45,7 @@ return {
 	{
 		"jcdickinson/codeium.nvim",
 		event = { "InsertEnter" },
+		cond = not vim.g.vscode,
 		config = function()
 			require("codeium").setup({})
 		end,
