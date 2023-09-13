@@ -20,6 +20,7 @@ return {
 	{
 		"lewis6991/gitsigns.nvim",
 		event = { "BufReadPre", "BufNewFile" },
+		cond = not vim.g.vscode,
 		config = function()
 			require("gitsigns").setup({
 				current_line_blame = true,
@@ -32,6 +33,7 @@ return {
 	{
 		"RRethy/vim-illuminate",
 		event = { "BufReadPost", "BufNewFile" },
+		cond = not vim.g.vscode,
 		config = function()
 			require("illuminate").configure()
 		end,
@@ -39,8 +41,20 @@ return {
 	{
 		"folke/todo-comments.nvim",
 		cmd = { "TodoTrouble", "TodoTelescope" },
+		cond = not vim.g.vscode,
 		event = { "BufReadPost", "BufNewFile" },
-		opts = {},
+		config = function()
+			require("todo-comments").setup()
+			vim.keymap.set("n", "]t", function()
+				require("todo-comments").jump_next()
+			end, { desc = "Next todo comment" })
+
+			vim.keymap.set("n", "[t", function()
+				require("todo-comments").jump_prev()
+			end, { desc = "Previous todo comment" })
+
+			vim.api.nvim_set_keymap("n", "<leader>td", "<cmd>TodoTelescope<CR>", { noremap = true, silent = true })
+		end,
 	},
 	{
 		"jcdickinson/codeium.nvim",

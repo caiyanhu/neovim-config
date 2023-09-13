@@ -2,6 +2,7 @@ return {
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		event = { "BufReadPost", "BufNewFile" },
+		cond = not vim.g.vscode,
 		opts = {
 			char = "│",
 			filetype_exclude = {
@@ -23,12 +24,14 @@ return {
 	{
 		"akinsho/bufferline.nvim",
 		version = "*",
+		cond = not vim.g.vscode,
 		dependencies = "nvim-tree/nvim-web-devicons",
 		event = "VeryLazy",
 		config = true,
 	},
 	{
 		"norcalli/nvim-colorizer.lua",
+		cond = not vim.g.vscode,
 		config = function()
 			require("colorizer").setup()
 		end,
@@ -36,6 +39,7 @@ return {
 	{
 		"MattesGroeger/vim-bookmarks",
 		event = { "BufWritePost", "BufReadPost" },
+		cond = not vim.g.vscode,
 		config = function()
 			-- vim.g.bookmark_sign = "💙"
 			-- vim.g.bookmark_sign = "♥"
@@ -48,6 +52,15 @@ return {
 			-- vim.g.bookmark_sign = "⭐"
 			vim.g.bookmark_sign = "🎯"
 			vim.g.bookmark_highlight_lines = 1
+
+			vim.api.nvim_set_keymap("n", "mm", ":BookmarkToggle<CR>", { noremap = true, silent = true })
+			vim.api.nvim_set_keymap("n", "mi", ":BookmarkAnnotate", { noremap = true, silent = true })
+			vim.api.nvim_set_keymap("n", "mn", ":BookmarkNext<CR>", { noremap = true, silent = true })
+			vim.api.nvim_set_keymap("n", "mp", ":BookmarkPrev<CR>", { noremap = true, silent = true })
+			vim.api.nvim_set_keymap("n", "ma", ":BookmarkShowAll<CR>", { noremap = true, silent = true })
+			vim.api.nvim_set_keymap("n", "mc", ":BookmarkClear<CR>", { noremap = true, silent = true })
+			vim.api.nvim_set_keymap("n", "mx", ":BookmarkClearAll<CR>", { noremap = true, silent = true })
+
 			vim.cmd([[ highlight BookmarkSign ctermbg=NONE ctermfg=160 ]])
 			vim.cmd([[ highlight BookmarkLine ctermbg=194 ctermfg=NONE ]])
 		end,
@@ -55,6 +68,7 @@ return {
 	{
 		"echasnovski/mini.pairs",
 		event = "VeryLazy",
+		cond = not vim.g.vscode,
 		version = false,
 		config = true,
 	},
@@ -86,6 +100,7 @@ return {
 	{
 		"echasnovski/mini.indentscope",
 		version = false, -- wait till new 0.7.0 release to put it back on semver
+		cond = not vim.g.vscode,
 		event = { "BufReadPre", "BufNewFile" },
 		opts = {
 			symbol = "│",
