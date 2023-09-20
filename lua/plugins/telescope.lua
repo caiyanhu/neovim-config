@@ -16,7 +16,7 @@ return {
 			{
 				"<leader>/",
 				function()
-					-- You can pass additional configuration to telescope to change theme, layout, etc.
+					-- find in current buffer
 					require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
 						winblend = 10,
 						previewer = false,
@@ -24,7 +24,17 @@ return {
 				end,
 			},
 			{ "<C-p>", "<cmd>lua require('telescope.builtin').find_files()<cr>" },
-			{ "<leader>ff", "<cmd>lua require('telescope.builtin').live_grep()<cr>" },
+			{
+				"<leader>ff",
+				function()
+					if TELESCOPE_LAST_SEARCH == 0 then
+						TELESCOPE_LAST_SEARCH = 1
+						require("telescope.builtin").live_grep()
+					else
+						require("telescope.builtin").resume()
+					end
+				end,
+			},
 		},
 		config = function()
 			require("telescope").setup({
