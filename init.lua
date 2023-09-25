@@ -3,5 +3,4 @@ if not vim.g.vscode then
 end
 require("options")
 require("keymaps")
-require("globalVar")
 require("lazy_nvim")

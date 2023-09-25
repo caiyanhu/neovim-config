@@ -9,6 +9,7 @@ return {
 				build = jit.os == "OSX" and "make"
 					or "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
 			},
+			"nvim-telescope/telescope-live-grep-args.nvim",
 		},
 		keys = {
 			{ "<leader>?", "<cmd>lua require('telescope.builtin').oldfiles()<cr>" },
@@ -24,19 +25,11 @@ return {
 				end,
 			},
 			{ "<C-p>", "<cmd>lua require('telescope.builtin').find_files()<cr>" },
-			{
-				"<leader>ff",
-				function()
-					if TELESCOPE_LAST_SEARCH == 0 then
-						TELESCOPE_LAST_SEARCH = 1
-						require("telescope.builtin").live_grep()
-					else
-						require("telescope.builtin").resume()
-					end
-				end,
-			},
+			{ "<leader>ff", "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>" },
+			{ "<leader>gc", "<cmd>lua require('telescope-live-grep-args.shortcuts').grep_word_under_cursor()<cr>" },
 		},
 		config = function()
+			local lga_actions = require("telescope-live-grep-args.actions")
 			require("telescope").setup({
 				extensions = {
 					fzf = {
@@ -45,9 +38,19 @@ return {
 						override_file_sorter = true,
 						case_mode = "smart_case",
 					},
+					live_grep_args = {
+						auto_quoting = true, -- enable/disable auto-quoting
+						mappings = {
+							i = {
+								["<C-k>"] = lga_actions.quote_prompt(),
+								["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
+							},
+						},
+					},
 				},
 			})
 			require("telescope").load_extension("fzf")
+			require("telescope").load_extension("live_grep_args")
 		end,
 	},
 }
