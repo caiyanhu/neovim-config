@@ -140,4 +140,12 @@ return {
 		dependencies = { "ggandor/leap.nvim" },
 		opts = { labeled_modes = "nx" },
 	},
+	{
+		"Exafunction/codeium.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"hrsh7th/nvim-cmp",
+		},
+		opts = {},
+	},
 }

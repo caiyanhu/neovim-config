@@ -13,4 +13,16 @@ return {
 		event = "VeryLazy",
 		opts = {},
 	},
+	{
+		"numToStr/FTerm.nvim",
+		keys = {
+			{
+				"<A-`>",
+				function()
+					require("FTerm").toggle()
+				end,
+			},
+		},
+		opts = {},
+	},
 }
