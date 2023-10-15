@@ -1,5 +1,5 @@
 if not vim.g.vscode then
-	vim.loader.enable()
+  vim.loader.enable()
 end
 require("options")
 require("keymaps")
