@@ -24,11 +24,6 @@ keymap("n", "<M-h>", "<C-w>h", opts)
 keymap("n", "<M-j>", "<C-w>j", opts)
 keymap("n", "<M-k>", "<C-w>k", opts)
 keymap("n", "<M-l>", "<C-w>l", opts)
--- Resize window size
-keymap("n", "<M-Up>", ":resize -2<CR>", opts)
-keymap("n", "<M-Down>", ":resize +2<CR>", opts)
-keymap("n", "<M-Left>", ":vertical resize +2<CR>", opts)
-keymap("n", "<M-Right>", ":vertical resize -2<CR>", opts)
 
 keymap("n", "<BS>", ":nohlsearch<CR>", opts)
 
@@ -59,6 +54,3 @@ keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
-
--- Format use lua formatter
-keymap("n", "<leader>f", ":lua vim.lsp.buf.format()<CR>", opts)

@@ -17,4 +17,8 @@ local opts = {
     colorscheme = { "tokyonight-storm" },
   },
 }
-require("lazy").setup("plugins", opts)
+require("lazy").setup({
+  {
+    import = "plugins",
+  },
+}, opts)
