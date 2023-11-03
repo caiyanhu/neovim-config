@@ -44,6 +44,7 @@ return {
             "lazyterm",
           },
         },
+        scope = { enabled = false },
       })
     end,
   },
