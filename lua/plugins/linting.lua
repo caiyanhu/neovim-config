@@ -38,7 +38,9 @@ return {
       vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
         group = lint_au_group,
         callback = function()
-          lint.try_lint()
+          lint.try_lint(nil, {
+            ignore_errors = true, -- ignore command-not-found errors
+          })
         end,
       })
     end,
