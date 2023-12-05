@@ -14,6 +14,7 @@ return {
         "lua",
         "markdown",
         "markdown_inline",
+        "rust",
         "scss",
         "toml",
         "tsx",

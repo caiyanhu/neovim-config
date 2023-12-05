@@ -12,6 +12,7 @@ return {
         "j-hui/fidget.nvim",
         tag = "legacy",
       },
+      "simrat39/rust-tools.nvim",
     },
     config = function()
       local servers = {
@@ -78,6 +79,8 @@ return {
           end,
         },
       })
+
+      require("rust-tools").setup()
     end,
   },
 }
