@@ -40,7 +40,7 @@ return {
         sections = {
           lualine_a = { "mode" },
           lualine_b = { "branch" },
-          lualine_c = { "filename" },
+          lualine_c = { { "filename", path = 2 } },
           lualine_x = { "diagnostics" },
           lualine_y = {
             { "progress", separator = " ", padding = { left = 1, right = 0 } },
