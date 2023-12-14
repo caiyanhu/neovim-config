@@ -27,6 +27,7 @@ return {
           },
         },
         tsserver = {},
+        eslint = {},
         volar = {},
         jsonls = {
           json = {
@@ -35,6 +36,7 @@ return {
           },
         },
         taplo = {},
+        unocss = {},
       }
 
       local on_attach = function(_, bufnr)
@@ -62,6 +64,8 @@ return {
       require("lspsaga").setup()
       require("mason").setup()
 
+      local util = require("lspconfig.util")
+
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       capabilities.textDocument.foldingRange = {
         dynamicRegistration = false,
@@ -72,6 +76,7 @@ return {
         handlers = {
           function(server_name)
             require("lspconfig")[server_name].setup({
+              root_dir = util.root_pattern(".git"),
               settings = servers[server_name],
               on_attach = on_attach,
               capabilities = capabilities,
