@@ -35,17 +35,17 @@ local options = {
   -- (have to use iterm2 or any other true color terminal)
   termguicolors = true,
   -- colorschemes that can be light or dark will be made dark
-  background = "dark",
+  background = 'dark',
   -- show sign column so that text doesn't shift
-  signcolumn = "yes",
+  signcolumn = 'yes',
 
   -- backspace
   -- allow backspace on indent, end of line or insert mode start position
-  backspace = "indent,eol,start",
+  backspace = 'indent,eol,start',
 
   -- clipboard
   -- use system clipboard as default register
-  clipboard = "unnamedplus",
+  clipboard = 'unnamedplus',
 
   -- split windows
   -- split vertical window to the right

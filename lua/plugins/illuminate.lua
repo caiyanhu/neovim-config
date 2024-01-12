@@ -1,10 +1,10 @@
 return {
   {
-    "RRethy/vim-illuminate",
-    event = { "BufReadPost", "BufNewFile" },
+    'RRethy/vim-illuminate',
+    event = { 'BufReadPost', 'BufNewFile' },
     cond = not vim.g.vscode,
     config = function()
-      require("illuminate").configure()
+      require('illuminate').configure()
     end,
   },
 }

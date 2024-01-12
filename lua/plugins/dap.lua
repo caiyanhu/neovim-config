@@ -1,71 +1,71 @@
 return {
-  "mfussenegger/nvim-dap",
+  'mfussenegger/nvim-dap',
   cond = not vim.g.vscode,
   dependencies = {
-    "rcarriga/nvim-dap-ui",
+    'rcarriga/nvim-dap-ui',
     {
-      "theHamsta/nvim-dap-virtual-text",
+      'theHamsta/nvim-dap-virtual-text',
       opts = {},
     },
   },
   keys = {
     {
-      "<leader>db",
+      '<leader>db',
       function()
-        require("dap").toggle_breakpoint()
+        require('dap').toggle_breakpoint()
       end,
     },
     {
-      "<F5>",
+      '<F5>',
       function()
-        require("dap").continue()
+        require('dap').continue()
       end,
     },
     {
-      "<F10>",
+      '<F10>',
       function()
-        require("dap").step_over()
+        require('dap').step_over()
       end,
     },
     {
-      "<F11>",
+      '<F11>',
       function()
-        require("dap").step_into()
+        require('dap').step_into()
       end,
     },
     {
-      "<F12>",
+      '<F12>',
       function()
-        require("dap").step_out()
+        require('dap').step_out()
       end,
     },
   },
   config = function()
-    local dap, dap_ui = require("dap"), require("dapui")
+    local dap, dap_ui = require 'dap', require 'dapui'
 
     dap_ui.setup()
-    dap.set_log_level("INFO")
+    dap.set_log_level 'INFO'
 
     local js_config = {
       {
-        type = "node2",
-        name = "Launch",
-        request = "launch",
-        program = "${file}",
+        type = 'node2',
+        name = 'Launch',
+        request = 'launch',
+        program = '${file}',
         cwd = vim.fn.getcwd(),
         sourceMaps = true,
-        protocol = "inspector",
-        console = "integratedTerminal",
+        protocol = 'inspector',
+        console = 'integratedTerminal',
       },
       {
-        type = "node2",
-        name = "Attach",
-        request = "attach",
-        program = "${file}",
+        type = 'node2',
+        name = 'Attach',
+        request = 'attach',
+        program = '${file}',
         cwd = vim.fn.getcwd(),
         sourceMaps = true,
-        protocol = "inspector",
-        console = "integratedTerminal",
+        protocol = 'inspector',
+        console = 'integratedTerminal',
       },
     }
 
@@ -76,18 +76,21 @@ return {
 
     dap.adapters = {
       node2 = {
-        type = "executable",
-        command = "node",
-        args = { vim.fn.stdpath("data") .. "/mason/packages/node-debug2-adapter/out/src/nodeDebug.js" },
+        type = 'executable',
+        command = 'node',
+        args = {
+          vim.fn.stdpath 'data'
+            .. '/mason/packages/node-debug2-adapter/out/src/nodeDebug.js',
+        },
       },
     }
 
-    vim.fn.sign_define("DapBreakpoint", { text = "🐞" })
+    vim.fn.sign_define('DapBreakpoint', { text = '🐞' })
 
-    dap.listeners.after.event_initialized["dapui_config"] = function()
-      dap_ui.open({ reset = true })
+    dap.listeners.after.event_initialized['dapui_config'] = function()
+      dap_ui.open { reset = true }
     end
-    dap.listeners.before.event_terminated["dapui_config"] = dap_ui.close
-    dap.listeners.before.event_exited["dapui_config"] = dap_ui.close
+    dap.listeners.before.event_terminated['dapui_config'] = dap_ui.close
+    dap.listeners.before.event_exited['dapui_config'] = dap_ui.close
   end,
 }

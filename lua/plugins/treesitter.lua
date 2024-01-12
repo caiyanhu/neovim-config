@@ -1,27 +1,27 @@
 return {
-  "nvim-treesitter/nvim-treesitter",
-  cmd = { "TSUpdateSync" },
+  'nvim-treesitter/nvim-treesitter',
+  cmd = { 'TSUpdateSync' },
   cond = not vim.g.vscode,
-  event = { "VeryLazy" },
-  build = ":TSUpdate",
+  event = { 'VeryLazy' },
+  build = ':TSUpdate',
   config = function()
     local opts = {
       ensure_installed = {
-        "css",
-        "html",
-        "javascript",
-        "json",
-        "lua",
-        "markdown",
-        "markdown_inline",
-        "rust",
-        "scss",
-        "toml",
-        "tsx",
-        "typescript",
-        "vim",
-        "vue",
-        "yaml",
+        'css',
+        'html',
+        'javascript',
+        'json',
+        'lua',
+        'markdown',
+        'markdown_inline',
+        'rust',
+        'scss',
+        'toml',
+        'tsx',
+        'typescript',
+        'vim',
+        'vue',
+        'yaml',
       },
       sync_install = false,
       ignore_install = {},
@@ -37,10 +37,10 @@ return {
       },
     }
 
-    require("nvim-treesitter.configs").setup(opts)
+    require('nvim-treesitter.configs').setup(opts)
 
-    if jit.os == "Windows" then
-      require("nvim-treesitter.install").compilers = { "clang" }
+    if jit.os == 'Windows' then
+      require('nvim-treesitter.install').compilers = { 'clang' }
     end
   end,
 }

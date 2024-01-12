@@ -1,18 +1,18 @@
 return {
   {
-    "numToStr/FTerm.nvim",
-    event = "VeryLazy",
+    'numToStr/FTerm.nvim',
+    event = 'VeryLazy',
     keys = {
       {
-        "<A-`>",
+        '<A-`>',
         function()
-          require("FTerm").toggle()
+          require('FTerm').toggle()
         end,
       },
       {
-        "<A-`>",
+        '<A-`>',
         "<C-\\><C-n><CMD>lua require('FTerm').toggle()<CR>",
-        mode = "t",
+        mode = 't',
       },
     },
     opts = {},
