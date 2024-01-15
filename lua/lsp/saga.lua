@@ -1,5 +1,6 @@
 return {
   'nvimdev/lspsaga.nvim',
+  cond = not vim.g.vscode,
   config = function()
     local keymap = vim.keymap
 
