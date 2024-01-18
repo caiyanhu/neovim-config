@@ -28,7 +28,7 @@ keymap('n', '<M-l>', '<C-w>l', opts)
 keymap('n', '<BS>', ':nohlsearch<CR>', opts)
 
 keymap('n', '<leader>w', '<CMD>w<CR>', opts)
-keymap('n', '<leader>q', '<CMD>q<CR>', opts)
+keymap('n', '<leader>q', '<CMD>q!<CR>', opts)
 keymap('n', '<leader>wq', '<CMD>wq<CR>', opts)
 
 -- Insert --

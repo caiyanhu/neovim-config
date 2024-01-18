@@ -52,7 +52,7 @@ return {
       end
     end
 
-    vim.keymap.set('n', '<space>k', show_documentation, { silent = true })
+    vim.keymap.set('n', 'K', show_documentation, { silent = true })
 
     -- error lens
     vim.fn.sign_define {
