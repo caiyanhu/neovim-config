@@ -74,7 +74,6 @@ return {
           { name = 'buffer' },
           { name = 'codeium' },
           { name = 'crates' },
-          { name = 'emmet_vim' },
         },
       }
 

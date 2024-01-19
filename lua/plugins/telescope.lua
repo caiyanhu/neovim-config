@@ -29,6 +29,7 @@ return {
         end,
       },
       { '<leader>f', "<CMD>lua require('telescope.builtin').find_files()<CR>" },
+      { '<C-p>', "<CMD>lua require('telescope.builtin').find_files()<CR>" },
       { '<leader>g', "<CMD>lua require('telescope.builtin').live_grep()<CR>" },
     },
     config = function()
