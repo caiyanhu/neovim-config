@@ -22,6 +22,7 @@ return {
       end
       formatters['lua'] = { 'stylua' }
       formatters['rust'] = { 'rustfmt' }
+      formatters['toml'] = { 'taplo' }
 
       require('conform').setup {
         formatters_by_ft = formatters,
