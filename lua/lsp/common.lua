@@ -24,7 +24,6 @@ return {
             },
           },
         },
-        eslint = {},
         volar = {},
         jsonls = {
           json = {
@@ -33,7 +32,6 @@ return {
           },
         },
         taplo = {},
-        unocss = {},
       }
 
       local on_attach = function(_, bufnr)
