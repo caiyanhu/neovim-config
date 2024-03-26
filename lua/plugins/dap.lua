@@ -7,6 +7,7 @@ return {
       'theHamsta/nvim-dap-virtual-text',
       opts = {},
     },
+    'nvim-neotest/nvim-nio',
   },
   keys = {
     {
