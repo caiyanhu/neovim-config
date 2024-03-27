@@ -13,7 +13,8 @@ return {
       },
     },
     config = function()
-      local servers = {
+      local server_names = { 'lua_ls', 'volar@1.8.27', 'jsonls', 'taplo' }
+      local server_settings = {
         lua_ls = {
           Lua = {
             workspace = {
@@ -62,12 +63,12 @@ return {
         lineFoldingOnly = true,
       }
       require('mason-lspconfig').setup {
-        ensure_installed = vim.tbl_keys(servers),
+        ensure_installed = server_names,
         handlers = {
           function(server_name)
             require('lspconfig')[server_name].setup {
               root_dir = util.root_pattern '.git',
-              settings = servers[server_name],
+              settings = server_settings[server_name],
               on_attach = on_attach,
               capabilities = capabilities,
             }
