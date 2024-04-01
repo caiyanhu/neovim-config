@@ -33,6 +33,7 @@ return {
           },
         },
         taplo = {},
+        rust_analyzer = {},
       }
 
       local on_attach = function(_, bufnr)
