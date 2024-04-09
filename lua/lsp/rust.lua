@@ -2,7 +2,7 @@ return {
   {
     'mrcjkb/rustaceanvim',
     cond = not vim.g.vscode,
-    version = '^3', -- Recommended
+    version = '^4', -- Recommended
     ft = { 'rust' },
     dependencies = {
       'saecki/crates.nvim',
