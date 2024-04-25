@@ -55,6 +55,12 @@ local options = {
 
   -- turn off swapfile
   swapfile = false,
+
+  -- buffer
+  -- 自动检查文件更改的时间间隔，单位毫秒
+  updatetime = 1000,
+  -- 自动加载
+  autoread = true,
 }
 
 for k, v in pairs(options) do
