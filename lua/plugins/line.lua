@@ -1,20 +1,11 @@
 return {
   {
     'akinsho/bufferline.nvim',
-    event = 'VeryLazy',
-    keys = {
-      { '[b', '<cmd>BufferLineCyclePrev<cr>', desc = 'Prev buffer' },
-      { ']b', '<cmd>BufferLineCycleNext<cr>', desc = 'Next buffer' },
-    },
+    version = '*',
+    dependencies = 'nvim-tree/nvim-web-devicons',
     config = function()
+      vim.opt.termguicolors = true
       require('bufferline').setup()
-      vim.api.nvim_create_autocmd('BufAdd', {
-        callback = function()
-          vim.schedule(function()
-            pcall(nvim_bufferline)
-          end)
-        end,
-      })
     end,
   },
   {

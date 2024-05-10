@@ -4,7 +4,7 @@ return {
     cond = not vim.g.vscode,
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
-      local langs_use_biome = {
+      local langs_use_prettier = {
         'css',
         'html',
         'javascript',
@@ -17,8 +17,8 @@ return {
         'yaml',
       }
       local formatters = {}
-      for _, name in pairs(langs_use_biome) do
-        formatters[name] = { 'biome' }
+      for _, name in pairs(langs_use_prettier) do
+        formatters[name] = { 'prettier' }
       end
       formatters['lua'] = { 'stylua' }
       formatters['rust'] = { 'rustfmt' }
