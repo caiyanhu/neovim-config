@@ -1,39 +1,34 @@
 return {
   'nvimdev/lspsaga.nvim',
   cond = not vim.g.vscode,
+  event = 'LspAttach',
   config = function()
-    local keymap = vim.keymap
-
     require('lspsaga').setup {
       ui = {
         border = 'rounded',
+        devicon = true,
+        expand = '⊞',
+        collapse = '⊟',
+        code_action = '💡',
+        imp_sign = '󰳛 ',
+        actionfix = ' ',
       },
       lightbulb = {
-        enable = false,
+        enable = false, -- Automatically show lightbulbs when the current line has available code actions.
+        sign = true, -- show sign in status column
+        virtual_text = false, -- Don't show virtual text at the end of line
       },
     }
 
-    keymap.set('n', '[d', '<CMD>Lspsaga diagnostic_jump_prev<CR>')
-    keymap.set('n', ']d', '<CMD>Lspsaga diagnostic_jump_next<CR>')
-    keymap.set('n', '<leader>o', '<CMD>Lspsaga outline<CR>')
-
+    local keymap = vim.keymap
     local builtin = require 'telescope.builtin'
-
-    vim.api.nvim_create_autocmd('LspAttach', {
-      group = vim.api.nvim_create_augroup('UserLspConfig', {}),
-      callback = function(ev)
-        local opts = { buffer = ev.buf }
-        keymap.set('n', 'gd', '<CMD>Lspsaga goto_definition<CR>', opts)
-        keymap.set('n', 'gr', '<CMD>Lspsaga rename<CR>', opts)
-        keymap.set(
-          { 'n', 'v' },
-          '<space>ca',
-          '<CMD>Lspsaga code_action<CR>',
-          opts
-        )
-        keymap.set('n', 'gR', builtin.lsp_references, opts)
-      end,
-    })
+    keymap.set('n', 'gd', '<CMD>Lspsaga goto_definition<CR>')
+    keymap.set('n', 'gr', '<CMD>Lspsaga rename<CR>')
+    keymap.set({ 'n', 'v' }, '<space>ca', '<CMD>Lspsaga code_action<CR>')
+    keymap.set('n', '<leader>o', '<CMD>Lspsaga outline<CR>')
+    keymap.set('n', 'gR', builtin.lsp_references)
+    keymap.set('n', '<leader>da', builtin.diagnostics)
+    keymap.set('n', 'gi', builtin.lsp_implementations)
 
     -- for crates.nvim
     local function show_documentation()
@@ -52,7 +47,7 @@ return {
       end
     end
 
-    vim.keymap.set('n', 'K', show_documentation, { silent = true })
+    keymap.set('n', 'K', show_documentation, { silent = true })
 
     -- error lens
     vim.fn.sign_define {

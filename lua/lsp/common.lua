@@ -36,22 +36,6 @@ return {
         rust_analyzer = {},
       }
 
-      local on_attach = function(_, bufnr)
-        local nmap = function(keys, func, desc)
-          if desc then
-            desc = 'LSP: ' .. desc
-          end
-
-          vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
-        end
-
-        local builtin = require 'telescope.builtin'
-
-        nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
-        nmap('gi', builtin.lsp_implementations, '[G]oto [I]mplementation')
-        nmap('<leader>da', builtin.diagnostics, '[D]i[A]gnostics')
-      end
-
       require('neodev').setup()
       require('fidget').setup()
       require('mason').setup()
