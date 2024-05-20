@@ -9,17 +9,43 @@ return {
         build = jit.os == 'OSX' and 'make'
           or 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build',
       },
+      {
+        'princejoogie/dir-telescope.nvim',
+        config = function()
+          require('dir-telescope').setup {
+            hidden = true,
+            no_ignore = false,
+            show_preview = true,
+          }
+        end,
+      },
     },
     keys = {
-      { '<leader>?', "<CMD>lua require('telescope.builtin').oldfiles()<CR>" },
       {
+        -- show all buffers
         '<leader><space>',
         "<CMD>lua require('telescope.builtin').buffers({ sort_mru = true })<CR>",
       },
       {
+        -- find file in all files
+        '<leader>f',
+        "<CMD>lua require('telescope.builtin').find_files()<CR>",
+      },
+      {
+        -- find file in all files
+        '<C-p>',
+        "<CMD>lua require('telescope.builtin').find_files()<CR>",
+      },
+      {
+        -- find text in all files
+        '<leader>g',
+        "<CMD>lua require('telescope.builtin').live_grep()<CR>",
+      },
+      { '<leader>?', "<CMD>lua require('telescope.builtin').oldfiles()<CR>" },
+      {
+        -- find text in current buffer, fancy than native search
         '<leader>/',
         function()
-          -- find in current buffer
           require('telescope.builtin').current_buffer_fuzzy_find(
             require('telescope.themes').get_dropdown {
               winblend = 10,
@@ -28,9 +54,16 @@ return {
           )
         end,
       },
-      { '<leader>f', "<CMD>lua require('telescope.builtin').find_files()<CR>" },
-      { '<C-p>', "<CMD>lua require('telescope.builtin').find_files()<CR>" },
-      { '<leader>g', "<CMD>lua require('telescope.builtin').live_grep()<CR>" },
+      {
+        -- find text in directories
+        '<leader>dg',
+        "<CMD>lua require('telescope').extensions.dir.live_grep()<CR>",
+      },
+      {
+        -- find file in directories
+        '<leader>df',
+        "<CMD>lua require('telescope').extensions.dir.find_files()<CR>",
+      },
     },
     config = function()
       local actions = require 'telescope.actions'
@@ -54,6 +87,7 @@ return {
         },
       }
       require('telescope').load_extension 'fzf'
+      require('telescope').load_extension 'dir'
     end,
   },
 }
