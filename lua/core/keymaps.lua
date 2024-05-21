@@ -27,12 +27,13 @@ keymap('n', '<M-l>', '<C-w>l', opts)
 
 keymap('n', '<BS>', ':nohlsearch<CR>', opts)
 
-keymap('n', 'Q', 'q', opts)
-keymap('n', 'q', '<Nop>', opts)
+-- move lines
+keymap('n', '<A-j>', '<cmd>m .+1<cr>==', opts)
+keymap('n', '<A-k>', '<cmd>m .-2<cr>==', opts)
 
-keymap('n', '<leader>w', '<CMD>w<CR>', opts)
-keymap('n', '<leader>q', '<CMD>q!<CR>', opts)
-keymap('n', '<leader>wq', '<CMD>wq<CR>', opts)
+-- buffers
+keymap('n', '<S-h>', '<cmd>bprevious<cr>', opts)
+keymap('n', '<S-l>', '<cmd>bnext<cr>', opts)
 
 -- Insert --
 keymap('i', '<M-o>', '<Esc>o', opts) -- open next line with insert mode
@@ -40,15 +41,18 @@ keymap('i', '<M-O>', '<Esc>O', opts) -- open previous line with insert mode
 keymap('i', '<C-a>', '<HOME>', opts)
 keymap('i', '<C-e>', '<END>', opts)
 keymap('i', '<C-c>', '<Esc>', opts)
+-- move lines
+keymap('i', '<A-j>', '<esc><cmd>m .+1<cr>==gi', opts)
+keymap('i', '<A-k>', '<esc><cmd>m .-2<cr>==gi', opts)
 
 -- Visual --
 -- Stay in indent mode
 keymap('v', '<', '<gv', opts)
 keymap('v', '>', '>gv', opts)
 
--- Move text up and down
-keymap('v', '<A-j>', ':m .+1<CR>==', opts)
-keymap('v', '<A-k>', ':m .-2<CR>==', opts)
+-- move lines
+keymap('v', '<A-j>', ":m '>+1<cr>gv=gv", opts)
+keymap('v', '<A-k>', ":m '<-2<cr>gv=gv", opts)
 
 -- Visual Block --
 -- Move text up and down

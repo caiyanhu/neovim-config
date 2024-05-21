@@ -61,6 +61,7 @@ local options = {
   updatetime = 1000,
   -- 自动加载
   autoread = true,
+  autowrite = true,
 }
 
 for k, v in pairs(options) do

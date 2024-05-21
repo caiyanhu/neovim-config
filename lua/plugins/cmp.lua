@@ -9,6 +9,7 @@ return {
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-cmdline',
       'saadparwaiz1/cmp_luasnip',
+      'hrsh7th/cmp-emoji',
     },
     config = function()
       local luasnip = require 'luasnip'
@@ -52,6 +53,7 @@ return {
           { name = 'path' },
           { name = 'buffer' },
           { name = 'crates' },
+          { name = 'emoji' },
         },
       }
 
