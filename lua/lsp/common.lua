@@ -13,7 +13,8 @@ return {
       },
     },
     config = function()
-      local server_names = { 'lua_ls', 'volar@1.8.27', 'jsonls', 'taplo' }
+      local server_names =
+        { 'lua_ls', 'volar@1.8.27', 'jsonls', 'rust_analyzer', 'taplo' }
       local server_settings = {
         lua_ls = {
           Lua = {
