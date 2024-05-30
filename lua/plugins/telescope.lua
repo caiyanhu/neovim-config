@@ -43,18 +43,6 @@ return {
       },
       { '<leader>?', "<CMD>lua require('telescope.builtin').oldfiles()<CR>" },
       {
-        -- find text in current buffer, fancy than native search
-        '<leader>/',
-        function()
-          require('telescope.builtin').current_buffer_fuzzy_find(
-            require('telescope.themes').get_dropdown {
-              winblend = 10,
-              previewer = false,
-            }
-          )
-        end,
-      },
-      {
         -- find text in directories
         '<leader>dg',
         "<CMD>lua require('telescope').extensions.dir.live_grep()<CR>",
