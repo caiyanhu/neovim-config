@@ -10,6 +10,7 @@ return {
         'javascript',
         'javascriptreact',
         'json',
+        'jsonc', -- for example: tsconfig.json
         'less',
         'typescript',
         'typescriptreact',

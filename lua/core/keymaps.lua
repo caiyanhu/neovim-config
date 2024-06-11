@@ -34,6 +34,7 @@ keymap('n', '<A-k>', '<cmd>m .-2<cr>==', opts)
 -- buffers
 keymap('n', '<S-h>', '<cmd>bprevious<cr>', opts)
 keymap('n', '<S-l>', '<cmd>bnext<cr>', opts)
+keymap('n', '<F5>', '<cmd>edit!<cr>', opts)
 
 -- Insert --
 keymap('i', '<M-o>', '<Esc>o', opts) -- open next line with insert mode
