@@ -13,6 +13,8 @@ return {
         'jsonc', -- for example: tsconfig.json
         'json5',
         'less',
+        'sass',
+        'scss',
         'typescript',
         'typescriptreact',
         'vue',

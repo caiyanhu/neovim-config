@@ -27,13 +27,15 @@ keymap('n', '<M-l>', '<C-w>l', opts)
 
 keymap('n', '<BS>', ':nohlsearch<CR>', opts)
 
+-- cursor position
+keymap('n', '<S-h>', '^', opts)
+keymap('n', '<S-l>', '$', opts)
+
 -- move lines
 keymap('n', '<A-j>', '<cmd>m .+1<cr>==', opts)
 keymap('n', '<A-k>', '<cmd>m .-2<cr>==', opts)
 
 -- buffers
-keymap('n', '<S-h>', '<cmd>bprevious<cr>', opts)
-keymap('n', '<S-l>', '<cmd>bnext<cr>', opts)
 keymap('n', '<F5>', '<cmd>edit!<cr>', opts)
 
 -- Insert --
