@@ -7,9 +7,8 @@ return {
     keys = {
       {
         '<leader>xx',
-        function()
-          require('trouble').toggle()
-        end,
+        '<cmd>Trouble diagnostics toggle<cr>',
+        desc = 'Diagnostics (Trouble)',
       },
     },
   },
