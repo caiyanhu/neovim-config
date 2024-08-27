@@ -4,9 +4,23 @@ return {
     version = 'v2.*',
     event = 'VeryLazy',
     build = 'make install_jsregexp',
+    dependencies = { 'rafamadriz/friendly-snippets' },
     config = function()
-      require('luasnip.loaders.from_vscode').load {
-        paths = {},
+      require('luasnip.loaders.from_vscode').lazy_load {
+        exclude = {
+          'c',
+          'cpp',
+          'csharp',
+          'docker',
+          'java',
+          'kotlin',
+          'latex',
+          'ocaml',
+          'php',
+          'python',
+          'ruby',
+          'shell',
+        },
       }
     end,
   },

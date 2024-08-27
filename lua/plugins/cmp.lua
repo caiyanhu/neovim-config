@@ -37,7 +37,19 @@ return {
             fallback()
           end
         end, { 'i', 's' }),
-        ['<CR>'] = cmp.mapping.confirm { select = true }, -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+        ['<CR>'] = cmp.mapping(function(fallback)
+          if cmp.visible() then
+            if luasnip.expandable() then
+              luasnip.expand()
+            else
+              cmp.confirm {
+                select = true,
+              }
+            end
+          else
+            fallback()
+          end
+        end),
       }
 
       cmp.setup {
