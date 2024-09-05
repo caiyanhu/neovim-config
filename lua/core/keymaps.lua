@@ -38,6 +38,10 @@ keymap('n', '<A-k>', '<cmd>m .-2<cr>==', opts)
 -- buffers
 keymap('n', '<F5>', '<cmd>edit!<cr>', opts)
 
+-- diable normal macro record
+keymap('n', 'Q', 'q', opts)
+keymap('n', 'q', '<Nop>', opts)
+
 -- Insert --
 keymap('i', '<M-o>', '<Esc>o', opts) -- open next line with insert mode
 keymap('i', '<M-O>', '<Esc>O', opts) -- open previous line with insert mode
