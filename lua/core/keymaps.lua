@@ -31,10 +31,6 @@ keymap('n', '<BS>', ':nohlsearch<CR>', opts)
 keymap('n', '<S-h>', '^', opts)
 keymap('n', '<S-l>', '$', opts)
 
--- move lines
-keymap('n', '<A-j>', '<cmd>m .+1<cr>==', opts)
-keymap('n', '<A-k>', '<cmd>m .-2<cr>==', opts)
-
 -- buffers
 keymap('n', '<F5>', '<cmd>edit!<cr>', opts)
 
