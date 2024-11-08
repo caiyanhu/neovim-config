@@ -7,19 +7,10 @@ return {
     dependencies = { 'rafamadriz/friendly-snippets' },
     config = function()
       require('luasnip.loaders.from_vscode').lazy_load {
-        exclude = {
-          'c',
-          'cpp',
-          'csharp',
+        include = {
+          'javascript',
           'docker',
-          'java',
-          'kotlin',
-          'latex',
-          'ocaml',
-          'php',
-          'python',
-          'ruby',
-          'shell',
+          'rust',
         },
       }
     end,

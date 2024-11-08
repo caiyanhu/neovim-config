@@ -34,9 +34,9 @@ keymap('n', '<S-l>', '$', opts)
 -- buffers
 keymap('n', '<F5>', '<cmd>edit!<cr>', opts)
 
--- diable normal macro record
+-- disable normal macro record
+keymap('n', 'q', '', opts)
 keymap('n', 'Q', 'q', opts)
-keymap('n', 'q', '<Nop>', opts)
 
 -- Insert --
 keymap('i', '<M-o>', '<Esc>o', opts) -- open next line with insert mode
