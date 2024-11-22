@@ -20,15 +20,14 @@ return {
       },
     }
 
+    -- dynamically render breadcrumb symbols in winbar
+    require('lspsaga.symbol.winbar').get_bar()
+
     local keymap = vim.keymap
-    local builtin = require 'telescope.builtin'
     keymap.set('n', 'gd', '<CMD>Lspsaga goto_definition<CR>')
     keymap.set('n', 'gr', '<CMD>Lspsaga rename<CR>')
-    keymap.set({ 'n', 'v' }, '<space>ca', '<CMD>Lspsaga code_action<CR>')
+    keymap.set({ 'n', 'v' }, '<leader>ca', '<CMD>Lspsaga code_action<CR>')
     keymap.set('n', '<leader>o', '<CMD>Lspsaga outline<CR>')
-    keymap.set('n', 'gR', builtin.lsp_references)
-    keymap.set('n', '<leader>da', builtin.diagnostics)
-    keymap.set('n', 'gi', builtin.lsp_implementations)
 
     -- for crates.nvim
     local function show_documentation()
