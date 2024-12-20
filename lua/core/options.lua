@@ -62,6 +62,9 @@ local options = {
   -- 自动加载
   autoread = true,
   autowrite = true,
+
+  -- jumplist, see https://www.reddit.com/r/neovim/comments/16nead7/can_someone_explain_set_jumpoptionsstack/
+  jumpoptions = 'stack'
 }
 
 for k, v in pairs(options) do
