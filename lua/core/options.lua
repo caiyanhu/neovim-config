@@ -64,7 +64,11 @@ local options = {
   autowrite = true,
 
   -- jumplist, see https://www.reddit.com/r/neovim/comments/16nead7/can_someone_explain_set_jumpoptionsstack/
-  jumpoptions = 'stack'
+  jumpoptions = 'stack',
+
+  -- spell check
+  spelllang = 'en_us',
+  spell = true,
 }
 
 for k, v in pairs(options) do
