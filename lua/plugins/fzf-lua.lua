@@ -20,6 +20,21 @@ return {
         "<CMD>lua require('fzf-lua').live_grep()<CR>",
       },
       { '<leader>?', "<CMD>lua require('fzf-lua').oldfiles()<CR>" },
+      {
+        -- go to the definition
+        'gd',
+        "<CMD>lua require('fzf-lua').lsp_definitions()<CR>",
+      },
+      {
+        -- go to the references
+        'gR',
+        "<CMD>lua require('fzf-lua').lsp_references()<CR>",
+      },
+      {
+        -- lsp code actions
+        '<leader>ca',
+        "<CMD>lua require('fzf-lua').lsp_code_actions()<CR>",
+      },
     },
   },
 }
