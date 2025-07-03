@@ -67,7 +67,7 @@ local options = {
   jumpoptions = 'stack',
 
   -- spell check
-  spelllang = 'en_us',
+  spelllang = 'en_us,cjk',
   spell = true,
 }
 
