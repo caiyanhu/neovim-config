@@ -19,6 +19,11 @@ return {
         '<leader>g',
         "<CMD>lua require('fzf-lua').live_grep()<CR>",
       },
+      {
+        -- resume last grep
+        '<leader>r',
+        "<CMD>lua require('fzf-lua').resume()<CR>",
+      },
       { '<leader>?', "<CMD>lua require('fzf-lua').oldfiles()<CR>" },
       {
         -- go to the definition
