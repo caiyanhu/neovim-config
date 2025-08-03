@@ -31,8 +31,27 @@ return {
 
       vim.lsp.enable 'tailwindcss'
 
-      vim.lsp.config('vue_ls', {
-        -- add filetypes for typescript, javascript and vue
+      vim.lsp.enable 'ts_ls'
+
+      vim.lsp.enable 'jsonls'
+
+      local vue_language_server_path = '/usr/local/lib/node_modules/@vue/language-server'
+      local vue_plugin = {
+        name = '@vue/typescript-plugin',
+        location = vue_language_server_path,
+        languages = { 'vue' },
+        configNamespace = 'typescript',
+      }
+      vim.lsp.config('vtsls', {
+        settings = {
+          vtsls = {
+            tsserver = {
+              globalPlugins = {
+                vue_plugin,
+              },
+            },
+          },
+        },
         filetypes = {
           'typescript',
           'javascript',
@@ -40,23 +59,9 @@ return {
           'typescriptreact',
           'vue',
         },
-        init_options = {
-          vue = {
-            -- disable hybrid mode. The Vue language server will run embedded ts_ls therefore there is no need to run it separately.
-            hybridMode = false,
-          },
-        },
       })
-      vim.lsp.enable 'vue_ls'
-
-      -- JSON
-      --Enable (broadcasting) snippet capability for completion
-      local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities.textDocument.completion.completionItem.snippetSupport = true
-      vim.lsp.config('jsonls', {
-        capabilities = capabilities,
-      })
-      vim.lsp.enable 'jsonls'
+      vim.lsp.enable('vue_ls')
+      vim.lsp.enable('vtsls')
     end,
   },
 }
