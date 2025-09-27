@@ -1,0 +1,21 @@
+# 使用 2 空格缩进（推荐 Lua 社区习惯）
+indent_type = "Spaces"
+indent_width = 2
+
+# 行宽限制
+column_width = 100
+
+# 是否在语句末尾加分号（Lua 不需要）
+no_call_parentheses = false
+
+# 换行风格 (Unix 换行符 \n)
+line_endings = "Unix"
+
+# 使用单引号还是双引号
+quote_style = "ForceDouble"
+
+# 单行语句（如 if ... then ... end）是否折叠
+collapse_simple_statement = "Never"
+
+# 函数调用括号风格
+call_parentheses = "Always"
