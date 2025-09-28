@@ -42,6 +42,23 @@ end
 -- 统一的 capabilities (由 blink.cmp 提供
 local capabilities = require("blink.cmp").get_lsp_capabilities()
 
+-- vue_language_server的前缀
+local vue_language_server_location_prefix = "/usr/local/lib/node_modules"
+
+-- 检查 zsh 下 nvm 是否存在
+local isNVMExist = ""
+local handle = io.popen("zsh -ic 'command -v nvm'")
+if handle then
+  isNVMExist = handle:read("*a") or ""
+  handle:close()
+end
+
+-- 如果nvm存在,修改vue_language_server的前缀
+if isNVMExist ~= "" then
+  vue_language_server_location_prefix =
+    vim.fn.expand("~/.nvm/versions/node/v24.0.1/lib/node_modules")
+end
+
 -- LSP 配置表
 local servers = {
   lua_ls = {
@@ -62,7 +79,7 @@ local servers = {
           globalPlugins = {
             {
               name = "@vue/typescript-plugin",
-              location = "/usr/local/lib/node_modules/@vue/language-server",
+              location = vue_language_server_location_prefix .. "/@vue/language-server",
               languages = { "vue" },
               configNamespace = "typescript",
             },
