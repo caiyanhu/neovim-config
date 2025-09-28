@@ -73,8 +73,26 @@ local servers = {
     filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
   },
 
+  cspell_ls = {
+    -- 配置文件位于~/Library/Preferences/cspell/cspell.json
+    cmd = { "cspell-lsp", "--stdio" },
+    filetypes = {
+      "go",
+      "rust",
+      "javascript",
+      "typescript",
+      "html",
+      "lua",
+      "css",
+      "json",
+      "yaml",
+      "markdown",
+      "gitcommit",
+    },
+    root_markers = { ".git" },
+  },
+
   -- 其它简单 LSP
-  cspell_ls = {},
   jsonls = {},
   tailwindcss = {},
   taplo = {},

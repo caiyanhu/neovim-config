@@ -2,7 +2,6 @@ vim.pack.add({
   { src = "https://github.com/catppuccin/nvim.git", name = "catppuccin" },
   { src = "https://github.com/windwp/nvim-ts-autotag" },
   { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
-  { src = "https://github.com/norcalli/nvim-colorizer.lua" },
   {
     src = "https://github.com/nvim-neo-tree/neo-tree.nvim",
     version = vim.version.range("3"),
@@ -22,6 +21,7 @@ vim.pack.add({
   { src = "https://github.com/rainbowhxch/accelerated-jk.nvim" },
   { src = "https://github.com/MattesGroeger/vim-bookmarks" },
   { src = "https://github.com/pmizio/typescript-tools.nvim" },
+  { src = "https://github.com/brenoprata10/nvim-highlight-colors" },
 
   -- dependencies
   "https://github.com/nvim-lua/plenary.nvim",
@@ -69,9 +69,6 @@ require("nvim-treesitter.configs").setup({
   ignore_install = {},
   modules = {},
 })
-
--- show color
-require("colorizer").setup()
 
 -- neo-tree
 require("neo-tree").setup({})
@@ -247,5 +244,8 @@ vim.g.bookmark_sign = "🎯"
 vim.g.bookmark_highlight_lines = 1
 -- 默认快捷键: mm增加书签 mn下一个书签 mp上一个书签 mx删除所有书签 mc删除当前buffer的所有书签
 
--- 不使用typescript-language-sercer, typescript-tool速度更快
+-- 不使用typescript-language-server, typescript-tool速度更快
 require("typescript-tools").setup({})
+
+-- show color
+require("nvim-highlight-colors").setup({})
