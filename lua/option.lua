@@ -66,9 +66,8 @@ local options = {
   -- jumplist, see https://www.reddit.com/r/neovim/comments/16nead7/can_someone_explain_set_jumpoptionsstack/
   jumpoptions = "stack",
 
-  -- spell check
-  spelllang = "en_us,cjk",
-  spell = true,
+  -- no native spell check, use cspell
+  spell = false,
 }
 
 for k, v in pairs(options) do
