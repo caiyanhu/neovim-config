@@ -1,6 +1,7 @@
 vim.pack.add({
   { src = "https://github.com/neovim/nvim-lspconfig.git" },
   { src = "https://github.com/Saghen/blink.cmp", version = "v1.7.0" },
+  { src = "https://github.com/b0o/SchemaStore.nvim" },
 })
 
 -- blink cmp
@@ -108,9 +109,16 @@ local servers = {
     },
     root_markers = { ".git" },
   },
+  jsonls = {
+    settings = {
+      json = {
+        schemas = require("schemastore").json.schemas(),
+        validate = { enable = true },
+      },
+    },
+  },
 
   -- 其它简单 LSP
-  jsonls = {},
   tailwindcss = {},
   taplo = {},
   vue_ls = {},
