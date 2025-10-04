@@ -245,7 +245,9 @@ vim.g.bookmark_highlight_lines = 1
 -- 默认快捷键: mm增加书签 mn下一个书签 mp上一个书签 mx删除所有书签 mc删除当前buffer的所有书签
 
 -- 不使用typescript-language-server, typescript-tool速度更快
-require("typescript-tools").setup({})
+require("typescript-tools").setup({
+  filetypes = { "javascript", "typescript" },
+})
 
 -- show color
 require("nvim-highlight-colors").setup({})

@@ -88,7 +88,7 @@ local servers = {
         },
       },
     },
-    filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+    filetypes = { "javascriptreact", "typescriptreact", "vue" },
   },
 
   cspell_ls = {
