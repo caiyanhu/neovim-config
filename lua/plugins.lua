@@ -134,6 +134,29 @@ end)
 vim.keymap.set({ "n", "v" }, "<leader>ca", function()
   vim.cmd("FzfLua lsp_code_actions")
 end)
+-- 定义命令 :SearchInFolder
+vim.api.nvim_create_user_command("SearchInFolder", function()
+  local fzf = require("fzf-lua")
+  -- 弹出输入框，默认路径是当前工作目录，支持目录补全
+  local path = vim.fn.input("📁 Search in folder: ", vim.fn.getcwd(), "dir")
+  if path == "" then
+    print("❌ No folder specified, canceled.")
+    return
+  end
+
+  -- 展开 ~ 并执行搜索
+  path = vim.fn.expand(path)
+  if vim.fn.isdirectory(path) == 0 then
+    print("⚠️ Not a valid directory: " .. path)
+    return
+  end
+
+  print("🔍 Searching in: " .. path)
+  fzf.live_grep({ cwd = path })
+end, { desc = "Search texts in specified folder using fzf-lua" })
+vim.keymap.set("n", "<leader>sf", function()
+  vim.cmd("SearchInFolder")
+end, { desc = "Search in folder (fzf-lua)" })
 
 -- git signs
 require("gitsigns").setup({
