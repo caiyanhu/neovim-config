@@ -56,8 +56,9 @@ require("nvim-treesitter.configs").setup({
     "lua",
     "markdown",
     "markdown_inline",
-    "rust",
+    "python",
     "query",
+    "rust",
     "scss",
     "toml",
     "tsx",
@@ -103,6 +104,7 @@ end
 formatters["lua"] = { "stylua" }
 formatters["rust"] = { "rustfmt" }
 formatters["toml"] = { "taplo" }
+formatters["python"] = { "ruff_format" }
 
 require("conform").setup({
   format_on_save = {
@@ -183,6 +185,7 @@ local linters = {
   javascript = { "eslint" },
   typescript = { "eslint" },
   typescriptreact = { "eslint" },
+  python = { "ruff" },
 }
 local languages_to_lint = {
   "css",
