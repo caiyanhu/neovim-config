@@ -14,15 +14,7 @@ require("blink.cmp").setup({
     documentation = { auto_show = false },
   },
   sources = {
-    default = { "lsp", "path", "snippets", "buffer", "copilot" },
-    providers = {
-      copilot = {
-        name = "copilot",
-        module = "blink.compat.source", -- 使用 blink.compat 桥接 cmp 源
-        async = true,
-        score_offset = 10, -- 提升优先级
-      },
-    },
+    default = { "lsp", "path", "snippets", "buffer" },
   },
   fuzzy = {
     implementation = "prefer_rust_with_warning",

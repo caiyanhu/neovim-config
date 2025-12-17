@@ -22,9 +22,6 @@ vim.pack.add({
   { src = "https://github.com/MattesGroeger/vim-bookmarks" },
   { src = "https://github.com/pmizio/typescript-tools.nvim" },
   { src = "https://github.com/brenoprata10/nvim-highlight-colors" },
-  { src = "https://github.com/Saghen/blink.compat" },
-  { src = "https://github.com/zbirenbaum/copilot.lua" },
-  { src = "https://github.com/zbirenbaum/copilot-cmp" },
 
   -- dependencies
   "https://github.com/nvim-lua/plenary.nvim",
@@ -261,15 +258,3 @@ require("typescript-tools").setup({
 
 -- show color
 require("nvim-highlight-colors").setup({})
-
--- Copilot setup
-require("copilot").setup({
-  suggestion = { enabled = false }, -- 不使用浮动 inline 建议，避免与 blink 冲突
-  panel = { enabled = false },
-  filetypes = { ["*"] = true },
-})
-
--- Copilot-cmp setup
-require("copilot_cmp").setup({
-  method = "getCompletionsCycling",
-})
