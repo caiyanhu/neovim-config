@@ -26,6 +26,8 @@ vim.keymap.set("n", "<S-l>", "$", opts)
 
 -- Buffers
 vim.keymap.set("n", "<F5>", "<cmd>edit!<cr>", opts)
+-- close all buffers except the current one
+vim.keymap.set("n", "<leader>bo", ":BufOnly<cr>", opts)
 
 -- Disable normal macro record
 vim.keymap.set("n", "q", "", opts)

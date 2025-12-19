@@ -33,3 +33,8 @@ vim.api.nvim_create_user_command("SearchInFolder", function()
   print("🔍 Searching in: " .. path)
   fzf.live_grep({ cwd = path })
 end, { desc = "Search texts in specified folder using fzf-lua" })
+
+-- 定义命令 :BufOnly
+vim.api.nvim_create_user_command("BufOnly", function()
+  vim.cmd("silent! %bd|e#|bd#")
+end, { desc = "Close all buffers in Neovim EXCEPT the current one" })
