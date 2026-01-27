@@ -122,7 +122,9 @@ local servers = {
   tailwindcss = {},
   taplo = {},
   vue_ls = {},
-  pyright = {},
+  pylsp = {},
+  ty = {},
+  ruff = {},
 }
 
 -- 循环批量配置 LSP
