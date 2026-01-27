@@ -122,8 +122,7 @@ local servers = {
   tailwindcss = {},
   taplo = {},
   vue_ls = {},
-  pylsp = {},
-  ty = {},
+  ty = {}, -- ty除了做类型检查外,也是python的lsp,所以不需要再安装pylsp和pyright这些东西
   ruff = {},
 }
 
