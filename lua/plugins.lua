@@ -22,6 +22,7 @@ vim.pack.add({
   { src = "https://github.com/MattesGroeger/vim-bookmarks" },
   { src = "https://github.com/pmizio/typescript-tools.nvim" },
   { src = "https://github.com/brenoprata10/nvim-highlight-colors" },
+  { src = "https://github.com/nvimdev/lspsaga.nvim" },
 
   -- dependencies
   "https://github.com/nvim-lua/plenary.nvim",
@@ -258,3 +259,6 @@ require("typescript-tools").setup({
 
 -- show color
 require("nvim-highlight-colors").setup({})
+
+-- lsp saga
+require("lspsaga").setup({})

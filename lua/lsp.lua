@@ -24,18 +24,16 @@ require("blink.cmp").setup({
 -- 通用 on_attach 函数，用来在 LSP 附加到 buffer 后设置 keymaps 等
 local function on_attach()
   -- 常用 LSP 功能 keymap
-  vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to Definition" })
-  vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover Document" })
+  vim.keymap.set("n", "gd", "<cmd>:Lspsaga goto_definition<cr>", { desc = "Go to Definition" })
+  vim.keymap.set("n", "K", "<cmd>:Lspsaga hover_doc<cr>", { desc = "Hover Document" })
+  vim.keymap.set("n", "<leader>rn", "<cmd>:Lspsaga rename<cr>", { desc = "Rename symbol" })
+  vim.keymap.set("n", "<leader>ca", "<cmd>:Lspsaga code_action<cr>", { desc = "Code Action" })
+  vim.keymap.set("n", "[d", "<cmd>:Lspsaga diagnostic_jump_prev<cr>", { desc = "Prev Diagnostic" })
+  vim.keymap.set("n", "]d", "<cmd>:Lspsaga diagnostic_jump_prev<cr>", { desc = "Next Diagnostic" })
+  vim.keymap.set("n", "<leader>o", "<cmd>:Lspsaga outline<cr>", { desc = "Show Outline" })
+
   vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { desc = "Go to Implementation" })
-  vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename symbol" })
-  vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
   vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "References" })
-  vim.keymap.set("n", "[d", function()
-    vim.diagnostic.jump({ count = -1 })
-  end, { desc = "Prev Diagnostic" })
-  vim.keymap.set("n", "]d", function()
-    vim.diagnostic.jump({ count = 1 })
-  end, { desc = "Next Diagnostic" })
   vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show Diagnostic Float" })
   vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Diagnostics to LocList" })
 end
