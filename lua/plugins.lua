@@ -43,33 +43,26 @@ require("nvim-ts-autotag").setup({
 })
 
 -- treesitter
-require("nvim-treesitter.configs").setup({
-  -- A list of parser names, or "all" (the five listed parsers should always be installed)
-  ensure_installed = {
-    "c",
-    "css",
-    "html",
-    "javascript",
-    "json",
-    "lua",
-    "markdown",
-    "markdown_inline",
-    "python",
-    "query",
-    "rust",
-    "scss",
-    "toml",
-    "tsx",
-    "typescript",
-    "vim",
-    "vimdoc",
-    "vue",
-    "yaml",
-  },
-  sync_install = false,
-  auto_install = true,
-  ignore_install = {},
-  modules = {},
+require("nvim-treesitter").install({
+  "c",
+  "css",
+  "html",
+  "javascript",
+  "json",
+  "lua",
+  "markdown",
+  "markdown_inline",
+  "python",
+  "query",
+  "rust",
+  "scss",
+  "toml",
+  "tsx",
+  "typescript",
+  "vim",
+  "vimdoc",
+  "vue",
+  "yaml",
 })
 
 -- neo-tree
