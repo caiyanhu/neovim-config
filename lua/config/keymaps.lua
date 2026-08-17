@@ -1,0 +1,35 @@
+local opts = { silent = true }
+
+vim.keymap.set("", "<Space>", "<Nop>", opts)
+
+vim.keymap.set("n", "<M-h>", "<C-w>h", opts)
+vim.keymap.set("n", "<M-j>", "<C-w>j", opts)
+vim.keymap.set("n", "<M-k>", "<C-w>k", opts)
+vim.keymap.set("n", "<M-l>", "<C-w>l", opts)
+vim.keymap.set("n", "<BS>", "<cmd>nohlsearch<cr>", opts)
+vim.keymap.set("n", "<S-h>", "^", opts)
+vim.keymap.set("n", "<S-l>", "$", opts)
+vim.keymap.set("n", "<F5>", "<cmd>edit!<cr>", opts)
+vim.keymap.set("n", "<leader>bo", "<cmd>BufOnly<cr>", opts)
+vim.keymap.set("n", "q", "", opts)
+vim.keymap.set("n", "Q", "q", opts)
+
+vim.keymap.set("i", "<M-o>", "<Esc>o", opts)
+vim.keymap.set("i", "<M-O>", "<Esc>O", opts)
+vim.keymap.set("i", "<C-a>", "<Home>", opts)
+vim.keymap.set("i", "<C-e>", "<End>", opts)
+vim.keymap.set("i", "<C-c>", "<Esc>", opts)
+vim.keymap.set("i", "<A-j>", "<Esc><cmd>move .+1<cr>==gi", opts)
+vim.keymap.set("i", "<A-k>", "<Esc><cmd>move .-2<cr>==gi", opts)
+
+vim.keymap.set("v", "<", "<gv", opts)
+vim.keymap.set("v", ">", ">gv", opts)
+vim.keymap.set("v", "<A-j>", ":move '>+1<cr>gv=gv", opts)
+vim.keymap.set("v", "<A-k>", ":move '<-2<cr>gv=gv", opts)
+vim.keymap.set("x", "<A-j>", ":move '>+1<cr>gv-gv", opts)
+vim.keymap.set("x", "<A-k>", ":move '<-2<cr>gv-gv", opts)
+
+vim.keymap.set("t", "<C-h>", "<C-\\><C-n><C-w>h", opts)
+vim.keymap.set("t", "<C-j>", "<C-\\><C-n><C-w>j", opts)
+vim.keymap.set("t", "<C-k>", "<C-\\><C-n><C-w>k", opts)
+vim.keymap.set("t", "<C-l>", "<C-\\><C-n><C-w>l", opts)

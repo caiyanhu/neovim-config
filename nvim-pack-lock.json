@@ -45,10 +45,6 @@
       "rev": "47f91c416daef12db467145e16bed5bbfe00add8",
       "src": "https://github.com/nvim-lualine/lualine.nvim"
     },
-    "mini.comment": {
-      "rev": "597d32ed2c9fbfbf9a250bec7c6b9035f71214f5",
-      "src": "https://github.com/nvim-mini/mini.comment"
-    },
     "mini.pairs": {
       "rev": "b7fde3719340946feb75017ef9d75edebdeb0566",
       "src": "https://github.com/nvim-mini/mini.pairs"
@@ -65,10 +61,6 @@
     "nvim-highlight-colors": {
       "rev": "e2cb22089cc2358b2b995c09578224f142de6039",
       "src": "https://github.com/brenoprata10/nvim-highlight-colors"
-    },
-    "nvim-lint": {
-      "rev": "606b823a57b027502a9ae00978ebf4f5d5158098",
-      "src": "https://github.com/mfussenegger/nvim-lint"
     },
     "nvim-lspconfig": {
       "rev": "2163c54bb6cfec53e3e555665ada945b8c8331b9",
@@ -97,10 +89,6 @@
     "trouble.nvim": {
       "rev": "bd67efe408d4816e25e8491cc5ad4088e708a69a",
       "src": "https://github.com/folke/trouble.nvim"
-    },
-    "typescript-tools.nvim": {
-      "rev": "c2f5910074103705661e9651aa841e0d7eea9932",
-      "src": "https://github.com/pmizio/typescript-tools.nvim"
     },
     "vim-bookmarks": {
       "rev": "9cc5fa7ecc23b052bd524d07c85356c64b92aeef",
